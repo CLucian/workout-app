@@ -1,0 +1,48 @@
+@import 'components/navbar';
+@import 'base/base';
+@import 'pages/community.scss';
+@import 'pages/exercises.scss';
+@import 'pages/home.scss';
+@import 'pages/muscle-groups.scss';
+@import 'pages/workouts.scss';
+
+
+.container {
+	height: 100vh;
+}
+
+.header-text {
+	font-size: 5rem;
+	color: #fff;
+}
+
+.content-text {
+	font-size: 2rem;
+	padding: 2rem;
+}
+
+.content-box {
+	position: absolute;
+	width: 75%;
+	height: 50%;
+	z-index: 5;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	
+	// border: 0.1rem solid white;
+	border-radius: 1rem;
+	background: rgba(238, 238, 238, 0.5);
+}
+
+.content {
+	padding: 2rem 6rem;
+}
+
+
+
+.centered {
+	text-align: center;
+}
+

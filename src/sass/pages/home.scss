@@ -1,0 +1,24 @@
+// .container-background-home {
+// 	background-image:url('../../images/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg');
+//     background-attachment:fixed;
+//     background-repeat: no-repeat;
+// 	background-size: cover;
+// 	min-height: 100%;
+
+// 	// background: rgba(0,0,0, 0.3)
+
+// }
+
+
+
+.container-background-home{
+	background-image: linear-gradient(
+		to right bottom,
+			rgba(0,0,0, 0.01),
+			rgba(0,0,0, 0.01)),
+	url('../../images/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg');
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+}
