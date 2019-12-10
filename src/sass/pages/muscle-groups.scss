@@ -1,0 +1,21 @@
+.muscle-groups {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	font-size: 3rem;
+	padding-top: 5rem;
+	cursor: pointer;
+}
+
+.muscle-group {
+	margin-top: 5rem;
+	padding: 5rem;
+	color: black;
+	font-size: 2rem;
+}
+
+.category-header {
+	text-align: center;
+	// padding-top: 3rem;
+}
+

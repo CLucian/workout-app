@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     return (
       <div className="navbar">
         <Link className="navbar-tab" to="/">
-          Deezler
+          The Deezle Dictionary
         </Link>
         <Link className="navbar-tab" to="/community">
           Community

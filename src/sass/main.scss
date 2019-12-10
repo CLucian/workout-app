@@ -6,8 +6,11 @@
 @import 'pages/muscle-groups.scss';
 @import 'pages/workouts.scss';
 
+@import 'components/exerciseCategory.scss';
 
-.container {
+
+
+.container-home {
 	height: 100vh;
 }
 
@@ -46,3 +49,6 @@
 	text-align: center;
 }
 
+.button {
+	text-align: center;
+}
