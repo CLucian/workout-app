@@ -42,7 +42,7 @@ class App extends React.Component {
   getExercisesByID = (id) => {
     axios.get(`https://wger.de/api/v2/exercise?status=2&category=${id}&language=2&limit=50`)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({ exercises: res.data.results })
       })
   }

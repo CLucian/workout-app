@@ -5,24 +5,26 @@ import Exercise from './Exercise'
 class ExerciseList extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			showExercises: false,
-		}
+		// this.state = {
+		// 	showExercises: false,
+		// }
 	}
 
-	toggleExercises = () => {
-		this.setState(prevState => ({
-			showExercises: !prevState.showExercises
-		}));
-	}
+	// toggleExercises = () => {
+	// 	this.setState(prevState => ({
+	// 		showExercises: !prevState.showExercises
+	// 	}));
+	// }
 
 	render () {
 		return (
-      <div>
-        {this.props.exercises.map(exercise => (
-          <Exercise exercise={exercise} />
-        ))}
-      </div>
+		<div className="container">
+			<div className="exercise-container">
+				{this.props.exercises.map(exercise => (
+				<Exercise exercise={exercise} />
+				))}
+			</div>
+		</div>
     );
 	}
 }

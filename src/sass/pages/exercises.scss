@@ -12,14 +12,13 @@
 .exercise-container {
 	display: flex;
 	justify-content: center;
-
+	display: inline-block;
 
 
 	padding: 1rem;
 	margin-top: 5rem;
 	border: 1px solid white;
-	height: 50rem;
-	width: 80%;
+	width: 85%;
 	text-align: center;
 
 }
@@ -27,6 +26,8 @@
 .exercise-box {
 	border: 1px solid #fff;
 	border-radius: 1rem;
-	height: 10rem;
+	height: 8rem;
 	width: 20rem;
+	display: inline-block;
+	background-color: orange;
 }
