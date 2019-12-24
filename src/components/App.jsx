@@ -26,35 +26,75 @@ class App extends React.Component {
     this.state = {
       exerciseCategories: [],
       exercises: [],
-      exerciseImages: []
+      isLoading: true
     };
 
     this.getExercisesByID = this.getExercisesByID.bind(this);
-    // this.handleExercises = this.handleExercises.bind(this);
   }
 
   componentDidMount() {
-    axios.get("https://wger.de/api/v2/exercisecategory/").then(res => {
+    this.fetchInitialData();
+  }
+
+  fetchInitialData(){
+    // fetch all initial data you need - exercises by category and images
+
+    // FETCH EVERYTHING
+    Promise.all([
+      this.getExerciseCategories(),
+      this.getExerciseImageByID()
+    ]).then(() => {
+      console.log('ALL IS DONE')
+      this.setState({isLoading: false})
+    })
+
+    // this.getExerciseCategories().then(() => {
+    // })
+  }
+
+  getExerciseCategories(){
+    return axios.get("https://wger.de/api/v2/exercisecategory/").then(res => {
       this.setState({ exerciseCategories: res.data.results });
+      console.log('CATEGORIES IS DONE')
     });
   }
 
-  getExercisesByID = (id) => {
-    axios.get(`https://wger.de/api/v2/exercise?status=2&category=${id}&language=2&limit=50`)
+  getExerciseImageByID = () => {
+    return axios
+      .get(
+        `https://wger.de/api/v2/exerciseimage/?is_main=True2&language=2&limit=500`
+      )
       .then(res => {
-        // console.log(res)
-        this.setState({ exercises: res.data.results })
-      })
-  }
+        const imageByExerciseID = {};
+        res.data.results.forEach(item => {
+          imageByExerciseID[item.exercise] = item;
+        });
 
-  // handleExercises = (id) => {
-  //    this.getExercisesByID(id);
-  // }
+        this.setState({
+          imageByExerciseID
+        });
+        console.log(this.state.imageByExerciseID);
+        console.log('IMAGES LOADING IS DONE', imageByExerciseID);
+      });
+  };
 
-
+  getExercisesByID = id => {
+    axios
+      .get(
+        `https://wger.de/api/v2/exercise?status=2&category=${id}&language=2&limit=50`
+      )
+      .then(res => {
+        // console.log(res);
+        this.setState({ exercises: res.data.results });
+      });
+  };
 
 
   render() {
+    if (this.state.isLoading) {
+      return "app is loading...";
+    }
+
     return (
       <>
         <Navbar />
@@ -62,7 +102,7 @@ class App extends React.Component {
           categories={this.state.exerciseCategories}
           exercises={this.state.exercises}
           getExercisesByID={this.getExercisesByID}
-          handleExercises={this.handleExercises}
+          imageByExerciseID={this.state.imageByExerciseID}
         />
         {/* <Switch>
           <div>
