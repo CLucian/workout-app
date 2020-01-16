@@ -12,13 +12,14 @@
 .exercise-container {
 	display: flex;
 	justify-content: center;
-	display: inline-block;
+	align-content: center;
+	flex-wrap: wrap;
 
 
 	padding: 1rem;
 	margin-top: 5rem;
 	border: 1px solid white;
-	width: 85%;
+	width: 90%;
 	text-align: center;
 
 }
@@ -26,8 +27,29 @@
 .exercise-box {
 	border: 1px solid #fff;
 	border-radius: 1rem;
-	height: 8rem;
+	height: 20rem;
 	width: 20rem;
-	display: inline-block;
 	background-color: orange;
+
+
+	margin: 2rem;
+}
+
+.photo-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// display: inline-block;
+	// vertical-align: top;
+}
+
+.exercise-photo {
+	// display: flex;
+	// align-content: center;
+	// justify-content: space-around;
+	// align-content: center;
+	// justify-content: center;
+	margin: 1rem;
+	width: 7.5rem;
+	height: auto;
 }

@@ -15,10 +15,18 @@ import Workouts from "../pages/Workouts";
 
 
 
+
+
 // import Facebook from './Facebook';
 
 // styles
 import '../sass/main.scss';
+
+import data from "../data/category_to_exercise";
+
+// console.log('DATA', data);
+// console.log(Object.keys(data).sort());
+
 
 class App extends React.Component {
   constructor(props) {
@@ -26,83 +34,27 @@ class App extends React.Component {
     this.state = {
       exerciseCategories: [],
       exercises: [],
-      isLoading: true
+      // isLoading: true
     };
-
-    this.getExercisesByID = this.getExercisesByID.bind(this);
+    // this.getExercisesByID = this.getExercisesByID.bind(this);
   }
 
   componentDidMount() {
-    this.fetchInitialData();
+    
   }
-
-  fetchInitialData(){
-    // fetch all initial data you need - exercises by category and images
-
-    // FETCH EVERYTHING
-    Promise.all([
-      this.getExerciseCategories(),
-      this.getExerciseImageByID()
-    ]).then(() => {
-      console.log('ALL IS DONE')
-      this.setState({isLoading: false})
-    })
-
-    // this.getExerciseCategories().then(() => {
-    // })
-  }
-
-  getExerciseCategories(){
-    return axios.get("https://wger.de/api/v2/exercisecategory/").then(res => {
-      this.setState({ exerciseCategories: res.data.results });
-      console.log('CATEGORIES IS DONE')
-    });
-  }
-
-  getExerciseImageByID = () => {
-    return axios
-      .get(
-        `https://wger.de/api/v2/exerciseimage/?is_main=True2&language=2&limit=500`
-      )
-      .then(res => {
-        const imageByExerciseID = {};
-        res.data.results.forEach(item => {
-          imageByExerciseID[item.exercise] = item;
-        });
-
-        this.setState({
-          imageByExerciseID
-        });
-        console.log(this.state.imageByExerciseID);
-        console.log('IMAGES LOADING IS DONE', imageByExerciseID);
-      });
-  };
-
-  getExercisesByID = id => {
-    axios
-      .get(
-        `https://wger.de/api/v2/exercise?status=2&category=${id}&language=2&limit=50`
-      )
-      .then(res => {
-        // console.log(res);
-        this.setState({ exercises: res.data.results });
-      });
-  };
-
 
   render() {
     if (this.state.isLoading) {
       return "app is loading...";
     }
 
+
     return (
       <>
         <Navbar />
+        <h1>Hello There</h1>
         <ExerciseCategory
-          categories={this.state.exerciseCategories}
-          exercises={this.state.exercises}
-          getExercisesByID={this.getExercisesByID}
-          imageByExerciseID={this.state.imageByExerciseID}
+          data={data}
         />
         {/* <Switch>
           <div>
@@ -128,3 +80,66 @@ export default App;
     //   </header>
     //     <Facebook />
     // </div>
+
+
+
+
+    // componentDidMount() {
+  //   this.fetchInitialData();
+  // }
+
+  // fetchInitialData(){
+  //   // fetch all initial data you need - exercises by category and images
+
+  //   // FETCH EVERYTHING
+  //   Promise.all([
+  //     this.getExerciseCategories(),
+  //     this.getExerciseImageByID()
+  //   ]).then(() => {
+  //     console.log('ALL IS DONE')
+  //     this.setState({isLoading: false})
+  //   })
+  // }
+
+  // getExerciseCategories(){
+  //   return axios.get("https://wger.de/api/v2/exercisecategory/").then(res => {
+  //     this.setState({ exerciseCategories: res.data.results });
+  //     console.log('CATEGORIES IS DONE')
+  //   });
+  // }
+
+  // getExerciseImageByID = () => {
+  //   return axios
+  //     .get(
+  //       `https://wger.de/api/v2/exerciseimage/?is_main=True2&language=2&limit=500`
+  //     )
+  //     .then(res => {
+  //       const imageByExerciseID = {};
+  //       res.data.results.forEach(item => {
+  //         imageByExerciseID[item.exercise] = item;
+  //       });
+
+  //       this.setState({
+  //         imageByExerciseID
+  //       });
+  //       console.log(this.state.imageByExerciseID);
+  //       console.log('IMAGES LOADING IS DONE', imageByExerciseID);
+  //     });
+  // };
+
+  // getExercisesByID = id => {
+  //   axios
+  //     .get(
+  //       `https://wger.de/api/v2/exercise?status=2&category=${id}&language=2&limit=50`
+  //     )
+  //     .then(res => {
+  //       // console.log(res);
+  //       this.setState({ exercises: res.data.results });
+  //     });
+  // };
+ 
+
+  // componentDidMount() {
+  //   Objectkeys(data)
+  // }
+  
