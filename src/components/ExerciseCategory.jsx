@@ -33,19 +33,23 @@ class ExerciseCategory extends React.Component {
 
   render() {
     return (
-      <div className="container-home">
+      <div className="container">
         <div className="container-background-home">
           <ul className="list">
-            {Object.keys(this.props.data).sort().map(category => (
-              <button className="muscle-group"
-              onClick={() => this.handleClick(category)}>
-                {category}
-              </button>
-            ))}
+            {Object.keys(this.props.data)
+              .sort()
+              .map(category => (
+                <button
+                  className="muscle-group"
+                  onClick={() => this.handleClick(category)}
+                >
+                  {category}
+                </button>
+              ))}
           </ul>
-          { this.state.category &&
+          {this.state.category && (
             <ExerciseList category={this.props.data[this.state.category]} />
-          }
+          )}
         </div>
       </div>
     );

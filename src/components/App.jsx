@@ -6,12 +6,15 @@ import axios from 'axios';
 import ExerciseImage from "./ExerciseImage";
 import ExerciseCategory from './ExerciseCategory';
 import Navbar from "./Navbar";
+import Landing from "./Landing";
+import MuscleMap from './MuscleMap';
 
 import Home from '../pages/Home';
 import Community from "../pages/Community";
 import Exercises from "../pages/Exercises";
 import MuscleGroups from "../pages/MuscleGroups";
 import Workouts from "../pages/Workouts";
+
 
 
 
@@ -50,12 +53,11 @@ class App extends React.Component {
 
 
     return (
-      <>
+      <div>
         <Navbar />
-        <h1>Hello There</h1>
-        <ExerciseCategory
-          data={data}
-        />
+        <ExerciseCategory data={data} />
+        <Landing />
+        <MuscleMap />
         {/* <Switch>
           <div>
             <Route exact path="/" component={Home} />
@@ -66,7 +68,7 @@ class App extends React.Component {
           </div>
         </Switch> */}
         {/* <Facebook /> */}
-      </>
+      </div>
     );
   }
 }
