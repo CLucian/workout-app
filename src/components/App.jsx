@@ -8,12 +8,26 @@ import ExerciseCategory from './ExerciseCategory';
 import Navbar from "./Navbar";
 import Landing from "./Landing";
 import MuscleMap from './MuscleMap';
+import MuscleCategory from './MuscleCategory';
+import Title from './Title';
 
 import Home from '../pages/Home';
 import Community from "../pages/Community";
 import Exercises from "../pages/Exercises";
 import MuscleGroups from "../pages/MuscleGroups";
 import Workouts from "../pages/Workouts";
+
+import Abdominals from './muscle-category-components/Abdominals';
+import Back from "./muscle-category-components/Back";
+import Biceps from "./muscle-category-components/Biceps";
+import Calves from "./muscle-category-components/Calves";
+import Chest from "./muscle-category-components/Chest";
+import Glutes from "./muscle-category-components/Glutes";
+import Hamstrings from "./muscle-category-components/Hamstrings";
+import Other from "./muscle-category-components/Other";
+import Quadriceps from "./muscle-category-components/Quadriceps";
+import Shoulders from "./muscle-category-components/Shoulders";
+import Triceps from "./muscle-category-components/Triceps";
 
 
 
@@ -37,6 +51,7 @@ class App extends React.Component {
     this.state = {
       exerciseCategories: [],
       exercises: [],
+      // muscleOverview: null
       // isLoading: true
     };
     // this.getExercisesByID = this.getExercisesByID.bind(this);
@@ -54,10 +69,13 @@ class App extends React.Component {
 
     return (
       <div>
-        <Navbar />
-        <ExerciseCategory data={data} />
-        <Landing />
+        {/* <Navbar /> */}
+        <Title />
         <MuscleMap />
+        {/* <ExerciseCategory data={data} /> */}
+        <MuscleCategory />
+        {/* <Landing /> */}
+
         {/* <Switch>
           <div>
             <Route exact path="/" component={Home} />

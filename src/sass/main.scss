@@ -18,6 +18,7 @@
 
 .container-home {
 	// height: 100vh;
+	// margin-top: 500rem;
 }
 
 .header-text {
@@ -71,6 +72,15 @@
 // 	background-color: white;
 // }
 
+
+
+////////////////////////////////////////////////////
+.title {
+	padding-bottom: 5rem;
+}
+
+
+///////////////////////////////////////////////////
 .body-diagram-image {
 	width: 60%;
 	// max-height: 60rem;
@@ -78,11 +88,11 @@
 
 }
 
-
 .muscle-map {
 	position: relative;
 	text-align: center;
 	display: block;
+	margin-bottom: 20rem;
 }
 
 .muscle-image-quadA {
@@ -90,6 +100,12 @@
 	width: 3.93%;
 	top: 42.1%;
 	left: 34.18%;
+	opacity: 0;
+}
+
+.muscle-image-quadA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-quadB {
@@ -97,6 +113,12 @@
 	width: 3.93%;
 	top: 42.1%;
 	left: 38.81%;
+	opacity: 0;
+}
+
+.muscle-image-quadB:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-abs {
@@ -104,6 +126,12 @@
 	width: 3.935%;
 	top: 28.44%;
 	left: 36.4%;
+	opacity: 0;
+}
+
+.muscle-image-abs:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-bicepsA {
@@ -111,7 +139,12 @@
 	width: 2.4%;
 	top: 26.8%;
 	left: 32.537%;
-	// display: none;
+	opacity: 0;
+}
+
+.muscle-image-bicepsA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-bicepsB {
@@ -119,7 +152,12 @@
 	width: 2.4%;
 	top: 26.8%;
 	left: 42%;
-	// display: none;
+	opacity: 0;
+}
+
+.muscle-image-bicepsB:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-pecs {
@@ -127,7 +165,12 @@
 	width: 7.77%;
 	top: 21.95%;
 	left: 34.6%;
-	// display: none;
+	opacity: 0;
+}
+
+.muscle-image-pecs:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-deltoidA {
@@ -135,6 +178,12 @@
 	width: 3.36%;
 	top: 20.95%;
 	left: 33.12%;
+	opacity: 0;
+}
+
+.muscle-image-deltoidA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-deltoidB {
@@ -142,6 +191,12 @@
 	width: 3.4%;
 	top: 20.89%;
 	left: 40.44%;
+	opacity: 0;
+}
+
+.muscle-image-deltoidB:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-calvesA {
@@ -149,6 +204,12 @@
 	width: 2.79%;
 	top: 64.5%;
 	left: 33.9%;
+	opacity: 0;
+}
+
+.muscle-image-calvesA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-calvesB {
@@ -156,14 +217,25 @@
 	width: 2.84%;
 	top: 63.9%;
 	left: 40.22%;
+	opacity: 0;
 }
 
+.muscle-image-calvesB:hover {
+	transition: 0.3s;
+	opacity: 1;
+}
 
 .muscle-image-deltoidC {
 	position: absolute;
 	width: 3.34%;
 	top: 19.3%;
 	left: 56.95%;
+	opacity: 0;
+}
+
+.muscle-image-deltoidC:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-deltoidD {
@@ -171,6 +243,12 @@
 	width: 3.41%;
 	top: 19.32%;
 	left: 64.8%;
+	opacity: 0;
+}
+
+.muscle-image-deltoidD:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-trapsC {
@@ -178,6 +256,12 @@
 	width: 4.8%;
 	top: 17.9%;
 	left: 60.18%;
+	opacity: 0;
+}
+
+.muscle-image-trapsC:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-latsA {
@@ -185,6 +269,12 @@
 	width: 3.58%;
 	top: 26.5%;
 	left: 58.82%;
+	opacity: 0;
+}
+
+.muscle-image-latsA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-latsB {
@@ -192,6 +282,12 @@
 	width: 3.58%;
 	top: 26.6%;
 	left: 62.735%;
+	opacity: 0;
+}
+
+.muscle-image-latsB:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-lower-back {
@@ -199,6 +295,12 @@
 	width: 3.97%;
 	top: 32.8%;
 	left: 60.55%;
+	opacity: 0;
+}
+
+.muscle-image-lower-back:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-tricepsA {
@@ -206,6 +308,12 @@
 	width: 2.75%;
 	top: 24.7%;
 	left: 56.1%;
+	opacity: 0;
+}
+
+.muscle-image-tricepsA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-tricepsB {
@@ -213,6 +321,12 @@
 	width: 2.75%;
 	top: 24.7%;
 	left: 66.25%;
+	opacity: 0;
+}
+
+.muscle-image-tricepsB:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-glutes {
@@ -220,6 +334,12 @@
 	width: 7.33%;
 	top: 40.7%;
 	left: 58.9%;
+	opacity: 0;
+}
+
+.muscle-image-glutes:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-hamstringsA {
@@ -227,6 +347,12 @@
 	width: 4.01%;
 	top: 47.2%;
 	left: 58.25%;
+	opacity: 0;
+}
+
+.muscle-image-hamstringsA:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-hamstringsB {
@@ -234,6 +360,12 @@
 	width: 4.0%;
 	top: 47.55%;
 	left: 62.9%;
+	opacity: 0;
+}
+
+.muscle-image-hamstringsB:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-calvesC {
@@ -241,6 +373,12 @@
 	width: 2.87%;
 	top: 64.1%;
 	left: 57.2%;
+	opacity: 0;
+}
+
+.muscle-image-calvesC:hover {
+	transition: 0.3s;
+	opacity: 1;
 }
 
 .muscle-image-calvesD {
@@ -248,4 +386,102 @@
 	width: 2.87%;
 	top: 64.2%;
 	left: 65.05%;
+	opacity: 0;
 }
+
+.muscle-image-calvesD:hover {
+	transition: 0.3s;
+	opacity: 1;
+}
+
+////////////////////////////////////////
+//MuscleCategory
+////////////////////////////////////////
+
+.muscle-category-container {
+	width: 80%;
+	height: 100vh;
+	border: 0.2rem solid black;
+	text-align: center;
+	margin: auto;
+	margin-top: 5rem;
+}
+
+
+////////////////////////////////////////
+//Abdominals/Back.....
+////////////////////////////////////////
+
+.main-container {
+	display: relative;
+}
+
+.tab-bar {
+	display: flex;
+	list-style: none;
+	justify-content: space-evenly;
+	width: 50%;
+	padding: 3rem;
+	font-size: 2rem;
+}
+
+.tab {
+	//
+}
+
+.category-title {
+	font-size: 5rem;
+	padding: 2rem;
+}
+
+.img-info-container {
+	// width: 100%;
+	// display: flex;
+	// margin: 2rem;
+	// justify-content: space-evenly;
+	text-align: center;
+}
+
+.img-container {
+	// position: relative;
+	width: 30%;
+	height: 15rem;
+	border: 0.1rem solid black;
+	// margin: 5rem 2rem;
+	// display: inline-block;
+	margin: 0 auto;
+	margin-bottom: 15rem;
+	
+}
+
+.info-container {
+	position: relative;
+	width: 50%;
+	margin: 5rem 2rem;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 5rem;
+	
+}
+
+.info {
+	font-size: 1.5rem;
+}
+
+.overview-img {
+	width: 75%;
+	height: auto;
+}
+
+// .category-image {
+// 	width: 100%;
+// 	height: 20rem;
+// 	border: 0.1rem solid black;
+// 	// margin: 5rem;
+// }
+
+// .info {
+// 	position: relative;
+// 	width: 50%;
+// 	margin: 5rem;
+// }
