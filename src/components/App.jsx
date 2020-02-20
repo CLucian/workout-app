@@ -51,29 +51,32 @@ class App extends React.Component {
     this.state = {
       exerciseCategories: [],
       exercises: [],
+      activeCategory: null
       // muscleOverview: null
       // isLoading: true
     };
     // this.getExercisesByID = this.getExercisesByID.bind(this);
   }
 
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
+
+  setActiveMuscleCategory = category => {
+    console.log("would set", category);
+    this.setState({ activeCategory: category });
+  };
 
   render() {
     if (this.state.isLoading) {
       return "app is loading...";
     }
 
-
     return (
       <div>
         {/* <Navbar /> */}
         <Title />
-        <MuscleMap />
+        <MuscleMap setActiveMuscleCategory={this.setActiveMuscleCategory} />
         {/* <ExerciseCategory data={data} /> */}
-        <MuscleCategory />
+        <MuscleCategory activeCategory={this.state.activeCategory} />
         {/* <Landing /> */}
 
         {/* <Switch>
