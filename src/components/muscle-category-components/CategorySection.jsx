@@ -3,7 +3,7 @@ import React from "react";
 
 function SectionContent({ category }) {
   const { sectionContent } = category;
-  const { info, title } = sectionContent;
+  const { info, title, muscleFunction } = sectionContent;
   return (
     <div className="main-container">
       <ul className="tab-bar">
@@ -21,6 +21,8 @@ function SectionContent({ category }) {
         </div>
         <div className="info-container">
           <div className="info">{info}</div>
+		  <h1 className="muscleFunction-title">Muscle Function</h1>
+  			<div className="muscleFunction">{muscleFunction}</div>
         </div>
       </div>
     </div>

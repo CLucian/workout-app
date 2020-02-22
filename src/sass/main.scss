@@ -456,7 +456,7 @@
 
 .info-container {
 	position: relative;
-	width: 50%;
+	width: 70%;
 	margin: 5rem 2rem;
 	text-align: center;
 	margin: 0 auto;
@@ -465,7 +465,19 @@
 }
 
 .info {
-	font-size: 1.5rem;
+	padding-top: 7rem;
+	font-size: 1.7rem;
+}
+
+.muscleFunction-title {
+	font-size: 3rem;
+	padding-top: 5rem;
+	padding-bottom: 2rem;
+
+}
+
+.muscleFunction {
+	font-size: 1.7rem;
 }
 
 .overview-img {
