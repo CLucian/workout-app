@@ -14,6 +14,10 @@ import CategorySection from "./muscle-category-components/CategorySection";
 // import Triceps from "./muscle-category-components/Triceps";
 
 class MuscleCategory extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state={};
+	}
 	render() {
 		const {activeCategory} = this.props
 
@@ -29,7 +33,11 @@ class MuscleCategory extends React.Component {
 
 		{/* <SectionComponent category={activeCategory}/> */}
 
-		<CategorySection category={activeCategory} />
+		<CategorySection activeCategory={activeCategory}
+		 handleCategoryClick={this.props.handleCategoryClick}
+		 setActiveTab={this.props.setActiveTab}
+		 activeTab={this.props.activeTab}
+		 active={this.props.active} />
         {/* <Abdominals /> */}
 		{/* <Back />
 		<Biceps /> 

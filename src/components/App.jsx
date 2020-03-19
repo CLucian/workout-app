@@ -51,11 +51,12 @@ class App extends React.Component {
     this.state = {
       exerciseCategories: [],
       exercises: [],
-      activeCategory: null
-      // muscleOverview: null
-      // isLoading: true
+      activeCategory: null,
+      activeTab: 'overview',
+      active: false,
     };
-    // this.getExercisesByID = this.getExercisesByID.bind(this);
+
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
   }
 
   componentDidMount() {}
@@ -65,6 +66,20 @@ class App extends React.Component {
     this.setState({ activeCategory: category });
   };
 
+  handleCategoryClick() {
+    this.setState({
+      activeTab: 'overview'
+    })
+  }
+  
+  setActiveTab = e => {
+    this.setState({ activeTab: e.target.id }, () => {
+      console.log(this.state.activeTab)
+    });
+  }
+
+
+
   render() {
     if (this.state.isLoading) {
       return "app is loading...";
@@ -72,11 +87,15 @@ class App extends React.Component {
 
     return (
       <div>
-        {/* <Navbar /> */}
+        <Navbar />
         <Title />
-        <MuscleMap setActiveMuscleCategory={this.setActiveMuscleCategory} />
+        <MuscleMap setActiveMuscleCategory={this.setActiveMuscleCategory} handleCategoryClick={this.handleCategoryClick} />
         {/* <ExerciseCategory data={data} /> */}
-        <MuscleCategory activeCategory={this.state.activeCategory} />
+        <MuscleCategory activeCategory={this.state.activeCategory}
+         handleCategoryClick={this.handleCategoryClick}
+         setActiveTab={this.setActiveTab}
+         activeTab={this.state.activeTab}
+         active={this.state.active} />
         {/* <Landing /> */}
 
         {/* <Switch>

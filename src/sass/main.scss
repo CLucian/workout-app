@@ -425,8 +425,28 @@
 	font-size: 2rem;
 }
 
+.overview {
+
+}
+
+.exercises {
+	
+}
+
 .tab {
-	//
+
+}
+
+.tab:hover {
+	text-decoration: underline;
+}
+
+.tab:active {
+	font-weight: bold;
+}
+
+.active {
+	text-decoration: underline;
 }
 
 .category-title {
@@ -483,6 +503,25 @@
 .overview-img {
 	width: 75%;
 	height: auto;
+}
+
+
+//////////////////////
+//Exercise Tab
+/////////////////////
+
+.big-header {
+	font-size: 5rem;
+}
+
+.exercisesTab {
+	width: 50rem;
+	height: 50rem;
+}
+
+.exerciseTab-para {
+	font-size: 5rem;
+	z-index: 5;
 }
 
 // .category-image {
