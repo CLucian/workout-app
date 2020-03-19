@@ -52,8 +52,7 @@ class App extends React.Component {
       exerciseCategories: [],
       exercises: [],
       activeCategory: null,
-      activeTab: 'overview',
-      active: false,
+      activeTab: 'overview'
     };
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);

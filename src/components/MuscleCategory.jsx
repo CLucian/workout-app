@@ -1,25 +1,9 @@
 import React from 'react';
 import CategorySection from "./muscle-category-components/CategorySection";
 
-// import Abdominals from "./muscle-category-components/Abdominals";
-// import Back from "./muscle-category-components/Back";
-// import Biceps from "./muscle-category-components/Biceps";
-// import Calves from "./muscle-category-components/Calves";
-// import Chest from "./muscle-category-components/Chest";
-// import Glutes from "./muscle-category-components/Glutes";
-// import Hamstrings from "./muscle-category-components/Hamstrings";
-// import Other from "./muscle-category-components/Other";
-// import Quadriceps from "./muscle-category-components/Quadriceps";
-// import Shoulders from "./muscle-category-components/Shoulders";
-// import Triceps from "./muscle-category-components/Triceps";
+function MuscleCategory(props) {
 
-class MuscleCategory extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state={};
-	}
-	render() {
-		const {activeCategory} = this.props
+		const {activeCategory, handleCategoryClick, setActiveTab, activeTab} = props
 
 		console.log("ACTIVE CATEGORY IS", activeCategory);
 
@@ -34,10 +18,10 @@ class MuscleCategory extends React.Component {
 		{/* <SectionComponent category={activeCategory}/> */}
 
 		<CategorySection activeCategory={activeCategory}
-		 handleCategoryClick={this.props.handleCategoryClick}
-		 setActiveTab={this.props.setActiveTab}
-		 activeTab={this.props.activeTab}
-		 active={this.props.active} />
+		 handleCategoryClick={handleCategoryClick}
+		 setActiveTab={setActiveTab}
+		 activeTab={activeTab}
+		 />
         {/* <Abdominals /> */}
 		{/* <Back />
 		<Biceps /> 
@@ -51,7 +35,6 @@ class MuscleCategory extends React.Component {
 		<Triceps /> */}
       </div>
     );
-	}
 }
 
 export default MuscleCategory;

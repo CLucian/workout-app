@@ -2,26 +2,14 @@ import React from "react";
 
 import ExercisesTab from './ExercisesTab';
 
-class SectionContent extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			// activeTab: 'overview',
-			// active: false,
-    };
-    
-	};
+function SectionContent(props) {
 
-	
-  
-  
-
-
-	render() {
-
-		const { activeCategory, activeTab, active, setActiveTab } = this.props;
+		const { activeCategory, activeTab, setActiveTab } = props;
 		const { sectionContent } = activeCategory;
-		const { info, title, muscleFunction } = sectionContent;
+    const { info, title, muscleFunction } = sectionContent;
+    
+
+
 		return (
       <div className="main-div">
         <ul className="tab-bar"> 
@@ -61,12 +49,11 @@ class SectionContent extends React.Component {
           </div>
         ) : (
           <div className="main-container">
-            <ExercisesTab activeCategory={this.props.activeCategory} />
+            <ExercisesTab activeCategory={activeCategory} />
           </div>
         )}
       </div>
     );
-		}
 	}
 
 
