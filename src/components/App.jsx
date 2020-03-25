@@ -3,7 +3,7 @@ import '../App.css';
 import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
-import ExerciseImage from "./ExerciseImage";
+// import ExerciseImage from "./ExerciseImage";
 import ExerciseCategory from './ExerciseCategory';
 import Navbar from "./Navbar";
 import Landing from "./Landing";
@@ -44,7 +44,7 @@ import data from "../data/category_to_exercise";
 // console.log('DATA', data);
 // console.log(Object.keys(data).sort());
 
-
+ 
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -52,17 +52,27 @@ class App extends React.Component {
       exerciseCategories: [],
       exercises: [],
       activeCategory: null,
+      dataCategory: null,
       activeTab: 'overview'
     };
 
+    console.log('DATA', data);
+    // console.log('------ACTIVE CATEGORY--------', data[this.state.activeCategory])
+
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
+
   }
 
-  componentDidMount() {}
+
+  componentDidMount() {
+  }
 
   setActiveMuscleCategory = category => {
     console.log("would set", category);
-    this.setState({ activeCategory: category });
+    this.setState({
+       activeCategory: category,
+       dataCategory: category.name
+     });
   };
 
   handleCategoryClick() {
@@ -78,23 +88,32 @@ class App extends React.Component {
   }
 
 
+ 
+
 
   render() {
     if (this.state.isLoading) {
       return "app is loading...";
     }
 
+
+    console.log('dataCategory', this.state.dataCategory);
+    console.log('dataCategory Name', data[this.state.dataCategory])
+  
+  
+
     return (
       <div>
         <Navbar />
         <Title />
-        <MuscleMap setActiveMuscleCategory={this.setActiveMuscleCategory} handleCategoryClick={this.handleCategoryClick} />
+        <MuscleMap setActiveMuscleCategory={this.setActiveMuscleCategory} handleCategoryClick={this.handleCategoryClick} getDataCategory={this.getDataCategory} />
         {/* <ExerciseCategory data={data} /> */}
         <MuscleCategory activeCategory={this.state.activeCategory}
          handleCategoryClick={this.handleCategoryClick}
          setActiveTab={this.setActiveTab}
          activeTab={this.state.activeTab}
-         active={this.state.active} />
+         active={this.state.active}
+         dataCategory={this.state.dataCategory} />
         {/* <Landing /> */}
 
         {/* <Switch>

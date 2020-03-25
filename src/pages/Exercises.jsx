@@ -1,7 +1,7 @@
 import React from 'react'; 
 import axios from 'axios';
 
-import ExerciseImage from '../components/ExerciseImage';
+// import ExerciseImage from '../components/ExerciseImage';
 
 export default class Exercises extends React.Component {
 	constructor(props) {

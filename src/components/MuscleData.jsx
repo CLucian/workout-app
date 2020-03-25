@@ -78,7 +78,7 @@ const quadsSectionContent = {
 
 const data = [
   {
-    name: "quads",
+    name: "quadriceps",
     key: "quadA",
     img: {
       src: "exercise-images/site-images/muscle-map/01.A-Quads.png",
@@ -89,7 +89,7 @@ const data = [
     sectionContent: quadsSectionContent
   },
   {
-    name: "quads",
+    name: "quadriceps",
     key: "quadB",
     img: {
       src: "exercise-images/site-images/muscle-map/01.B-Quads.png",
@@ -99,7 +99,7 @@ const data = [
     sectionContent: quadsSectionContent
   },
   {
-    name: "abs",
+    name: "abdominals",
     key: "abs",
     img: {
       src: "exercise-images/site-images/muscle-map/04.-Obliques.png",
@@ -129,7 +129,7 @@ const data = [
     sectionContent: bicepsSectionContent
   },
   {
-    name: "pecs",
+    name: "chest",
     key: "pecs",
     img: {
       src: "exercise-images/site-images/muscle-map/06.-Pecs.png",
@@ -139,7 +139,7 @@ const data = [
     sectionContent: pectoralsSectionContent
   },
   {
-    name: "delts",
+    name: "shoulders",
     key: "deltA",
     img: {
       src: "exercise-images/site-images/muscle-map/07.A-Deltoids.png",
@@ -149,7 +149,7 @@ const data = [
     sectionContent: deltoidsSectionContent
   },
   {
-    name: "delts",
+    name: "shoulders",
     key: "deltB",
     img: {
       src: "exercise-images/site-images/muscle-map/07.B-Deltoids.png",
@@ -159,7 +159,7 @@ const data = [
     sectionContent: deltoidsSectionContent
   },
   {
-    name: "delts",
+    name: "shoulders",
     key: "deltC",
     img: {
       src: "exercise-images/site-images/muscle-map/07.C-Deltoids.png",
@@ -169,7 +169,7 @@ const data = [
     sectionContent: deltoidsSectionContent
   },
   {
-    name: "delts",
+    name: "shoulders",
     key: "deltsD",
     img: {
       src: "exercise-images/site-images/muscle-map/07.D-Deltoids.png",

@@ -554,7 +554,7 @@ export default {
         title: "Incline Cable Fly's",
         url: "http://db.everkinetic.com/exercise/incline-cable-flys",
         primer:
-          "This exercise is an alternative to the Butterfly or Pec Deck, it defines the muscles of the chest.Place an incline bench set at a 45 degree angle between two cable towers.",
+          "This exercise is an alternative to the Butterfly or Pec Deck, it defines the muscles of the chest. Place an incline bench set at a 45 degree angle between two cable towers.",
         type: "isolation",
         primary: "chest",
         secondary: ["biceps", "triceps", "forearm"],
@@ -1146,7 +1146,9 @@ export default {
         title: "Medicine Ball Ab Tucks",
         url: "http://db.everkinetic.com/exercise/",
         primary: "chest",
-        primer: "",
+        type: "isolation",
+        primer: "This is an exercise for chest, shoulder and triceps strengthening.",
+        equipment: ["body", "medicine ball"],
         images: [
           "http://img.everkinetic.com/?action=image&id=1048&number=0&key=69cadbdd2&version=96a864e1&size=480,480&download=medium",
           "http://img.everkinetic.com/?action=image&id=1048&number=1&key=69cadbdd2&version=5df21a74&size=480,480&download=medium"
@@ -4263,8 +4265,10 @@ export default {
         url: "http://db.everkinetic.com/exercise/wide-grip-chin-up",
         primer:
           "This variation on the basic chin up is a great exercise for people who rock climb.",
+        type: "isolation",
         primary: "back",
         secondary: ["neck", "biceps"],
+        equipment: ["bar", "body"],
         images: [
           "http://img.everkinetic.com/?action=image&id=386&number=0&key=69cadbdd2&version=920bb525&size=960,960&download=large",
           "http://img.everkinetic.com/?action=image&id=386&number=1&key=69cadbdd2&version=37eb3e1c&size=960,960&download=large"
@@ -5575,7 +5579,7 @@ export default {
         name: "barbell-squat",
         title: "Barbell Squat",
         url: "http://db.everkinetic.com/exercise/barbell-squat",
-        primer: "",
+        primer: "A staple compound movement for the legs, primarily the quadriceps.",
         type: "compound",
         primary: "quadriceps",
         secondary: ["hamstrings"],

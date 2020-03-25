@@ -399,12 +399,15 @@
 ////////////////////////////////////////
 
 .muscle-category-container {
-	width: 80%;
-	height: 100vh;
+	width: 65%;
+	// height: 100vh;
 	border: 0.2rem solid black;
+	background: white;
+	border-radius: 1rem;
 	text-align: center;
 	margin: auto;
 	margin-top: 5rem;
+	margin-bottom: 8rem;
 }
 
 
@@ -446,7 +449,8 @@
 }
 
 .active {
-	text-decoration: underline;
+	border-bottom: 0.2rem solid rgba(102,177,241,0.8);
+	font-weight: bolder;
 }
 
 .category-title {
@@ -516,7 +520,7 @@
 
 .exercisesTab {
 	width: 50rem;
-	height: 50rem;
+	height: auto;
 }
 
 .exerciseTab-para {
@@ -536,3 +540,80 @@
 // 	width: 50%;
 // 	margin: 5rem;
 // }
+
+
+////////////////////////////////////////////
+/////	Exercise List
+////////////////////////////////////////////
+
+.exerciseList {
+	// display: flex;
+	// justify-content: space-around;
+	background: rgba(102,177,241,0.8);
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	height: 20rem;
+	// width: 50%;
+	padding: 1rem;
+	margin: 4rem;
+	padding-bottom: 15rem;
+}
+
+.exerciseTitle {
+	display: flex;
+	justify-content: space-around;
+	// margin-left: 7rem;
+	margin-bottom: 2rem;
+	// text-align: center;
+}
+
+.exercise-title {
+	margin-top: 1rem;
+	font-size: 3rem;
+	text-align: center;
+}
+
+.exerciseImageAndInfo {
+	display: flex;
+	justify-content: space-around
+}
+
+.image-container {
+	// Add hover effect here
+	height: 50%;
+	width: 20%;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	background: white;
+}
+
+.exercise-image {
+	object-fit: contain;
+	width: 100%;
+	// width: 20rem;
+	height: 20rem;
+	// width: 100%;
+}
+
+.exercise-info {
+	// margin-bottom: 2rem;
+	// display: flex;
+	// align-items: center;
+	margin-top: 2rem;
+	width: 50%;
+}
+
+.general-info {
+	text-align: center;
+}
+
+.mini-info-container {
+	padding-top: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mini-info {
+	padding: 2rem;
+}

@@ -1,10 +1,11 @@
 import React from "react";
 
 import ExercisesTab from './ExercisesTab';
+import OverviewTab from './OverviewTab';
 
 function SectionContent(props) {
 
-		const { activeCategory, activeTab, setActiveTab } = props;
+		const { activeCategory, activeTab, setActiveTab, dataCategory } = props;
 		const { sectionContent } = activeCategory;
     const { info, title, muscleFunction } = sectionContent;
     
@@ -30,28 +31,10 @@ function SectionContent(props) {
           </li>
         </ul>
         {activeTab === "overview" ? (
-          <div className="main-container">
-            <div className="category-title">{title}</div>
-            <div className="img-info-container">
-              <div className="img-container">
-                <img
-                  className="overview-img"
-                  src="exercise-images/muscle-category-images/abs.png"
-                  alt="abs"
-                />
-              </div>
-              <div className="info-container">
-                <div className="info">{info}</div>
-                <h1 className="muscleFunction-title">Muscle Function</h1>
-                <div className="muscleFunction">{muscleFunction}</div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="main-container">
-            <ExercisesTab activeCategory={activeCategory} />
-          </div>
-        )}
+          <OverviewTab info={info} title={title} muscleFunction={muscleFunction}  />
+        ) :
+          <ExercisesTab activeCategory={activeCategory} dataCategory={dataCategory} />
+        }
       </div>
     );
 	}

@@ -6,6 +6,7 @@ function MuscleMap(props) {
 
   const { setActiveMuscleCategory, handleCategoryClick } = props
 
+
   return (
     <div className="muscle-map">
       <img
@@ -13,7 +14,7 @@ function MuscleMap(props) {
         className="body-diagram-image"
         alt="muscle-diagram"
       />
-
+      {}
       {MuscleData.map(category => {
         return <img
           key={category.key}

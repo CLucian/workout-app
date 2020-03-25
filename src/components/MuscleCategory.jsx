@@ -3,9 +3,9 @@ import CategorySection from "./muscle-category-components/CategorySection";
 
 function MuscleCategory(props) {
 
-		const {activeCategory, handleCategoryClick, setActiveTab, activeTab} = props
+		const {activeCategory, handleCategoryClick, setActiveTab, activeTab, dataCategory } = props;
 
-		console.log("ACTIVE CATEGORY IS", activeCategory);
+		// console.log("ACTIVE CATEGORY IS", activeCategory);
 
 		if (!activeCategory) {
 		return null;
@@ -21,6 +21,7 @@ function MuscleCategory(props) {
 		 handleCategoryClick={handleCategoryClick}
 		 setActiveTab={setActiveTab}
 		 activeTab={activeTab}
+		 dataCategory={dataCategory}
 		 />
         {/* <Abdominals /> */}
 		{/* <Back />
