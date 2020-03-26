@@ -1,5 +1,5 @@
 import React from 'react';
-import CategorySection from "./muscle-category-components/CategorySection";
+import CategorySection from "./CategorySection";
 
 function MuscleCategory(props) {
 
