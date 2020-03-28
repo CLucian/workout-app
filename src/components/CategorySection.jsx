@@ -5,7 +5,7 @@ import OverviewTab from './OverviewTab';
 
 function SectionContent(props) {
 
-		const { activeCategory, activeTab, setActiveTab, dataCategory } = props;
+		const { activeCategory, activeTab, setActiveTab, dataCategory, exerciseOverlay } = props;
 		const { sectionContent } = activeCategory;
     const { info, title, muscleFunction } = sectionContent;
     
@@ -33,7 +33,7 @@ function SectionContent(props) {
         {activeTab === "overview" ? (
           <OverviewTab info={info} title={title} muscleFunction={muscleFunction}  />
         ) :
-          <ExercisesTab activeCategory={activeCategory} dataCategory={dataCategory} />
+          <ExercisesTab activeCategory={activeCategory} dataCategory={dataCategory} exerciseOverlay={exerciseOverlay} />
         }
       </div>
     );

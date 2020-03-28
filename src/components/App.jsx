@@ -10,6 +10,7 @@ import Landing from "./Landing";
 import MuscleMap from './MuscleMap';
 import MuscleCategory from './MuscleCategory';
 import Title from './Title';
+import MoreInfo from './MoreInfo';
 
 import Home from '../pages/Home';
 import Community from "../pages/Community";
@@ -42,7 +43,8 @@ class App extends React.Component {
       exercises: [],
       activeCategory: null,
       dataCategory: null,
-      activeTab: 'overview'
+      activeTab: 'overview',
+      exerciseOverlay: true
     };
 
     console.log('DATA', data);
@@ -95,14 +97,26 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Title />
-        <MuscleMap setActiveMuscleCategory={this.setActiveMuscleCategory} handleCategoryClick={this.handleCategoryClick} getDataCategory={this.getDataCategory} />
-        {/* <ExerciseCategory data={data} /> */}
-        <MuscleCategory activeCategory={this.state.activeCategory}
-         handleCategoryClick={this.handleCategoryClick}
-         setActiveTab={this.setActiveTab}
-         activeTab={this.state.activeTab}
-         active={this.state.active}
-         dataCategory={this.state.dataCategory} />
+        {this.state.exerciseOverlay ? (
+          <MoreInfo />
+        ) : (
+          <div>
+            <MuscleMap
+              setActiveMuscleCategory={this.setActiveMuscleCategory}
+              handleCategoryClick={this.handleCategoryClick}
+              getDataCategory={this.getDataCategory}
+            />
+            <MuscleCategory
+              activeCategory={this.state.activeCategory}
+              handleCategoryClick={this.handleCategoryClick}
+              setActiveTab={this.setActiveTab}
+              activeTab={this.state.activeTab}
+              active={this.state.active}
+              dataCategory={this.state.dataCategory}
+              exerciseOverlay={this.state.exerciseOverlay}
+            />
+          </div>
+        )}
         {/* <Landing /> */}
 
         {/* <Switch>
