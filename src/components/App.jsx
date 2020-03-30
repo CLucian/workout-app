@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import Portal from './Portal';
 
 // import ExerciseImage from "./ExerciseImage";
 import ExerciseCategory from './ExerciseCategory';
@@ -10,7 +11,7 @@ import Landing from "./Landing";
 import MuscleMap from './MuscleMap';
 import MuscleCategory from './MuscleCategory';
 import Title from './Title';
-import MoreInfo from './MoreInfo';
+import Modal from './Modal';
 
 import Home from '../pages/Home';
 import Community from "../pages/Community";
@@ -44,13 +45,14 @@ class App extends React.Component {
       activeCategory: null,
       dataCategory: null,
       activeTab: 'overview',
-      exerciseOverlay: true
+      isModalActive: true
     };
 
     console.log('DATA', data);
     // console.log('------ACTIVE CATEGORY--------', data[this.state.activeCategory])
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    this.showModal = this.showModal.bind(this);
 
   }
 
@@ -79,6 +81,13 @@ class App extends React.Component {
   }
 
 
+  showModal() {
+    this.setState(prevState => {
+      return {
+        showModal: !prevState.showModal
+      };
+    })
+  }
  
 
 
@@ -97,9 +106,9 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Title />
-        {this.state.exerciseOverlay ? (
-          <MoreInfo />
-        ) : (
+        {/* {this.state.exerciseOverlay ? (
+          <Modal />
+        ) : ( */}
           <div>
             <MuscleMap
               setActiveMuscleCategory={this.setActiveMuscleCategory}
@@ -113,10 +122,12 @@ class App extends React.Component {
               activeTab={this.state.activeTab}
               active={this.state.active}
               dataCategory={this.state.dataCategory}
-              exerciseOverlay={this.state.exerciseOverlay}
+              showModal={this.showModal}
+              isModalActive={this.state.isModalActive}
             />
           </div>
-        )}
+        )
+        {/* } */}
         {/* <Landing /> */}
 
         {/* <Switch>

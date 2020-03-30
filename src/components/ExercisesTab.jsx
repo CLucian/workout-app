@@ -3,9 +3,10 @@ import React from 'react';
 import data from "../data/category_to_exercise";
 import ExerciseList from './ExerciseList';
 
+
 function ExercisesTab(props) {
 	
-	const { activeCategory, dataCategory, exerciseOverlay } = props;
+	const { activeCategory, dataCategory, showModal, isModalActive } = props;
 
 
 
@@ -19,15 +20,17 @@ function ExercisesTab(props) {
 
 
 			return (
-        <ExerciseList
-          exerciseTitle={exercise.title}
-          exerciseImage1={exerciseImage1}
-          exerciseImage2={exerciseImage2}
-          exercisePrimer={exercise.primer}
-          exerciseType={exercise.type}
-          exerciseEquipment={exercise.equipment}
-          exerciseOverlay={exerciseOverlay}
-        />
+          <ExerciseList
+            exerciseTitle={exercise.title}
+            exerciseImage1={exerciseImage1}
+            exerciseImage2={exerciseImage2}
+            exercisePrimer={exercise.primer}
+            exerciseType={exercise.type}
+            exerciseEquipment={exercise.equipment}
+			steps={exercise.steps}
+			showModal={showModal}
+			isModalActive={isModalActive}
+          />
       ); 
 
 			}) }

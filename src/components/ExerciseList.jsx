@@ -1,10 +1,9 @@
 import React from 'react';
 
 import ExerciseImage from "./ExerciseImage";
-import MoreInfo from './MoreInfo';
+import Modal from "./Modal";
 
 function ExerciseList(props) {
-
 
 
     const {
@@ -14,12 +13,15 @@ function ExerciseList(props) {
       exercisePrimer,
       exerciseType,
       exerciseEquipment,
-      exerciseOverlay
+      steps,
+      isModalActive,
+      showModal
     } = props;
 
 
     return (
-      <div className="exerciseList">
+      <div className="exerciseList" onClick={showModal}>
+        <Modal exerciseTitle={exerciseTitle} steps={steps} showModal={showModal} isModalActive={isModalActive} />
         <div className="exerciseTitle">
           <h1 className="exercise-title">{exerciseTitle}</h1>
         </div>

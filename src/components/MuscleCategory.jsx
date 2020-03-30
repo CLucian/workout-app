@@ -3,7 +3,7 @@ import CategorySection from "./CategorySection";
 
 function MuscleCategory(props) {
 
-		const {activeCategory, handleCategoryClick, setActiveTab, activeTab, dataCategory, exerciseOverlay } = props;
+		const {activeCategory, handleCategoryClick, setActiveTab, activeTab, dataCategory, showModal, isModalActive } = props;
 
 		// console.log("ACTIVE CATEGORY IS", activeCategory);
 
@@ -22,7 +22,8 @@ function MuscleCategory(props) {
           setActiveTab={setActiveTab}
           activeTab={activeTab}
           dataCategory={dataCategory}
-          exerciseOverlay={exerciseOverlay}
+		  showModal={showModal}
+		  isModalActive={isModalActive}
         />
         {/* <Abdominals /> */}
         {/* <Back />
