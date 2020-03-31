@@ -7,6 +7,7 @@ function ExerciseList(props) {
 
 
     const {
+      selectExercise,
       exerciseTitle,
       exerciseImage1,
       exerciseImage2,
@@ -15,13 +16,18 @@ function ExerciseList(props) {
       exerciseEquipment,
       steps,
       isModalActive,
-      showModal
+      // showModal
     } = props;
 
 
     return (
-      <div className="exerciseList" onClick={showModal}>
-        <Modal exerciseTitle={exerciseTitle} steps={steps} showModal={showModal} isModalActive={isModalActive} />
+      <div className="exerciseList" /* onClick={showModal} */ onClick={() => {
+        selectExercise({
+          exerciseTitle: exerciseTitle,
+          steps: steps
+        })
+      }}>
+        {/* <Modal exerciseTitle={exerciseTitle} steps={steps} showModal={showModal} isModalActive={isModalActive} /> */}
         <div className="exerciseTitle">
           <h1 className="exercise-title">{exerciseTitle}</h1>
         </div>
