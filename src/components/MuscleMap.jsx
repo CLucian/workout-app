@@ -1,6 +1,8 @@
 import React from 'react';
 import MuscleData from './MuscleData';
 
+import Foo from './Temp'
+
 
 function MuscleMap(props) {  
 
@@ -9,6 +11,20 @@ function MuscleMap(props) {
 
   return (
     <div className="muscle-map">
+      <br />
+      <br />
+
+      <Foo children={"this is other stuff"} />
+
+      <Foo>
+        some random stuff
+      </Foo>
+
+      <br />
+      <br />
+      <br />
+
+
       <img
         src="exercise-images/site-images/MuscleDiagram.png"
         className="body-diagram-image"

@@ -40,7 +40,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 
-	
+
 	// border: 0.1rem solid white;
 	border-radius: 1rem;
 	background: rgba(238, 238, 238, 0.5);
@@ -428,17 +428,11 @@
 	font-size: 2rem;
 }
 
-.overview {
+.overview {}
 
-}
+.exercises {}
 
-.exercises {
-	
-}
-
-.tab {
-
-}
+.tab {}
 
 .tab:hover {
 	text-decoration: underline;
@@ -449,7 +443,7 @@
 }
 
 .active {
-	border-bottom: 0.2rem solid rgba(102,177,241,0.8);
+	border-bottom: 0.2rem solid rgba(102, 177, 241, 0.8);
 	font-weight: bolder;
 }
 
@@ -475,7 +469,7 @@
 	// display: inline-block;
 	margin: 0 auto;
 	margin-bottom: 15rem;
-	
+
 }
 
 .info-container {
@@ -485,7 +479,7 @@
 	text-align: center;
 	margin: 0 auto;
 	padding-bottom: 5rem;
-	
+
 }
 
 .info {
@@ -549,7 +543,7 @@
 .exerciseList {
 	// display: flex;
 	// justify-content: space-around;
-	background: rgba(102,177,241,0.8);
+	background: rgba(102, 177, 241, 0.8);
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	height: 20rem;
@@ -633,10 +627,16 @@
 	align-items: center;
 
 	position: absolute;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0, 0, 0, 0.3);
 	width: 100%;
 	height: 100%;
 	// padding-top: 15rem;
+
+	// THIS STUFF IS NEW - LOOK AT IT
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
 }
 
 .modal-info-container {
@@ -645,5 +645,14 @@
 	width: 60%;
 	height: 60%;
 	text-align: center;
+	z-index: 1;
 
+}
+
+.modal-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }

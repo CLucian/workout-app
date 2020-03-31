@@ -4,10 +4,12 @@ import data from "../data/category_to_exercise";
 import ExerciseList from './ExerciseList';
 import Modal from "./Modal";
 
+import ExerciseModalContent from './ExerciseModalContent'
+
 class ExercisesTab extends React.Component {
-	constructor(props){
+	constructor(props) {
 		super(props)
-		
+
 		this.state = {
 			modalData: null,
 			selectedExercise: false
@@ -15,7 +17,6 @@ class ExercisesTab extends React.Component {
 	}
 
 	selectExercise = (data) => {
-		// debugger
 		this.setState({
 			modalData: data,
 			selectedExercise: true
@@ -34,6 +35,8 @@ class ExercisesTab extends React.Component {
 
 		return (
 			<div className="main-container">
+
+
 				{data[dataCategory].exercise.map(exercise => {
 					const exerciseImage1 = `exercise-images/images-web/${(exercise.img[0]).split('').slice(12).join('')}`;
 					const exerciseImage2 = `exercise-images/images-web/${(exercise.img[1]).split('').slice(12).join('')}`;
@@ -54,14 +57,13 @@ class ExercisesTab extends React.Component {
 
 				})}
 
-				{state.selectedExercise &&
-					<Modal
-						exerciseTitle={state.modalData.exerciseTitle}
-						steps={state.modalData.steps}
-						// showModal={showModal}
-						// isModalActive={isModalActive}
-					/>
-				}
+
+				<Modal
+					isVisible={state.selectedExercise}
+					closeModal={this.closeModal}
+				>
+					<ExerciseModalContent data={state.modalData} closeModal={this.closeModal} />
+				</Modal>
 			</div>
 		);
 	}

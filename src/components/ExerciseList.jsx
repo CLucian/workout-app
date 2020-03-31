@@ -60,6 +60,7 @@ function ExerciseList(props) {
             <p className="more-info">More info</p>
           </div>
         </div>
+
       </div>
     );
 
