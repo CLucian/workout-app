@@ -3,7 +3,16 @@ import CategorySection from "./CategorySection";
 
 function MuscleCategory(props) {
 
-		const {activeCategory, handleCategoryClick, setActiveTab, activeTab, dataCategory, showModal, isModalActive } = props;
+		const {
+      activeCategory,
+      handleCategoryClick,
+      setActiveTab,
+      activeTab,
+      dataCategory,
+      showModal,
+      isModalActive,
+      setExerciseTitle
+    } = props;
 
 		// console.log("ACTIVE CATEGORY IS", activeCategory);
 
@@ -22,8 +31,9 @@ function MuscleCategory(props) {
           setActiveTab={setActiveTab}
           activeTab={activeTab}
           dataCategory={dataCategory}
-		  showModal={showModal}
-		  isModalActive={isModalActive}
+          showModal={showModal}
+          isModalActive={isModalActive}
+          setExerciseTitle={setExerciseTitle}
         />
         {/* <Abdominals /> */}
         {/* <Back />

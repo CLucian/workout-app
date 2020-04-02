@@ -15,7 +15,6 @@ import Modal from './Modal';
 
 import Home from '../pages/Home';
 import Community from "../pages/Community";
-import Exercises from "../pages/Exercises";
 import MuscleGroups from "../pages/MuscleGroups";
 import Workouts from "../pages/Workouts";
 
@@ -31,6 +30,7 @@ import Workouts from "../pages/Workouts";
 import '../sass/main.scss';
 
 import data from "../data/category_to_exercise";
+import { timingSafeEqual } from 'crypto';
 
 // console.log('DATA', data);
 // console.log(Object.keys(data).sort());
@@ -39,26 +39,40 @@ import data from "../data/category_to_exercise";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       exerciseCategories: [],
       exercises: [],
       activeCategory: null,
       dataCategory: null,
       activeTab: 'overview',
-      isModalActive: true
+      // isModalActive: false,
+      exerciseTitle: null
     };
 
     console.log('DATA', data);
+    console.log("exerciseTitle", this.state.exerciseTitle);
     // console.log('------ACTIVE CATEGORY--------', data[this.state.activeCategory])
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.showModal = this.showModal.bind(this);
+    // this.setExerciseTitle = this.setExerciseTitle.bind(this);
 
   }
 
 
   componentDidMount() {
   }
+
+  setExerciseList() {
+
+  }
+
+  // setExerciseTitle(e){
+  //   this.setState({
+  //     exerciseTitle: e.target.value
+  //   })
+  //   console.log('E.TARGET.VALUE', e.target.value)
+  // }
 
   setActiveMuscleCategory = category => {
     console.log("would set", category);
@@ -84,7 +98,7 @@ class App extends React.Component {
   showModal() {
     this.setState(prevState => {
       return {
-        showModal: !prevState.showModal
+        isModalActive: !prevState.isModalActive
       };
     })
   }
@@ -99,6 +113,7 @@ class App extends React.Component {
 
     console.log('dataCategory', this.state.dataCategory);
     console.log('dataCategory Name', data[this.state.dataCategory])
+    console.log("Exercise Title =======", this.state.exerciseTitle);
   
   
 
@@ -109,27 +124,26 @@ class App extends React.Component {
         {/* {this.state.exerciseOverlay ? (
           <Modal />
         ) : ( */}
-          <div>
-            <MuscleMap
-              setActiveMuscleCategory={this.setActiveMuscleCategory}
-              handleCategoryClick={this.handleCategoryClick}
-              getDataCategory={this.getDataCategory}
-            />
-            <MuscleCategory
-              activeCategory={this.state.activeCategory}
-              handleCategoryClick={this.handleCategoryClick}
-              setActiveTab={this.setActiveTab}
-              activeTab={this.state.activeTab}
-              active={this.state.active}
-              dataCategory={this.state.dataCategory}
-              showModal={this.showModal}
-              isModalActive={this.state.isModalActive}
-            />
-          </div>
-        )
-        {/* } */}
+        <div>
+          <MuscleMap
+            setActiveMuscleCategory={this.setActiveMuscleCategory}
+            handleCategoryClick={this.handleCategoryClick}
+            getDataCategory={this.getDataCategory}
+          />
+          <MuscleCategory
+            activeCategory={this.state.activeCategory}
+            handleCategoryClick={this.handleCategoryClick}
+            setActiveTab={this.setActiveTab}
+            activeTab={this.state.activeTab}
+            active={this.state.active}
+            dataCategory={this.state.dataCategory}
+            showModal={this.showModal}
+            isModalActive={this.state.isModalActive}
+            setExerciseTitle={this.setExerciseTitle}
+          />
+        </div>
+        ){/* } */}
         {/* <Landing /> */}
-
         {/* <Switch>
           <div>
             <Route exact path="/" component={Home} />

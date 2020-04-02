@@ -5,7 +5,16 @@ import OverviewTab from './OverviewTab';
 
 function SectionContent(props) {
 
-		const { activeCategory, activeTab, setActiveTab, dataCategory, showModal, isModalActive } = props;
+		const {
+      activeCategory,
+      activeTab,
+      setActiveTab,
+      dataCategory,
+      showModal,
+      isModalActive,
+      setExerciseTitle
+    } = props;
+    
 		const { sectionContent } = activeCategory;
     const { info, title, muscleFunction } = sectionContent;
     
@@ -13,28 +22,37 @@ function SectionContent(props) {
 
 		return (
       <div className="main-div">
-        <ul className="tab-bar"> 
+        <ul className="tab-bar">
           <li
-            className={activeTab === 'overview' ? "active" : null}
+            className={activeTab === "overview" ? "active" : null}
             id="overview"
             onClick={setActiveTab}
           >
             Overview
           </li>
           <li
-            className={activeTab === 'exercises' ? 'active' : null}
+            className={activeTab === "exercises" ? "active" : null}
             id="exercises"
-            
             onClick={setActiveTab}
           >
             Exercises
           </li>
         </ul>
         {activeTab === "overview" ? (
-          <OverviewTab info={info} title={title} muscleFunction={muscleFunction}  />
-        ) :
-          <ExercisesTab activeCategory={activeCategory} dataCategory={dataCategory} showModal={showModal} isModalActive={isModalActive} />
-        }
+          <OverviewTab
+            info={info}
+            title={title}
+            muscleFunction={muscleFunction}
+          />
+        ) : (
+          <ExercisesTab
+            activeCategory={activeCategory}
+            dataCategory={dataCategory}
+            showModal={showModal}
+            isModalActive={isModalActive}
+            setExerciseTitle={setExerciseTitle}
+          />
+        )}
       </div>
     );
 	}
