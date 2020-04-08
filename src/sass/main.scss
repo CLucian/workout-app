@@ -92,7 +92,7 @@
 	position: relative;
 	text-align: center;
 	display: block;
-	margin-bottom: 20rem;
+	margin-bottom: 5rem;
 }
 
 .muscle-image-quadA {
@@ -399,10 +399,19 @@
 ////////////////////////////////////////
 
 .muscle-category-container {
+	// color: white;
 	width: 65%;
 	// height: 100vh;
 	border: 0.2rem solid black;
-	background: white;
+	background-image: linear-gradient(
+	to right bottom,
+		rgba(0,0,0, 0.95),
+		rgba(0,0,0, 0.01)),
+	url('/exercise-images/background-images/gym3.jpg');
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	// object-fit: contain;
 	border-radius: 1rem;
 	text-align: center;
 	margin: auto;
@@ -410,13 +419,20 @@
 	margin-bottom: 8rem;
 }
 
+// .overview-background-image {
+// 	position: relative;
+// 	object-fit: contain;
+// 	width: 100%;
+// 	height: 25rem;
+// }
+
 
 ////////////////////////////////////////
 //Abdominals/Back.....
 ////////////////////////////////////////
 
 .main-container {
-	display: relative;
+	// display: relative;
 }
 
 .tab-bar {
@@ -425,7 +441,8 @@
 	justify-content: space-evenly;
 	width: 50%;
 	padding: 3rem;
-	font-size: 2rem;
+	font-size: 2.5rem;
+	color: white;
 }
 
 .overview {
@@ -453,9 +470,24 @@
 	font-weight: bolder;
 }
 
+.overview-main-container {
+	padding-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+.overview-content-container {
+	width: 80%;
+	border-radius: 0.5rem;
+	// display: flex;
+	// justify-content: center;
+	background: rgba(255, 255, 255, 0.5); 
+}
+
 .category-title {
-	font-size: 5rem;
-	padding: 2rem;
+	font-size: 4rem;
+	// background: white;
+	padding: 1rem;
 }
 
 .img-info-container {
@@ -466,30 +498,17 @@
 	text-align: center;
 }
 
-.img-container {
-	// position: relative;
-	width: 30%;
-	height: 15rem;
-	border: 0.1rem solid black;
-	// margin: 5rem 2rem;
-	// display: inline-block;
-	margin: 0 auto;
-	margin-bottom: 15rem;
-	
-}
 
 .info-container {
 	position: relative;
-	width: 70%;
-	margin: 5rem 2rem;
+	padding: 2rem 4rem 4rem;
 	text-align: center;
 	margin: 0 auto;
-	padding-bottom: 5rem;
-	
+	// background: white;
+	border-radius: 0.5rem;
 }
 
 .info {
-	padding-top: 7rem;
 	font-size: 1.7rem;
 }
 
@@ -504,9 +523,27 @@
 	font-size: 1.7rem;
 }
 
+
+.img-container {
+	// position: relative;
+
+	width: 50%;
+	// height: 110%;
+	// border: 0.1rem solid black;
+	border-radius: 0.5rem;
+	// margin: 5rem 2rem;
+	// display: inline-block;
+	margin: 0 auto;
+
+	
+}
+
 .overview-img {
-	width: 75%;
-	height: auto;
+	object-fit: contain;
+	border-radius: 0.5rem;
+	width: 100%;
+	height: 25rem;
+	background: white;
 }
 
 
@@ -550,7 +587,8 @@
 	// display: flex;
 	// justify-content: space-around;
 	// width: 50%;
-	background: rgba(102,177,241,0.8);
+	// background: rgba(102,177,241,0.8);
+	background: white;
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	// height: 20rem;
@@ -577,13 +615,14 @@
 
 .exerciseImageAndInfo {
 	display: flex;
-	justify-content: space-around
+	justify-content: space-around;
+	padding-top: 2rem;
 }
 
 .image-container {
 	// Add hover effect here
-	height: 50%;
-	width: 20%;
+	height: 20%;
+	width: 25%;
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	background: white;
@@ -591,9 +630,9 @@
 
 .exercise-image {
 	object-fit: contain;
-	width: 100%;
+	width: 80%;
 	// width: 20rem;
-	height: 20rem;
+	height: 18rem;
 	// width: 100%;
 }
 
@@ -601,7 +640,7 @@
 	// margin-bottom: 2rem;
 	// display: flex;
 	// align-items: center;
-	margin-top: 2rem;
+	// margin-top: 2rem;
 	width: 50%;
 }
 
@@ -669,8 +708,10 @@
 
 .steps-list {
 	// list-style-type: lower-alpha;
-	padding-left: 7rem;
-	font-size: 2rem;
+	// padding-left: 7rem;
+	font-size: 1.5rem;
+	padding-top: 0.5rem;
+	text-align: left;
 }
 
 .steps-list-item {
@@ -678,8 +719,8 @@
 }
 
 .steps {
-	padding-left: 10rem;
-	padding-right: 7rem;
+	// padding-left: 10rem;
+	// padding-right: 7rem;
 }
 
 .modal-button-div {
@@ -705,6 +746,7 @@
 	// padding: 1rem;
 	// margin: 4rem;
 	// padding-bottom: 15rem;
+	height: 100%;
 	perspective: 1000px;
 	// padding-bottom: 15rem;
 }
@@ -713,6 +755,7 @@
 	position: relative;
 	width: 100%;
 	height: 50rem;
+	// height: 100%;
 	transition: transform 0.8s;
 	transform-style: 0.8s;
 	transition: 0.6;
@@ -721,7 +764,7 @@
 
 
 .flip-card:hover .flip-card-inner {
-	transform: rotateY(180deg);
+	transform: rotateX(180deg);
 }
 
 .flip-card-front, .flip-card-back {
@@ -736,7 +779,7 @@
 }
 
 .flip-card-back {
-	transform: rotateY(180deg);
+	transform: rotateX(180deg);
 }
 
 

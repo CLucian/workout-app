@@ -2,7 +2,7 @@ import React from 'react';
 
 function OverviewTab(props) {
 
-	const { title, info, muscleFunction } = props;
+	const { title, info, muscleFunction, src } = props;
 
 	return(
 		<div className="main-container">
@@ -11,7 +11,7 @@ function OverviewTab(props) {
 				<div className="img-container">
 					<img
 						className="overview-img"
-						src="exercise-images/muscle-category-images/abs.png"
+						src={src}
 						alt="abs"
 					/>
 				</div>

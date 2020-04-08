@@ -63,7 +63,7 @@ function ExerciseList(props) {
                         : null}
                     </h2>
                   </div>
-                  <p className="more-info">More info</p>
+                  {/* <p className="more-info">More info</p> */}
                 </div>
               </div>
             </div>
@@ -80,28 +80,12 @@ function ExerciseList(props) {
                   exerciseImage2={exerciseImage2}
                 />
                 <div className="exercise-info">
-                  <h1 className="general-info">{exercisePrimer}</h1>
-                  <div className="mini-info-container">
-                    <h2 className="mini-info">
-                      Movement type:{" "}
-                      {exerciseType
-                        ? exerciseType.charAt(0).toUpperCase() +
-                          exerciseType.substring(1)
-                        : null}
-                    </h2>
-                    <br />
-                    <h2 className="mini-info">
-                      Equipment:{" "}
-                      {exerciseEquipment
-                        ? exerciseEquipment
-                            .join(", ")
-                            .charAt(0)
-                            .toUpperCase() +
-                          exerciseEquipment.join(", ").substring(1)
-                        : null}
-                    </h2>
-                  </div>
-                  <p className="more-info">More info</p>
+                  <h1 className="general-info">Steps</h1>
+                    <ol className="steps-list">
+                      {steps.map(step => {
+                        return <li className="step-list-item">{step}</li>;
+                      })}
+                    </ol>
                 </div>
               </div>
             </div>

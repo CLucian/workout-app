@@ -23,29 +23,17 @@ function MuscleCategory(props) {
 
 		return (
       <div className="muscle-category-container">
-        {/* <SectionComponent category={activeCategory}/> */}
-
-        <CategorySection
-          activeCategory={activeCategory}
-          handleCategoryClick={handleCategoryClick}
-          setActiveTab={setActiveTab}
-          activeTab={activeTab}
-          dataCategory={dataCategory}
-          showModal={showModal}
-          isModalActive={isModalActive}
-          setExerciseTitle={setExerciseTitle}
-        />
-        {/* <Abdominals /> */}
-        {/* <Back />
-		<Biceps /> 
-		<Calves />
-		<Chest />
-		<Glutes />
-		<Hamstrings />
-		<Other />
-		<Quadriceps />
-		<Shoulders />
-		<Triceps /> */}
+        {/* <img className="overview-background-image" src="/exercise-images/background-images/gym1.jpg" alt="overview-background" /> */}
+          <CategorySection
+            activeCategory={activeCategory}
+            handleCategoryClick={handleCategoryClick}
+            setActiveTab={setActiveTab}
+            activeTab={activeTab}
+            dataCategory={dataCategory}
+            showModal={showModal}
+            isModalActive={isModalActive}
+            setExerciseTitle={setExerciseTitle}
+          />
       </div>
     );
 }

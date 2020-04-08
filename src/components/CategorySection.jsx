@@ -16,7 +16,7 @@ function SectionContent(props) {
     } = props;
     
 		const { sectionContent } = activeCategory;
-    const { info, title, muscleFunction } = sectionContent;
+    const { info, title, muscleFunction, src } = sectionContent;
     
 
 
@@ -38,21 +38,26 @@ function SectionContent(props) {
             Exercises
           </li>
         </ul>
-        {activeTab === "overview" ? (
-          <OverviewTab
-            info={info}
-            title={title}
-            muscleFunction={muscleFunction}
-          />
-        ) : (
-          <ExercisesTab
-            activeCategory={activeCategory}
-            dataCategory={dataCategory}
-            showModal={showModal}
-            isModalActive={isModalActive}
-            setExerciseTitle={setExerciseTitle}
-          />
-        )}
+        <div className="overview-main-container">
+          <div className="overview-content-container">
+            {activeTab === "overview" ? (
+              <OverviewTab
+                info={info}
+                title={title}
+                src={src}
+                muscleFunction={muscleFunction}
+              />
+            ) : (
+              <ExercisesTab
+                activeCategory={activeCategory}
+                dataCategory={dataCategory}
+                showModal={showModal}
+                isModalActive={isModalActive}
+                setExerciseTitle={setExerciseTitle}
+              />
+            )}
+          </div>
+        </div>
       </div>
     );
 	}
