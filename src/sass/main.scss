@@ -471,7 +471,7 @@
 }
 
 .overview-main-container {
-	padding-bottom: 2rem;
+	padding-bottom: 4rem;
 	display: flex;
 	justify-content: center;
 }
@@ -481,7 +481,7 @@
 	border-radius: 0.5rem;
 	// display: flex;
 	// justify-content: center;
-	background: rgba(255, 255, 255, 0.5); 
+	background: rgba(255, 255, 255, 0.9); 
 }
 
 .category-title {
@@ -514,7 +514,7 @@
 
 .muscleFunction-title {
 	font-size: 3rem;
-	padding-top: 5rem;
+	padding-top: 3rem;
 	padding-bottom: 2rem;
 
 }
@@ -588,20 +588,27 @@
 	// justify-content: space-around;
 	// width: 50%;
 	// background: rgba(102,177,241,0.8);
-	background: white;
+	background: #222;
+	color: #555;
+	font-style: 'Roboto Mono';
 	border: 1px solid black;
 	border-radius: 0.5rem;
-	// height: 20rem;
 	height: 85%;
+	display: block;
+	overflow: auto;
+	// height: 20rem;
+	// height: 85%;
 	
-	padding: 1rem;
-	margin: 4rem;
+	// padding: 1rem;
+	margin: 3rem;
+	// overflow: hidden;
 	 
 }
 
 .exerciseTitle {
 	display: flex;
 	justify-content: space-around;
+	color: #fff;
 	// margin-left: 7rem;
 	margin-bottom: 2rem;
 	// text-align: center;
@@ -615,8 +622,10 @@
 
 .exerciseImageAndInfo {
 	display: flex;
+	align-items: center;
 	justify-content: space-around;
 	padding-top: 2rem;
+	margin-bottom: 3rem;
 }
 
 .image-container {
@@ -737,49 +746,131 @@
 ///		CARD FLIP
 //////////////////////////////// 
 
-.flip-card {
-	// background: rgba(102,177,241,0.8);
-	// border: 1px solid black;
-	// border-radius: 0.5rem;
-	// height: 20rem;
+// .flip-card {
+// 	// background: rgba(102,177,241,0.8);
+// 	// border: 1px solid black;
+// 	// border-radius: 0.5rem;
+// 	// height: 20rem;
 	
-	// padding: 1rem;
-	// margin: 4rem;
-	// padding-bottom: 15rem;
-	height: 100%;
-	perspective: 1000px;
-	// padding-bottom: 15rem;
+// 	// padding: 1rem;
+// 	// margin: 4rem;
+// 	// padding-bottom: 15rem;
+// 	height: 100%;
+// 	perspective: 1000px;
+// 	// padding-bottom: 15rem;
+// }
+
+// .flip-card-inner {
+// 	position: relative;
+// 	width: 100%;
+// 	height: 50rem;
+// 	// height: 100%;
+// 	transition: transform 0.8s;
+// 	transform-style: 0.8s;
+// 	transition: 0.6;
+// 	transform-style: preserve-3d;
+// }
+
+
+// .flip-card:hover .flip-card-inner {
+// 	transform: rotateX(180deg);
+// }
+
+// .flip-card-front, .flip-card-back {
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100%;
+// 	backface-visibility: hidden;
+// }
+
+// .flip-card-front {
+// 	color: black;
+// }
+
+// .flip-card-back {
+// 	transform: rotateX(180deg);
+// }
+
+
+.flip {
+    position: relative;
+    >.front,
+    >.back {
+        display: block;
+        transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+        transition-duration: .5s;
+		transition-property: transform, opacity;
+    }
+    >.front {
+		transform: rotateY(0deg);
+    }
+    >.back {
+		position: absolute;
+        opacity: 0;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 50%;
+		transform: rotateY(-180deg);
+		
+    }
+    &:hover {
+        >.front {
+			transform: rotateY(180deg);
+        }
+        >.back {
+            opacity: 1;
+			transform: rotateY(0deg);
+        }
+    }
+    &.flip-vertical {
+        >.back {
+            transform: rotateX(-180deg);
+        }
+        &:hover {
+            >.front {
+                transform: rotateX(180deg);
+            }
+            >.back {
+                transform: rotateX(0deg);
+            }
+        }
+    }
 }
 
-.flip-card-inner {
+.flip {
 	position: relative;
-	width: 100%;
-	height: 50rem;
+	display: flex;
 	// height: 100%;
-	transition: transform 0.8s;
-	transform-style: 0.8s;
-	transition: 0.6;
-	transform-style: preserve-3d;
+    // display: inline-block;
+    margin: 4rem;
+    // margin-bottom: 2rem;
+    // width: 400px;
+    >.front,
+    >.back {
+	//   display: block;
+		border: 1px solid black;
+	  color: white;
+	  justify-content: center;
+	  align-items: center;
+	  width: inherit;
+      background-size: cover!important;
+	  background-position: center!important;
+	//   height: 220px;
+	height: 45rem;
+      padding: 1em 2em;
+      background: #313131;
+      border-radius: 10px;
+      p {
+        font-size: 0.9125rem;
+        line-height: 160%;
+        color: #999;
+      }
+    }
 }
 
-
-.flip-card:hover .flip-card-inner {
-	transform: rotateX(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-}
-
-.flip-card-front {
-	color: black;
-}
-
-.flip-card-back {
-	transform: rotateX(180deg);
+.text-shadow {
+text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
 
 
