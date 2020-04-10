@@ -442,7 +442,7 @@
 	width: 50%;
 	padding: 3rem;
 	font-size: 2.5rem;
-	color: white;
+	color: #f2b01e;
 }
 
 .overview {
@@ -466,7 +466,8 @@
 }
 
 .active {
-	border-bottom: 0.2rem solid rgba(102,177,241,0.8);
+	// border-bottom: 0.2rem solid rgba(102,177,241,0.8);
+	border-bottom: 0.2rem solid #f2b01e;
 	font-weight: bolder;
 }
 
@@ -513,7 +514,7 @@
 }
 
 .muscleFunction-title {
-	font-size: 3rem;
+	font-size: 2rem;
 	padding-top: 3rem;
 	padding-bottom: 2rem;
 
@@ -608,7 +609,7 @@
 .exerciseTitle {
 	display: flex;
 	justify-content: space-around;
-	color: #fff;
+	color: #f2b01e;
 	// margin-left: 7rem;
 	margin-bottom: 2rem;
 	// text-align: center;
@@ -635,6 +636,7 @@
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	background: white;
+	border: 0.2rem solid #f2b01e;
 }
 
 .exercise-image {
@@ -655,6 +657,7 @@
 
 .general-info {
 	text-align: center;
+	color: #fff;
 }
 
 .mini-info-container {
@@ -664,8 +667,15 @@
 	align-items: center;
 }
 
-.mini-info {
+.mini-info-title {
 	padding: 2rem;
+	color: #f2b01e;
+}
+
+.mini-info {
+	padding: 1rem;
+	font-size: 1.5rem;
+	color: #fff;
 }
 
 .more-info {
@@ -715,21 +725,33 @@
 	width: 100%;
 }
 
+.steps-list-title {
+	text-align: center;
+	color: #f2b01e;
+}
+
 .steps-list {
 	// list-style-type: lower-alpha;
 	// padding-left: 7rem;
 	font-size: 1.5rem;
 	padding-top: 0.5rem;
 	text-align: left;
+	color: #999;
+	counter-reset: item;
 }
 
-.steps-list-item {
-	// padding-left: 7rem;
+ol {
+	counter-reset: item;
 }
 
-.steps {
-	// padding-left: 10rem;
-	// padding-right: 7rem;
+ol li {
+	display: block;
+}
+
+ol li:before {
+	content: counter(item) ". ";
+	counter-increment: item;
+	color: #f2b01e;
 }
 
 .modal-button-div {
