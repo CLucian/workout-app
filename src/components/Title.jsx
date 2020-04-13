@@ -2,8 +2,8 @@ import React from 'react';
 
 function Title () {
 	return (
-		<div className="title">
-			This is the title Component
+		<div className="main-title">
+			The Exercise Dictionary
 		</div>
 	)
 }

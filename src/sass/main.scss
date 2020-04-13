@@ -11,6 +11,21 @@
 @import 'components/exerciseCategory.scss';
 
 
+.main-title {
+	font-size: 6rem;
+	padding: 2rem;
+	text-align: center;
+	color: #f2b01e;
+	font-family: 'Didact Gothic';
+}
+
+
+.master-div {
+	background-color: #313131;
+	height: 100vh;
+}
+
+
 .container {
 	// height: 100vh;
 }
@@ -83,8 +98,8 @@
 ///////////////////////////////////////////////////
 .body-diagram-image {
 	width: 60%;
-	// max-height: 60rem;
 	background-color: #fff;
+	border-radius: 1rem;
 
 }
 
@@ -400,7 +415,7 @@
 
 .muscle-category-container {
 	// color: white;
-	width: 65%;
+	width: 80%;
 	// height: 100vh;
 	border: 0.2rem solid black;
 	background-image: linear-gradient(
@@ -475,20 +490,22 @@
 	padding-bottom: 4rem;
 	display: flex;
 	justify-content: center;
+	// font-family: 'Oswald';
 }
 
 .overview-content-container {
-	width: 80%;
+	width: 70%;
 	border-radius: 0.5rem;
 	// display: flex;
 	// justify-content: center;
-	background: rgba(255, 255, 255, 0.9); 
+	background: rgba(255, 255, 255, 0.5); 
 }
 
 .category-title {
 	font-size: 4rem;
 	// background: white;
-	padding: 1rem;
+	font-family: 'Bangers';
+	padding: 2rem;
 }
 
 .img-info-container {
@@ -502,7 +519,7 @@
 
 .info-container {
 	position: relative;
-	padding: 2rem 4rem 4rem;
+	padding: 1rem 10rem 3rem;
 	text-align: center;
 	margin: 0 auto;
 	// background: white;
@@ -514,9 +531,10 @@
 }
 
 .muscleFunction-title {
-	font-size: 2rem;
-	padding-top: 3rem;
-	padding-bottom: 2rem;
+	font-size: 2.5rem;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+	font-family: 'Lato';
 
 }
 
@@ -843,7 +861,7 @@ ol li:before {
         >.back {
             opacity: 1;
 			transform: rotateY(0deg);
-        }
+		}
     }
     &.flip-vertical {
         >.back {

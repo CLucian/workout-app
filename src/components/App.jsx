@@ -118,8 +118,8 @@ class App extends React.Component {
   
 
     return (
-      <div>
-        <Navbar />
+      <div className="master-div">
+        {/* <Navbar /> */}
         <Title />
         {/* {this.state.exerciseOverlay ? (
           <Modal />
