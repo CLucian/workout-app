@@ -11,7 +11,9 @@ function MuscleCategory(props) {
       dataCategory,
       showModal,
       isModalActive,
-      setExerciseTitle
+      setExerciseTitle,
+      handleFormChange,
+      formSubData
     } = props;
 
 		// console.log("ACTIVE CATEGORY IS", activeCategory);
@@ -24,16 +26,18 @@ function MuscleCategory(props) {
 		return (
       <div className="muscle-category-container">
         {/* <img className="overview-background-image" src="/exercise-images/background-images/gym1.jpg" alt="overview-background" /> */}
-          <CategorySection
-            activeCategory={activeCategory}
-            handleCategoryClick={handleCategoryClick}
-            setActiveTab={setActiveTab}
-            activeTab={activeTab}
-            dataCategory={dataCategory}
-            showModal={showModal}
-            isModalActive={isModalActive}
-            setExerciseTitle={setExerciseTitle}
-          />
+        <CategorySection
+          activeCategory={activeCategory}
+          handleCategoryClick={handleCategoryClick}
+          setActiveTab={setActiveTab}
+          activeTab={activeTab}
+          dataCategory={dataCategory}
+          showModal={showModal}
+          isModalActive={isModalActive}
+          setExerciseTitle={setExerciseTitle}
+          handleFormChange={handleFormChange}
+          formSubData={formSubData}
+        />
       </div>
     );
 }

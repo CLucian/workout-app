@@ -4,7 +4,7 @@ const absSectionContent = {
   title: "Abdominals",
   src: "exercise-images/muscle-category-images/abdominal-muscles.jpg",
   info:
-    "The abdominal muscles form the anterior and lateral abdominal wall and consist of the external abdominal obliques, the internal abdominal obliques, the rectus abdominis and the transversus abdominis . Acting together these muscles form a firm wall that protects the viscera and they help to maintain erect posture. In addition the contraction of these muscles helps in expiration and to increase the intra-abdominal pressure such as in sneezing, coughing, micturating, defecating, lifting and childbirth.",
+    "The abdominal muscles form the anterior and lateral abdominal wall and consist of the external abdominal obliques, the internal abdominal obliques, the rectus abdominis and the transversus abdominis . Acting together these muscles form a firm wall that protects the viscera and they help to maintain erect posture. In addition the contraction of these muscles helps in expiration and to increase the intra-abdominal pressure such as in sneezing, coughing, lifting and childbirth.",
   muscleFunction:
     "Both sides acting together, the external abdominal obliques flex the vertebral column by drawing the pubis towards the xiphoid process. Acting unilaterally it results in ipsilateral side flexion and contralateral rotation of the trunk."
 };

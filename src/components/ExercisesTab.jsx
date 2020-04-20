@@ -36,30 +36,34 @@ class ExercisesTab extends React.Component {
 	  
 	render() {
 
-		const { activeCategory, dataCategory, showModal, isModalActive } = this.props;
-		const state = this.state
+		const { activeCategory, dataCategory, showModal, isModalActive, handleFormChange, formSubData } = this.props;
+		const state = this.state;
+		const newArray = data[dataCategory].exercise.push(formSubData);
 
 		return (
 			<div className="main-container">
+				
 				{data[dataCategory].exercise.map(exercise => {
 
-					const exerciseImage1 = `exercise-images/images-web/${(exercise.img[0]).split('').slice(12).join('')}`;
-					const exerciseImage2 = `exercise-images/images-web/${(exercise.img[1]).split('').slice(12).join('')}`;
+					const exerciseImage1 = `exercise-images/images-web/${(exercise.img[0]).split('').slice(12).join('')}`
+					const exerciseImage2 = `exercise-images/images-web/${(exercise.img[1]).split('').slice(12).join('')}`
 
 				return (
-			<ExerciseList
-				selectExercise={this.selectExercise}
-				exerciseTitle={exercise.title}
-				exerciseImage1={exerciseImage1}
-				exerciseImage2={exerciseImage2}
-				exercisePrimer={exercise.primer}
-				exerciseType={exercise.type}
-				exerciseEquipment={exercise.equipment}
-				steps={exercise.steps}
-				showModal={showModal}
-				isModalActive={isModalActive}
-			/>
-		);
+          <ExerciseList
+            selectExercise={this.selectExercise}
+            exerciseTitle={exercise.title}
+            exerciseImage1={exerciseImage1}
+            exerciseImage2={exerciseImage2}
+            exercisePrimer={exercise.primer}
+            exerciseType={exercise.type}
+            exerciseEquipment={exercise.equipment}
+            steps={exercise.steps}
+            showModal={showModal}
+            isModalActive={isModalActive}
+            handleFormChange={handleFormChange}
+            formSubData={formSubData}
+          />
+        );
 	})}
 				{/* {state.selectedExercise &&
 					<Modal 

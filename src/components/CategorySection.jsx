@@ -2,6 +2,7 @@ import React from "react";
 
 import ExercisesTab from './ExercisesTab';
 import OverviewTab from './OverviewTab';
+import CreateTab from './CreateTab';
 
 function SectionContent(props) {
 
@@ -12,12 +13,46 @@ function SectionContent(props) {
       dataCategory,
       showModal,
       isModalActive,
-      setExerciseTitle
+      setExerciseTitle,
+      handleFormChange,
+      formSubData
     } = props;
     
 		const { sectionContent } = activeCategory;
     const { info, title, muscleFunction, src } = sectionContent;
-    
+
+  function currentTab() {
+    if(activeTab === "overview") {
+      return (
+        <OverviewTab
+          info={info}
+          title={title}
+          src={src}
+          muscleFunction={muscleFunction}
+        />
+      )
+      }
+      else if (activeTab === "exercises") {
+        return (
+          <ExercisesTab
+            activeCategory={activeCategory}
+            dataCategory={dataCategory}
+            showModal={showModal}
+            isModalActive={isModalActive}
+            setExerciseTitle={setExerciseTitle}
+            handleFormChange={handleFormChange}
+            formSubData={formSubData}
+          />
+        );
+      } 
+      else {
+        return <CreateTab handleFormChange={handleFormChange} />
+      }
+
+    }
+
+
+
 
 
 		return (
@@ -37,10 +72,18 @@ function SectionContent(props) {
           >
             Exercises
           </li>
+          <li
+            className={activeTab === "create" ? "active" : null}
+            id="create"
+            onClick={setActiveTab}
+          >
+            Create
+          </li>
         </ul>
         <div className="overview-main-container">
           <div className="overview-content-container">
-            {activeTab === "overview" ? (
+            {currentTab()}
+             {/* {activeTab === "overview" ? (
               <OverviewTab
                 info={info}
                 title={title}
@@ -55,12 +98,11 @@ function SectionContent(props) {
                 isModalActive={isModalActive}
                 setExerciseTitle={setExerciseTitle}
               />
-            )}
+            )} */}
           </div>
         </div>
       </div>
     );
-	}
-
+  }
 
 export default SectionContent;
