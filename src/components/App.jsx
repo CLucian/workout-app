@@ -30,7 +30,6 @@ import Workouts from "../pages/Workouts";
 import '../sass/main.scss';
 
 import data from "../data/category_to_exercise";
-import { timingSafeEqual } from 'crypto';
 
 // console.log('DATA', data);
 // console.log(Object.keys(data).sort());
@@ -48,13 +47,6 @@ class App extends React.Component {
       // isModalActive: false,
       exerciseTitle: null,
 
-      inputName: '',
-			inputGroup: 'abdominals',
-      inputDesc: 'Please describe this movement.',
-      img: [],
-      inputEquipment: [],
-      inputType: [],
-      steps: []
     };
 
     console.log("DATA", data);
@@ -63,20 +55,28 @@ class App extends React.Component {
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.showModal = this.showModal.bind(this);
-    this.handleFormChange = this.handleFormChange.bind(this);
+    this.addNewItem = this.addNewItem.bind(this);
+    // this.handleFormChange = this.handleFormChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     // this.setExerciseTitle = this.setExerciseTitle.bind(this);
   }
 
   componentDidMount() {}
 
 
+  addNewItem(newItem) {
+    console.log("THIS IS THE NEWITEM", newItem);
+  }
+
   
 
-  handleFormChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  }
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   });
+
+  // }
 
   setActiveMuscleCategory = category => {
     console.log("would set", category);
@@ -111,20 +111,9 @@ class App extends React.Component {
       return "app is loading...";
     }
 
-    const formSubData = {
-      title: this.state.inputName,
-      primary: this.state.inputGroup,
-      primer: this.state.inputDesc,
-      equipment: [this.state.inputEquipment],
-      type: this.state.inputType,
-      img: [
-        "_images/web/dumbbell-shoulder-press-1.png",
-        "_images/web/dumbbell-shoulder-press-2.png"
-      ],
-      steps: []
-    };
+    
 
-    console.log("THIS IS THE INPUT EQUIPMENT", this.state.inputEquipment.length);
+    // console.log("THIS IS THE INPUT EQUIPMENT", this.state.inputEquipment.length);
     console.log("dataCategory", this.state.dataCategory);
     console.log("dataCategory Name", data[this.state.dataCategory]);
     console.log("Exercise Title =======", this.state.exerciseTitle);
@@ -152,8 +141,10 @@ class App extends React.Component {
             showModal={this.showModal}
             isModalActive={this.state.isModalActive}
             setExerciseTitle={this.setExerciseTitle}
-            handleFormChange={this.handleFormChange}
-            formSubData={formSubData}
+            // handleFormChange={this.handleFormChange}
+            // handleSubmit={this.handleSubmit}
+            // formSubData={formSubData}
+            addNewItem={this.addNewItem}
           />
         </div>
         ){/* } */}

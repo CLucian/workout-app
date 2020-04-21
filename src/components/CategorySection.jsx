@@ -15,7 +15,9 @@ function SectionContent(props) {
       isModalActive,
       setExerciseTitle,
       handleFormChange,
-      formSubData
+      handleSubmit,
+      formSubData,
+      addNewItem
     } = props;
     
 		const { sectionContent } = activeCategory;
@@ -41,12 +43,19 @@ function SectionContent(props) {
             isModalActive={isModalActive}
             setExerciseTitle={setExerciseTitle}
             handleFormChange={handleFormChange}
+            handleSubmit={handleSubmit}
             formSubData={formSubData}
           />
         );
       } 
       else {
-        return <CreateTab handleFormChange={handleFormChange} />
+        return (
+          <CreateTab
+            handleFormChange={handleFormChange}
+            handleSubmit={handleSubmit}
+            addNewItem={addNewItem}
+          />
+        );
       }
 
     }

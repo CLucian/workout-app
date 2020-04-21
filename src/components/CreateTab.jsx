@@ -1,24 +1,55 @@
 import React from 'react';
 
 class CreateTab extends React.Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			
-		}
-
-
-	}
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputName: "",
+      inputGroup: "abdominals",
+      inputDesc: "Please describe this movement.",
+      img: [],
+      inputEquipment: [],
+      inputType: [],
+      steps: []
+	};
 	
+	this.handleFormChange = this.handleFormChange.bind(this);
+	this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleFormChange(e) {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+
+  handleSubmit(e) {
+	e.preventDefault();
+	const formSubData = {
+      title: this.state.inputName,
+      primary: this.state.inputGroup,
+      primer: this.state.inputDesc,
+      equipment: [this.state.inputEquipment],
+      type: this.state.inputType,
+      img: [
+        "_images/web/dumbbell-shoulder-press-1.png",
+        "_images/web/dumbbell-shoulder-press-2.png"
+      ],
+      steps: []
+    };
+	this.props.addNewItem(formSubData)
+  }
+
+  render() {
 
 
 
-	render() {
-		const {handleFormChange} = this.props
-		return (
+    const { handleFormChange, handleSubmit } = this;
+    return (
       <div>
-        <form className="create-form">
+        <form className="create-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="createTab-label">Exercise name: </label>
             <div className="input-div">
@@ -28,6 +59,7 @@ class CreateTab extends React.Component {
                 name="inputName"
                 placeholder="E.g. Push Ups"
                 onChange={handleFormChange}
+                required
               />
             </div>
           </div>
@@ -40,6 +72,7 @@ class CreateTab extends React.Component {
                 name="inputType"
                 placeholder="E.g. Isolation/Compound"
                 onChange={handleFormChange}
+                required
               />
             </div>
           </div>
@@ -52,6 +85,7 @@ class CreateTab extends React.Component {
                 name="inputEquipment"
                 placeholder="E.g. Barbell/Bench etc..."
                 onChange={handleFormChange}
+                required
               />
             </div>
           </div>
@@ -62,6 +96,7 @@ class CreateTab extends React.Component {
               name="inputGroup"
               //   value={this.state.value}
               onChange={handleFormChange}
+              required
             >
               <option name="abdominals" value="abdominals">
                 Abdominals
@@ -104,6 +139,7 @@ class CreateTab extends React.Component {
               cols="30"
               //   value={this.state.value}
               onChange={handleFormChange}
+              required
             />
           </div>
           <div>
@@ -115,8 +151,7 @@ class CreateTab extends React.Component {
         <h1>{this.state.inputDesc}</h1>
       </div>
     );
-	}
-	
+  }
 }
 
 export default CreateTab;

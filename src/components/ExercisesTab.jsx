@@ -36,7 +36,7 @@ class ExercisesTab extends React.Component {
 	  
 	render() {
 
-		const { activeCategory, dataCategory, showModal, isModalActive, handleFormChange, formSubData } = this.props;
+		const { activeCategory, dataCategory, showModal, isModalActive, formSubData } = this.props;
 		const state = this.state;
 		const newArray = data[dataCategory].exercise.push(formSubData);
 
@@ -60,7 +60,8 @@ class ExercisesTab extends React.Component {
             steps={exercise.steps}
             showModal={showModal}
             isModalActive={isModalActive}
-            handleFormChange={handleFormChange}
+            // handleFormChange={handleFormChange}
+            // handleSubmit={handleSubmit}
             formSubData={formSubData}
           />
         );

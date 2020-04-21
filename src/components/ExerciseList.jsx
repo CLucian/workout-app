@@ -14,8 +14,7 @@ function ExerciseList(props) {
       exercisePrimer,
       exerciseType,
       exerciseEquipment,
-      steps,
-      handleFormChange
+      steps
       // isModalActive,
       // showModal
     } = props;

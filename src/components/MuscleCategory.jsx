@@ -13,6 +13,8 @@ function MuscleCategory(props) {
       isModalActive,
       setExerciseTitle,
       handleFormChange,
+      handleSubmit,
+      addNewItem,
       formSubData
     } = props;
 
@@ -37,6 +39,8 @@ function MuscleCategory(props) {
           setExerciseTitle={setExerciseTitle}
           handleFormChange={handleFormChange}
           formSubData={formSubData}
+          handleSubmit={handleSubmit}
+          addNewItem={addNewItem}
         />
       </div>
     );
