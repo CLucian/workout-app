@@ -3,6 +3,7 @@ import React from "react";
 import ExercisesTab from './ExercisesTab';
 import OverviewTab from './OverviewTab';
 import CreateTab from './CreateTab';
+import FormContext from "./FormContext";
 
 function SectionContent(props) {
 
@@ -50,11 +51,17 @@ function SectionContent(props) {
       } 
       else {
         return (
-          <CreateTab
-            handleFormChange={handleFormChange}
-            handleSubmit={handleSubmit}
-            addNewItem={addNewItem}
-          />
+          <FormContext.Consumer>
+            {context => (
+              <CreateTab
+                handleFormChange={handleFormChange}
+                handleSubmit={handleSubmit}
+                addNewItem={addNewItem}
+                addArrayItem={context.addArrayItem}
+                hello={context.hello}
+              />
+            )}
+          </FormContext.Consumer>
         );
       }
 

@@ -18,7 +18,7 @@ import Community from "../pages/Community";
 import MuscleGroups from "../pages/MuscleGroups";
 import Workouts from "../pages/Workouts";
 
-
+import FormProvider from './FormProvider';
 
 
 
@@ -66,7 +66,7 @@ class App extends React.Component {
 
   addNewItem(newItem) {
     console.log("THIS IS THE NEWITEM", newItem);
-  }
+  } 
 
   
 
@@ -119,47 +119,49 @@ class App extends React.Component {
     console.log("Exercise Title =======", this.state.exerciseTitle);
 
     return (
-      <div className="master-div">
-        {/* <Navbar /> */}
-        <Title />
-        {/* {this.state.exerciseOverlay ? (
-          <Modal />
-        ) : ( */}
-        <div>
-          <MuscleMap
-            setActiveMuscleCategory={this.setActiveMuscleCategory}
-            handleCategoryClick={this.handleCategoryClick}
-            getDataCategory={this.getDataCategory}
-          />
-          <MuscleCategory
-            activeCategory={this.state.activeCategory}
-            handleCategoryClick={this.handleCategoryClick}
-            setActiveTab={this.setActiveTab}
-            activeTab={this.state.activeTab}
-            active={this.state.active}
-            dataCategory={this.state.dataCategory}
-            showModal={this.showModal}
-            isModalActive={this.state.isModalActive}
-            setExerciseTitle={this.setExerciseTitle}
-            // handleFormChange={this.handleFormChange}
-            // handleSubmit={this.handleSubmit}
-            // formSubData={formSubData}
-            addNewItem={this.addNewItem}
-          />
-        </div>
-        ){/* } */}
-        {/* <Landing /> */}
-        {/* <Switch>
+      <FormProvider>
+        <div className="master-div">
+          {/* <Navbar /> */}
+          <Title />
+          {/* {this.state.exerciseOverlay ? (
+            <Modal />
+          ) : ( */}
           <div>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/community" component={Community} />
-            <Route exact path="/exercises" component={Exercises} />
-            <Route exact path="/muscle-groups" component={MuscleGroups} />
-            <Route exact path="/workouts" component={Workouts} />
+            <MuscleMap
+              setActiveMuscleCategory={this.setActiveMuscleCategory}
+              handleCategoryClick={this.handleCategoryClick}
+              getDataCategory={this.getDataCategory}
+            />
+            <MuscleCategory
+              activeCategory={this.state.activeCategory}
+              handleCategoryClick={this.handleCategoryClick}
+              setActiveTab={this.setActiveTab}
+              activeTab={this.state.activeTab}
+              active={this.state.active}
+              dataCategory={this.state.dataCategory}
+              showModal={this.showModal}
+              isModalActive={this.state.isModalActive}
+              setExerciseTitle={this.setExerciseTitle}
+              // handleFormChange={this.handleFormChange}
+              // handleSubmit={this.handleSubmit}
+              // formSubData={formSubData}
+              addNewItem={this.addNewItem}
+            />
           </div>
-        </Switch> */}
-        {/* <Facebook /> */}
-      </div>
+          ){/* } */}
+          {/* <Landing /> */}
+          {/* <Switch>
+            <div>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/community" component={Community} />
+              <Route exact path="/exercises" component={Exercises} />
+              <Route exact path="/muscle-groups" component={MuscleGroups} />
+              <Route exact path="/workouts" component={Workouts} />
+            </div>
+          </Switch> */}
+          {/* <Facebook /> */}
+        </div>
+      </FormProvider>
     );
   }
 }

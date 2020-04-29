@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 class CreateTab extends React.Component {
   constructor(props) {
     super(props);
@@ -39,11 +41,12 @@ class CreateTab extends React.Component {
       ],
       steps: []
     };
-	this.props.addNewItem(formSubData)
+	this.props.addArrayItem(formSubData)
   }
 
   render() {
 
+	console.log(this.props.hello)
 
 
     const { handleFormChange, handleSubmit } = this;
@@ -149,6 +152,7 @@ class CreateTab extends React.Component {
         <h1>{this.state.inputName}</h1>
         <h1>{this.state.inputGroup}</h1>
         <h1>{this.state.inputDesc}</h1>
+		<h1>{this.props.hello}</h1>
       </div>
     );
   }
