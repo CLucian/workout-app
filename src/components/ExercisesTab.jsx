@@ -36,49 +36,47 @@ class ExercisesTab extends React.Component {
 	  
 	render() {
 
-		const { activeCategory, dataCategory, showModal, isModalActive, formSubData } = this.props;
+		const { activeCategory, dataCategory, showModal, isModalActive, formData } = this.props;
 		const state = this.state;
-		const newArray = data[dataCategory].exercise.push(formSubData);
+		// const newArray = data[dataCategory].exercise.push(formSubData);
+		const finalArray = [...(data[dataCategory].exercise), ...formData];
+		
+		
 
 		return (
 			<div className="main-container">
 				
-				{data[dataCategory].exercise.map(exercise => {
+				{/* {(data[dataCategory].exercise.map(exercise => { */}
+				{finalArray.map(exercise => {
 
 					const exerciseImage1 = `exercise-images/images-web/${(exercise.img[0]).split('').slice(12).join('')}`
 					const exerciseImage2 = `exercise-images/images-web/${(exercise.img[1]).split('').slice(12).join('')}`
 
 				return (
-          <ExerciseList
-            selectExercise={this.selectExercise}
-            exerciseTitle={exercise.title}
-            exerciseImage1={exerciseImage1}
-            exerciseImage2={exerciseImage2}
-            exercisePrimer={exercise.primer}
-            exerciseType={exercise.type}
-            exerciseEquipment={exercise.equipment}
-            steps={exercise.steps}
-            showModal={showModal}
-            isModalActive={isModalActive}
-            // handleFormChange={handleFormChange}
-            // handleSubmit={handleSubmit}
-            formSubData={formSubData}
-          />
+          <div>
+            {dataCategory === exercise.primary ? (
+              <ExerciseList
+                selectExercise={this.selectExercise}
+                exerciseTitle={exercise.title}
+                exerciseImage1={exerciseImage1}
+                exerciseImage2={exerciseImage2}
+                exercisePrimer={exercise.primer}
+                exerciseType={exercise.type}
+                exerciseEquipment={exercise.equipment}
+                steps={exercise.steps}
+                showModal={showModal}
+                isModalActive={isModalActive}
+              />
+            ) : null}
+          </div>
         );
-	})}
-				{/* {state.selectedExercise &&
-					<Modal 
-						exerciseTitle={state.modalData.exerciseTitle}
-						steps={state.modalData.steps}
-					/>
-				} */}
-
-				<Modal
-					isVisible={state.selectedExercise}
-					closeModal={this.closeModal}
-				>
-					<ExerciseModalContent data={state.modalData} closeModal={this.closeModal} />
-				</Modal>
+					})}
+			<Modal
+				isVisible={state.selectedExercise}
+				closeModal={this.closeModal}
+			>
+				<ExerciseModalContent data={state.modalData} closeModal={this.closeModal} />
+			</Modal>
 			</div>
 		);
 	}

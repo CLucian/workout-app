@@ -31,7 +31,7 @@ class CreateTab extends React.Component {
 	e.preventDefault();
 	const formSubData = {
       title: this.state.inputName,
-      primary: this.state.inputGroup,
+      primary: this.state.inputGroup, 
       primer: this.state.inputDesc,
       equipment: [this.state.inputEquipment],
       type: this.state.inputType,
@@ -41,7 +41,7 @@ class CreateTab extends React.Component {
       ],
       steps: []
     };
-	this.props.addArrayItem(formSubData)
+	this.props.addArrayItem(formSubData);
   }
 
   render() {

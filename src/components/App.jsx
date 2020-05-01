@@ -51,6 +51,7 @@ class App extends React.Component {
 
     console.log("DATA", data);
     console.log("exerciseTitle", this.state.exerciseTitle);
+    console.log('THIS IS THE DATA CATEGORY', this.state.activeCategory);
     // console.log('------ACTIVE CATEGORY--------', data[this.state.activeCategory])
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);

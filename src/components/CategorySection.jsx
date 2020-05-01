@@ -37,16 +37,21 @@ function SectionContent(props) {
       }
       else if (activeTab === "exercises") {
         return (
-          <ExercisesTab
-            activeCategory={activeCategory}
-            dataCategory={dataCategory}
-            showModal={showModal}
-            isModalActive={isModalActive}
-            setExerciseTitle={setExerciseTitle}
-            handleFormChange={handleFormChange}
-            handleSubmit={handleSubmit}
-            formSubData={formSubData}
-          />
+          <FormContext.Consumer>
+            {context => (
+              <ExercisesTab
+                activeCategory={activeCategory}
+                dataCategory={dataCategory}
+                showModal={showModal}
+                isModalActive={isModalActive}
+                setExerciseTitle={setExerciseTitle}
+                handleFormChange={handleFormChange}
+                handleSubmit={handleSubmit}
+                // formSubData={formSubData}
+                formData={context.items}
+              />
+            )}
+          </FormContext.Consumer>
         );
       } 
       else {
@@ -58,7 +63,7 @@ function SectionContent(props) {
                 handleSubmit={handleSubmit}
                 addNewItem={addNewItem}
                 addArrayItem={context.addArrayItem}
-                hello={context.hello}
+                hello={context.test}
               />
             )}
           </FormContext.Consumer>
