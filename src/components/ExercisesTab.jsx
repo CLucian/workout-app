@@ -48,7 +48,7 @@ class ExercisesTab extends React.Component {
 				
 				{/* {(data[dataCategory].exercise.map(exercise => { */}
 				{finalArray.map(exercise => {
-
+					console.log(exercise.steps);
 					const exerciseImage1 = `exercise-images/images-web/${(exercise.img[0]).split('').slice(12).join('')}`
 					const exerciseImage2 = `exercise-images/images-web/${(exercise.img[1]).split('').slice(12).join('')}`
 

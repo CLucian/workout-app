@@ -29,7 +29,7 @@ function ExerciseList(props) {
               onClick={() => {
                 selectExercise({
                   exerciseTitle: exerciseTitle,
-                  steps: steps
+                  // steps: steps
                 });
               }}
             >
@@ -87,6 +87,8 @@ function ExerciseList(props) {
                   <h1 className="steps-list-title">Steps</h1>
                   <ol className="steps-list">
                     {steps.map(step => {
+                        console.log(step);
+                      
                       return <li className="step-list-item">{step}</li>;
                     })}
                   </ol>

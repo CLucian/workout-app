@@ -998,6 +998,8 @@ text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px r
 	// padding: 2rem;
 }
 
+
+
 .createTab-label {
 	display: flex;
 	// justify-content: center;
@@ -1006,17 +1008,51 @@ text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px r
 
 .inputs {
 	width: 100%;
+	margin: 0.3rem;
 }
 
 input[type=text] {
 	padding: 0.5rem 1.5rem;
 	box-sizing: border-box;
-	border: 0.2rem solid red;
+	border: 0.1rem solid red;
 	border-radius: 0.4rem;
 }
 
 
 .input-div {
+	// display: flex;
+	// justify-content: center;
+	// flex-wrap: wrap;
+	// padding-bottom: 1rem;
+
+}
+
+.step-button {
+	padding: 0.5rem;
+	border: 0.1rem solid red;
+	border-radius: 0.4rem;
+}
+
+.steps-div {
 	display: flex;
-	justify-content: center;
+}
+
+.step-inputs {
+	// display: flex;
+	width: 90%;
+	margin: 0.3rem;
+}
+
+.step-remove-button {
+	// display: flex;
+	padding: 0.3rem;
+	margin: 0.1rem;
+	border: 0.1rem solid red;
+	border-radius: 0.4rem;
+}
+
+.steps-input-div {
+	// display: flex;
+	justify-content: right;
+	// width: 90%
 }

@@ -12,11 +12,12 @@ class CreateTab extends React.Component {
       img: [],
       inputEquipment: [],
       inputType: [],
-      steps: []
+	  steps: []
 	};
 	
 	this.handleFormChange = this.handleFormChange.bind(this);
 	this.handleSubmit = this.handleSubmit.bind(this);
+	// this.handleStepsChange = this.handleStepsChange.bind(this);
   }
 
   handleFormChange(e) {
@@ -24,6 +25,25 @@ class CreateTab extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  handleStepsChange(e, index) {
+	  this.state.steps[index] = e.target.value 
+	  this.setState({steps: this.state.steps})
+
+  }
+
+  addStep() {
+	this.setState({
+		// the "" is what appends an empty element to the array 
+		steps: [...this.state.steps, ""]
+	})
+  }
+
+
+  handleRemove(index) {
+	  this.state.steps.splice(index, 1)
+	  this.setState({steps : this.state.steps})
   }
 
 
@@ -39,15 +59,16 @@ class CreateTab extends React.Component {
         "_images/web/dumbbell-shoulder-press-1.png",
         "_images/web/dumbbell-shoulder-press-2.png"
       ],
-      steps: []
+      steps: this.state.steps
     };
 	this.props.addArrayItem(formSubData);
   }
 
   render() {
 
-	console.log(this.props.hello)
-
+	// console.log(this.props.hello);
+	console.log(this.state.steps);
+	
 
     const { handleFormChange, handleSubmit } = this;
     return (
@@ -91,6 +112,35 @@ class CreateTab extends React.Component {
                 required
               />
             </div>
+          </div>
+          <div className="form-group">
+            <label className="createTab-label">Steps: </label>
+            <div className="steps-input-div">
+              {/* <input
+                className="inputs"
+                type="text"
+                name="inputEquipment"
+                placeholder="E.g. Lie flat on a bench"
+              /> */}
+              {this.state.steps.map((step, index) => {
+                return (
+                  <div className="steps-div" key={index}>
+                    <input
+                      className="step-inputs"
+                      type="text"
+                      name="steps"
+                      //   onChange={handleFormChange}
+                      onChange={e => this.handleStepsChange(e, index)}
+                      value={step}
+                    />
+					<button className="step-remove-button" onClick={() => this.handleRemove(index)}>Remove</button>
+                  </div>
+                );
+              })}
+            </div>
+            <button onClick={(e) => this.addStep(e)} className="step-button">
+              Add Step
+            </button>
           </div>
           <div className="form-group">
             <label className="createTab-label">Muscle Group</label>
@@ -152,7 +202,8 @@ class CreateTab extends React.Component {
         <h1>{this.state.inputName}</h1>
         <h1>{this.state.inputGroup}</h1>
         <h1>{this.state.inputDesc}</h1>
-		<h1>{this.props.hello}</h1>
+		<h1>{this.state.steps}</h1>
+        <h1>{this.props.hello}</h1>
       </div>
     );
   }
