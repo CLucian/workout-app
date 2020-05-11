@@ -2,23 +2,36 @@ import React from 'react';
 
 
 
+
+function initialState() {
+  return {
+    inputName: "",
+    inputGroup: "abdominals",
+    inputDesc: "Please describe this movement.",
+    img: [],
+    inputEquipment: [],
+    inputType: [],
+    steps: [],
+    completeArray: [],
+    id: Math.random()
+  }
+}
+
 class CreateTab extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      inputName: "",
-      inputGroup: "abdominals",
-      inputDesc: "Please describe this movement.",
-      img: [],
-      inputEquipment: [],
-      inputType: [],
-	  steps: []
-	};
-	
-	this.handleFormChange = this.handleFormChange.bind(this);
-	this.handleSubmit = this.handleSubmit.bind(this);
-	// this.handleStepsChange = this.handleStepsChange.bind(this);
+    this.state = initialState();
+
+
+    
+
+    this.handleFormChange = this.handleFormChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleStepsChange = this.handleStepsChange.bind(this);
   }
+
+  
+  
 
   handleFormChange(e) {
     e.preventDefault();
@@ -28,30 +41,29 @@ class CreateTab extends React.Component {
   }
 
   handleStepsChange(e, index) {
-	  this.state.steps[index] = e.target.value 
-	  this.setState({steps: this.state.steps})
-
+    this.state.steps[index] = e.target.value;
+    this.setState({ steps: this.state.steps });
   }
 
   addStep() {
-	this.setState({
-		// the "" is what appends an empty element to the array 
-		steps: [...this.state.steps, ""]
-	})
+    this.setState({
+      // the "" is what appends an empty element to the array
+      steps: [...this.state.steps, ""]
+    });
   }
-
 
   handleRemove(index) {
-	  this.state.steps.splice(index, 1)
-	  this.setState({steps : this.state.steps})
+    this.state.steps.splice(index, 1);
+    this.setState({ steps: this.state.steps });
   }
+
 
 
   handleSubmit(e) {
-	e.preventDefault();
-	const formSubData = {
+    e.preventDefault();
+    const formSubData = {
       title: this.state.inputName,
-      primary: this.state.inputGroup, 
+      primary: this.state.inputGroup,
       primer: this.state.inputDesc,
       equipment: [this.state.inputEquipment],
       type: this.state.inputType,
@@ -59,16 +71,21 @@ class CreateTab extends React.Component {
         "_images/web/dumbbell-shoulder-press-1.png",
         "_images/web/dumbbell-shoulder-press-2.png"
       ],
-      steps: this.state.steps
+      steps: this.state.steps,
+      userCreated: true,
+      id: this.state.id
     };
-	this.props.addArrayItem(formSubData);
+    this.setState(initialState())
+    this.props.addArrayItem(formSubData);
+    
   }
 
-  render() {
 
-	// console.log(this.props.hello);
-	console.log(this.state.steps);
-	
+
+  render() {
+    // console.log(this.props.hello);
+    // console.log(this.state.steps);
+    console.log('CreateTab State:', this.state.inputName)
 
     const { handleFormChange, handleSubmit } = this;
     return (
@@ -133,12 +150,17 @@ class CreateTab extends React.Component {
                       onChange={e => this.handleStepsChange(e, index)}
                       value={step}
                     />
-					<button className="step-remove-button" onClick={() => this.handleRemove(index)}>Remove</button>
+                    <button
+                      className="step-remove-button"
+                      onClick={() => this.handleRemove(index)}
+                    >
+                      Remove
+                    </button>
                   </div>
                 );
               })}
             </div>
-            <button onClick={(e) => this.addStep(e)} className="step-button">
+            <button onClick={e => this.addStep(e)} className="step-button">
               Add Step
             </button>
           </div>
@@ -202,7 +224,7 @@ class CreateTab extends React.Component {
         <h1>{this.state.inputName}</h1>
         <h1>{this.state.inputGroup}</h1>
         <h1>{this.state.inputDesc}</h1>
-		<h1>{this.state.steps}</h1>
+        <h1>{this.state.steps}</h1>
         <h1>{this.props.hello}</h1>
       </div>
     );

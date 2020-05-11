@@ -14,7 +14,12 @@ function ExerciseList(props) {
       exercisePrimer,
       exerciseType,
       exerciseEquipment,
-      steps
+      steps,
+      userCreated,
+      exercise,
+      // index,
+      handleDeleteExercise,
+      handleDeleteEx
       // isModalActive,
       // showModal
     } = props;
@@ -22,13 +27,13 @@ function ExerciseList(props) {
 
     return (
       <>
-        <div class="flip">
+        <div class="flip" key={exercise.id}>
           <div class="front">
             <div
               className="exerciseList"
               onClick={() => {
                 selectExercise({
-                  exerciseTitle: exerciseTitle,
+                  exerciseTitle: exerciseTitle
                   // steps: steps
                 });
               }}
@@ -47,11 +52,11 @@ function ExerciseList(props) {
                     <h2 className="mini-info-title">
                       Movement type:{" "}
                       <h2 className="mini-info">
-                      {exerciseType
-                        ? exerciseType.charAt(0).toUpperCase() +
-                          exerciseType.substring(1)
-                        : null}
-                        </h2>
+                        {exerciseType
+                          ? exerciseType.charAt(0).toUpperCase() +
+                            exerciseType.substring(1)
+                          : null}
+                      </h2>
                     </h2>
                     <br />
                     <h2 className="mini-info-title">
@@ -87,11 +92,12 @@ function ExerciseList(props) {
                   <h1 className="steps-list-title">Steps</h1>
                   <ol className="steps-list">
                     {steps.map(step => {
-                        console.log(step);
-                      
+                      // console.log(step);
+
                       return <li className="step-list-item">{step}</li>;
                     })}
                   </ol>
+                  { userCreated && <button onClick={() => handleDeleteExercise(exercise.id)}>Delete</button> }
                 </div>
               </div>
             </div>

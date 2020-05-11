@@ -47,6 +47,7 @@ function SectionContent(props) {
                 setExerciseTitle={setExerciseTitle}
                 handleFormChange={handleFormChange}
                 handleSubmit={handleSubmit}
+                handleDeleteEx={context.handleDeleteEx}
                 // formSubData={formSubData}
                 formData={context.items}
               />
