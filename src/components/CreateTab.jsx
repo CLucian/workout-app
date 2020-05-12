@@ -90,7 +90,7 @@ class CreateTab extends React.Component {
     const { handleFormChange, handleSubmit } = this;
     return (
       <div>
-        <form className="create-form" onSubmit={handleSubmit}>
+        <form className="create-form"   onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="createTab-label">Exercise name: </label>
             <div className="input-div">
@@ -151,6 +151,7 @@ class CreateTab extends React.Component {
                       value={step}
                     />
                     <button
+                      type="button"
                       className="step-remove-button"
                       onClick={() => this.handleRemove(index)}
                     >
@@ -160,7 +161,7 @@ class CreateTab extends React.Component {
                 );
               })}
             </div>
-            <button onClick={e => this.addStep(e)} className="step-button">
+            <button type="button" onClick={e => this.addStep(e)} className="step-button">
               Add Step
             </button>
           </div>
@@ -218,6 +219,7 @@ class CreateTab extends React.Component {
             />
           </div>
           <div>
+            {/* <button type="submit" value="Submit" onSubmit={handleSubmit}>Submit</button> */}
             <input type="submit" value="Submit" />
           </div>
         </form>
