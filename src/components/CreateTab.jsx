@@ -7,7 +7,7 @@ function initialState() {
   return {
     inputName: "",
     inputGroup: "abdominals",
-    inputDesc: "Please describe this movement.",
+    inputDesc: "",
     img: [],
     inputEquipment: [],
     inputType: [],
@@ -16,6 +16,7 @@ function initialState() {
     id: Math.random()
   }
 }
+
 
 class CreateTab extends React.Component {
   constructor(props) {
@@ -100,6 +101,7 @@ class CreateTab extends React.Component {
                 name="inputName"
                 placeholder="E.g. Push Ups"
                 onChange={handleFormChange}
+                value={this.state.inputName}
                 required
               />
             </div>
@@ -113,6 +115,7 @@ class CreateTab extends React.Component {
                 name="inputType"
                 placeholder="E.g. Isolation/Compound"
                 onChange={handleFormChange}
+                value={this.state.inputType}
                 required
               />
             </div>
@@ -126,6 +129,7 @@ class CreateTab extends React.Component {
                 name="inputEquipment"
                 placeholder="E.g. Barbell/Bench etc..."
                 onChange={handleFormChange}
+                value={this.state.inputEquipment}
                 required
               />
             </div>
@@ -172,6 +176,7 @@ class CreateTab extends React.Component {
               name="inputGroup"
               //   value={this.state.value}
               onChange={handleFormChange}
+              value="inputGroup"
               required
             >
               <option name="abdominals" value="abdominals">
@@ -215,6 +220,8 @@ class CreateTab extends React.Component {
               cols="30"
               //   value={this.state.value}
               onChange={handleFormChange}
+              placeholder="Please describe this movement."
+              value={this.state.inputDesc}
               required
             />
           </div>
