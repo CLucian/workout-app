@@ -9,8 +9,6 @@ function MuscleCategory(props) {
       setActiveTab,
       activeTab,
       dataCategory,
-      showModal,
-      isModalActive,
       setExerciseTitle,
       handleFormChange,
       handleSubmit,
@@ -34,8 +32,6 @@ function MuscleCategory(props) {
           setActiveTab={setActiveTab}
           activeTab={activeTab}
           dataCategory={dataCategory}
-          showModal={showModal}
-          isModalActive={isModalActive}
           setExerciseTitle={setExerciseTitle}
           handleFormChange={handleFormChange}
           formSubData={formSubData}

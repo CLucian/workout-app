@@ -4,9 +4,10 @@ import MuscleData from './MuscleData';
 
 function MuscleMap(props) {  
 
-  const { setActiveMuscleCategory, handleCategoryClick } = props
+  const { setActiveMuscleCategory, handleCategoryClick, dataCategory } = props
 
 
+  
   return (
     <div className="muscle-map">
       <img
@@ -21,7 +22,7 @@ function MuscleMap(props) {
           src={category.img.src}
           alt={category.img.alt}
           className={category.img.class}
-          onClick={() => {setActiveMuscleCategory(category); handleCategoryClick()}}
+          onClick={() => {setActiveMuscleCategory(category); handleCategoryClick(); }}
         />
         })}
       </div>

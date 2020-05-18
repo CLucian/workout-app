@@ -1,9 +1,7 @@
 import React from 'react';
 
 import FormContext from './FormContext';
-
-
-
+import data from "../data/category_to_exercise";
 
 
 class FormProvider extends React.Component {
@@ -14,17 +12,32 @@ class FormProvider extends React.Component {
 	this.state = {
 		items: [],
 		test: 'Test state',
-		// handleDelete,
-		// addArrayItem: (newItem) => {
-		// 	this.setState({
-		// 		items: newItem
-		// 	})
-		// 	console.log(newItem)
-		// }
+		completeArray: [],
+		dataCategory: null,
+		workout: [],
+
+
+		addDataCategory: (dataCategory) => {
+			this.setState({
+				dataCategory
+			})
+		},
+
+		
 
 		addArrayItem: (newItem) => {
 			this.setState({
 				items: [...this.state.items, newItem]
+			})
+		},
+		addCompleteArray: (completeArray) => {
+			this.setState({
+				completeArray
+			})
+		},
+		addNewWorkout: (newWorkout) => {
+			this.setState({
+				workout: [...this.state.workout, newWorkout]
 			})
 		}
 
@@ -32,6 +45,8 @@ class FormProvider extends React.Component {
 		this.handleDeleteEx = this.handleDeleteEx.bind(this);
 	}
 	
+
+
 
 	handleExerciseReset() {
 		this.setState({items: null})
@@ -41,8 +56,6 @@ class FormProvider extends React.Component {
 		const isNotId = exercise => exercise.id !== id;
 		const updatedList = this.state.items.filter(isNotId);
 		this.setState({ items: updatedList })
-		// const splicedArray = this.state.exerciseArray.splice(index, 1)
-		// this.setState({ exerciseArray: splicedArray })
 	}
 
 
@@ -54,7 +67,9 @@ class FormProvider extends React.Component {
 		}
 
 		console.log('THIS IS THE NEW ARRAY ITEM', this.state.items)
-		// console.log('THIS IS THE VALUE', value)
+		console.log('===========This is the absolute completeArray============', this.state.completeArray)
+		console.log('++++++++++++++++++++++++++++++++++++++++++', this.state.dataCategory)
+		console.log('******************************', this.state.workout.map(obj => obj))
 
 		return (
 			<FormContext.Provider value={value}>

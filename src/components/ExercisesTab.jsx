@@ -7,16 +7,6 @@ import Modal from './Modal';
 import ExerciseModalContent from './ExerciseModalContent';
 
 
-// const {
-//   activeCategory,
-//   dataCategory,
-//   showModal,
-//   isModalActive,
-//   formData
-// } = this.props;
-
-// const finalArray = [...data[this.props.dataCategory].exercise, ...this.props.formData];
-// const finalArray = [...data[dataCategory].exercise, ...formData];
 
 
 class ExercisesTab extends React.Component {
@@ -30,12 +20,10 @@ class ExercisesTab extends React.Component {
 			selectedExercise: false,
 			exerciseArray: finalArray
 		}
+		this.sendFinalArray = this.sendFinalArray.bind(this);
 		this.handleDeleteExercise = this.handleDeleteExercise.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	this.setState({ exerciseArray: this.finalArray })
-	// }
 	
 	selectExercise = (data) => {
 		this.setState({
@@ -44,14 +32,19 @@ class ExercisesTab extends React.Component {
 		})
 	}
 
-	finalArray = [...data[this.props.dataCategory].exercise, ...this.props.formData];
 
 
-	closeModal = () => {
-		this.setState({
-			selectedExercise: false
-		})
+
+	// finalArray = [...data[this.props.dataCategory].exercise, ...this.props.formData];
+
+	sendFinalArray () {
+		const completeArray = this.state.exerciseArray;
+		this.props.addCompleteArray(completeArray);
+
 	}
+
+
+	
 
 
 
@@ -61,11 +54,8 @@ class ExercisesTab extends React.Component {
 		
 		const isNotId = exercise => exercise.id !== id;
 		const updatedList = this.state.exerciseArray.filter(isNotId);
-		this.setState({ exerciseArray: updatedList })
-		// this.finalArray = updatedList;
-		// this.setState({ exerciseArray: [...data[this.props.dataCategory].exercise]})
-		// const splicedArray = this.state.exerciseArray.splice(index, 1)
-		// this.setState({ exerciseArray: splicedArray })
+		this.setState({ exerciseArray: updatedList });
+		this.sendFinalArray()
 	}
 
 
@@ -73,16 +63,8 @@ class ExercisesTab extends React.Component {
 
 	render() {
 
-		// const { activeCategory, dataCategory, showModal, isModalActive, formData } = this.props;
-		// const state = this.state;
-		// const newArray = data[dataCategory].exercise.push(formSubData);
-		
-		// console.log('----------------------------------------', this.props.handleDeleteEx)
-		// console.log(this.finalArray)
-
 		return (
 			<div className="main-container">
-				
 				{/* {(data[dataCategory].exercise.map(exercise => { */}
 				{this.state.exerciseArray.map((exercise, index) => {
 					// console.log(index);
@@ -108,20 +90,12 @@ class ExercisesTab extends React.Component {
 				index={index}
 				userCreated={exercise.userCreated}
 				handleDeleteExercise={this.handleDeleteExercise}
-				handleDeleteEx={this.props.handleDeleteEx}
-                // showModal={showModal}
-                // isModalActive={isModalActive}
+				sendFinalArray={this.sendFinalArray}
               />
             ) : null}
           </div>
         );
 					})}
-			<Modal
-				isVisible={this.state.selectedExercise}
-				closeModal={this.closeModal}
-			>
-				<ExerciseModalContent data={this.state.modalData} closeModal={this.closeModal} />
-			</Modal>
 			</div>
 		);
 	}

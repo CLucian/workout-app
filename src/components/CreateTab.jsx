@@ -102,6 +102,7 @@ class CreateTab extends React.Component {
                 placeholder="E.g. Push Ups"
                 onChange={handleFormChange}
                 value={this.state.inputName}
+                maxLength="20"
                 required
               />
             </div>
@@ -116,6 +117,7 @@ class CreateTab extends React.Component {
                 placeholder="E.g. Isolation/Compound"
                 onChange={handleFormChange}
                 value={this.state.inputType}
+                maxLength="20"
                 required
               />
             </div>
@@ -130,6 +132,7 @@ class CreateTab extends React.Component {
                 placeholder="E.g. Barbell/Bench etc..."
                 onChange={handleFormChange}
                 value={this.state.inputEquipment}
+                maxLength="20"
                 required
               />
             </div>
@@ -152,6 +155,7 @@ class CreateTab extends React.Component {
                       name="steps"
                       //   onChange={handleFormChange}
                       onChange={e => this.handleStepsChange(e, index)}
+                      maxLength="50"
                       value={step}
                     />
                     <button
@@ -176,7 +180,7 @@ class CreateTab extends React.Component {
               name="inputGroup"
               //   value={this.state.value}
               onChange={handleFormChange}
-              value="inputGroup"
+              value={this.state.inputGroup}
               required
             >
               <option name="abdominals" value="abdominals">
@@ -220,8 +224,9 @@ class CreateTab extends React.Component {
               cols="30"
               //   value={this.state.value}
               onChange={handleFormChange}
-              placeholder="Please describe this movement."
+              placeholder="Briefly, please describe this movement."
               value={this.state.inputDesc}
+              maxLength="100"
               required
             />
           </div>

@@ -20,7 +20,10 @@ class Modal extends React.Component {
       return null
     }
 
+    console.log('IS THIS VISIBLE?', props.isVisible)
+
      return ReactDOM.createPortal(
+
        <div className="modal-container">
          <div className="modal-bg" onClick={props.closeModal}></div>
          <div className="modal-info-container">

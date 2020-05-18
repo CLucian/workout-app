@@ -3,7 +3,9 @@ import React from "react";
 import ExercisesTab from './ExercisesTab';
 import OverviewTab from './OverviewTab';
 import CreateTab from './CreateTab';
+import WorkoutTab from './WorkoutTab';
 import FormContext from "./FormContext";
+
 
 function SectionContent(props) {
 
@@ -12,8 +14,6 @@ function SectionContent(props) {
       activeTab,
       setActiveTab,
       dataCategory,
-      showModal,
-      isModalActive,
       setExerciseTitle,
       handleFormChange,
       handleSubmit,
@@ -34,20 +34,19 @@ function SectionContent(props) {
           muscleFunction={muscleFunction}
         />
       )
-      }
+    }
       else if (activeTab === "exercises") {
         return (
           <FormContext.Consumer>
             {context => (
               <ExercisesTab
-                activeCategory={activeCategory}
+                // activeCategory={activeCategory}
                 dataCategory={dataCategory}
-                showModal={showModal}
-                isModalActive={isModalActive}
-                setExerciseTitle={setExerciseTitle}
+                // setExerciseTitle={setExerciseTitle}
                 handleFormChange={handleFormChange}
                 handleSubmit={handleSubmit}
                 handleDeleteEx={context.handleDeleteEx}
+                addCompleteArray={context.addCompleteArray}
                 // formSubData={formSubData}
                 formData={context.items}
               />
@@ -55,7 +54,7 @@ function SectionContent(props) {
           </FormContext.Consumer>
         );
       } 
-      else {
+      else if (activeTab === 'create') {
         return (
           <FormContext.Consumer>
             {context => (
@@ -69,6 +68,21 @@ function SectionContent(props) {
             )}
           </FormContext.Consumer>
         );
+      }
+      else if (activeTab === 'workout') {
+        return(
+          <FormContext.Consumer>
+            {context => (
+              <WorkoutTab
+                handleFormChange={handleFormChange}
+                handleSubmit={handleSubmit}
+                addNewItem={addNewItem}
+                addArrayItem={context.addArrayItem}
+                hello={context.test}
+              />
+            )}
+          </FormContext.Consumer>
+        )
       }
 
     }
@@ -101,26 +115,17 @@ function SectionContent(props) {
           >
             Create
           </li>
+          <li
+            className={activeTab === "workout" ? "active" : null}
+            id="workout"
+            onClick={setActiveTab}
+          >
+            Workouts
+          </li>
         </ul>
         <div className="overview-main-container">
           <div className="overview-content-container">
             {currentTab()}
-             {/* {activeTab === "overview" ? (
-              <OverviewTab
-                info={info}
-                title={title}
-                src={src}
-                muscleFunction={muscleFunction}
-              />
-            ) : (
-              <ExercisesTab
-                activeCategory={activeCategory}
-                dataCategory={dataCategory}
-                showModal={showModal}
-                isModalActive={isModalActive}
-                setExerciseTitle={setExerciseTitle}
-              />
-            )} */}
           </div>
         </div>
       </div>

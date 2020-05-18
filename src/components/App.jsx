@@ -19,8 +19,7 @@ import MuscleGroups from "../pages/MuscleGroups";
 import Workouts from "../pages/Workouts";
 
 import FormProvider from './FormProvider';
-
-
+import FormContext from './FormContext';
 
 
 
@@ -31,11 +30,16 @@ import '../sass/main.scss';
 
 import data from "../data/category_to_exercise";
 
+
 // console.log('DATA', data);
 // console.log(Object.keys(data).sort());
 
- 
+
+
+
 class App extends React.Component {
+  static contextType = FormContext;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -44,114 +48,98 @@ class App extends React.Component {
       activeCategory: null,
       dataCategory: null,
       activeTab: "overview",
-      // isModalActive: false,
       exerciseTitle: null,
-
     };
 
     console.log("DATA", data);
     console.log("exerciseTitle", this.state.exerciseTitle);
-    console.log('THIS IS THE DATA CATEGORY', this.state.activeCategory);
+    console.log("THIS IS THE DATA CATEGORY", this.state.activeCategory);
+
     // console.log('------ACTIVE CATEGORY--------', data[this.state.activeCategory])
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
-    this.showModal = this.showModal.bind(this);
     this.addNewItem = this.addNewItem.bind(this);
     // this.handleFormChange = this.handleFormChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
     // this.setExerciseTitle = this.setExerciseTitle.bind(this);
   }
 
-  componentDidMount() {}
-
+  componentDidMount() {
+    console.log("===================", this.context);
+  }
 
   addNewItem(newItem) {
     console.log("THIS IS THE NEWITEM", newItem);
-  } 
+  }
 
-  
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   });
+  sendDataCategory = () => {
+    this.context.addDataCategory(this.state.dataCategory);
+  };
 
-  // }
-
-  setActiveMuscleCategory = category => {
+  setActiveMuscleCategory = (category) => {
     console.log("would set", category);
     this.setState({
       activeCategory: category,
-      dataCategory: category.name
-    });
+      dataCategory: category.name,
+    }, () => this.sendDataCategory())
   };
 
   handleCategoryClick() {
     this.setState({
-      activeTab: "overview"
+      activeTab: "overview",
     });
   }
 
-  setActiveTab = e => {
+  setActiveTab = (e) => {
     this.setState({ activeTab: e.target.id }, () => {
       console.log(this.state.activeTab);
     });
   };
-
-  showModal() {
-    this.setState(prevState => {
-      return {
-        isModalActive: !prevState.isModalActive
-      };
-    });
-  }
 
   render() {
     if (this.state.isLoading) {
       return "app is loading...";
     }
 
-    
-
     // console.log("THIS IS THE INPUT EQUIPMENT", this.state.inputEquipment.length);
     console.log("dataCategory", this.state.dataCategory);
-    console.log("dataCategory Name", data[this.state.dataCategory]);
-    console.log("Exercise Title =======", this.state.exerciseTitle);
+    // console.log("dataCategory Name", data[this.state.dataCategory]);
+    // console.log("Exercise Title =======", this.state.exerciseTitle);
 
     return (
-      <FormProvider>
-        <div className="master-div">
-          {/* <Navbar /> */}
-          <Title />
-          {/* {this.state.exerciseOverlay ? (
-            <Modal />
-          ) : ( */}
-          <div>
-            <MuscleMap
-              setActiveMuscleCategory={this.setActiveMuscleCategory}
-              handleCategoryClick={this.handleCategoryClick}
-              getDataCategory={this.getDataCategory}
-            />
-            <MuscleCategory
-              activeCategory={this.state.activeCategory}
-              handleCategoryClick={this.handleCategoryClick}
-              setActiveTab={this.setActiveTab}
-              activeTab={this.state.activeTab}
-              active={this.state.active}
-              dataCategory={this.state.dataCategory}
-              showModal={this.showModal}
-              isModalActive={this.state.isModalActive}
-              setExerciseTitle={this.setExerciseTitle}
-              // handleFormChange={this.handleFormChange}
-              // handleSubmit={this.handleSubmit}
-              // formSubData={formSubData}
-              addNewItem={this.addNewItem}
-            />
-          </div>
-          ){/* } */}
-          {/* <Landing /> */}
-          {/* <Switch>
+      <div className="master-div">
+        {/* <Navbar /> */}
+        <Title />
+        <div>
+          <FormContext.Consumer>
+            {(context) => (
+              <MuscleMap
+                setActiveMuscleCategory={this.setActiveMuscleCategory}
+                handleCategoryClick={this.handleCategoryClick}
+                dataCategory={this.state.dataCategory}
+                addDataCategory={context.addDataCategory}
+                sendDataCategory={this.sendDataCategory}
+              />
+            )}
+          </FormContext.Consumer>
+          <MuscleCategory
+            activeCategory={this.state.activeCategory}
+            handleCategoryClick={this.handleCategoryClick}
+            setActiveTab={this.setActiveTab}
+            activeTab={this.state.activeTab}
+            active={this.state.active}
+            dataCategory={this.state.dataCategory}
+            setExerciseTitle={this.setExerciseTitle}
+            // handleFormChange={this.handleFormChange}
+            // handleSubmit={this.handleSubmit}
+            // formSubData={formSubData}
+            addNewItem={this.addNewItem}
+          />
+        </div>
+        ){/* } */}
+        {/* <Landing /> */}
+        {/* <Switch>
             <div>
               <Route exact path="/" component={Home} />
               <Route exact path="/community" component={Community} />
@@ -160,12 +148,13 @@ class App extends React.Component {
               <Route exact path="/workouts" component={Workouts} />
             </div>
           </Switch> */}
-          {/* <Facebook /> */}
-        </div>
-      </FormProvider>
+        {/* <Facebook /> */}
+      </div>
     );
   }
 }
 
+
 export default App;
+
 
