@@ -79,6 +79,7 @@ function SectionContent(props) {
                 addNewItem={addNewItem}
                 addArrayItem={context.addArrayItem}
                 hello={context.test}
+                workout={context.workout}
               />
             )}
           </FormContext.Consumer>

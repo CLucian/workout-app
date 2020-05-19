@@ -51,14 +51,12 @@ class WorkoutTab extends React.Component {
           </div>
         </div>
         <div>
-          <FormContext.Consumer>
-			{context => (
-				<Workout 
-					workout={context.workout}
-				/>
+			{this.props.workout.map(workout => {
+				return(
+					<Workout name={workout.workoutName} desc={workout.workoutDesc} />
 				)
-			}
-          </FormContext.Consumer>
+			})}
+			
         </div>
         <Modal
           isVisible={this.state.selectedWorkout}

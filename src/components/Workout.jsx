@@ -1,35 +1,45 @@
 import React from 'react';
 import FormContext from './FormContext';
+import WorkoutExercises from './WorkoutExercises';
 
 
+class Workout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      exerciseDisplay: 'false'
+    }
+  }
+  
+  render() {
+    console.log(
+      "AAAAAAAAAJHDFJHDJFHDJHFDJHFJSHDFKHSDFSDF",
+      this.props.workoutName
+    );
 
-
-function Workout(props) {
-	
-
-	console.log('AAAAAAAAAJHDFJHDJFHDJHFDJHFJSHDFKHSDFSDF', props.workoutName)
-
-
-	return (
-    <>
-      <div className="outer-container">
-        <div className="inner-container">
-          <div className="workout-info">
-            <div className="workoutTitle">
-              <h1 className="workout-title"> WORKOUT TITLE</h1>
-              {props.workout.map(workout => {
-				return  (
-				  <div>
-					<h1>{workout.workoutName}</h1>
-					<h1>{workout.workoutDesc}</h1>
-				</div>)
-			  })}
+    return (
+      <>
+        <div className="outer-container">
+          <div className="inner-container">
+            <div className="create-workout-info">
+              <div className="workoutTitle">
+                <h1 className="create-workout-title">
+                  {this.props.name}
+                </h1>
+              </div>
+              <div className="workoutDescription">{this.props.desc}</div>
+              <button type="button">Display Exercises</button>
+              {
+                this.state.exerciseDisplay ? 
+                <WorkoutExercises /> :
+                null
+              }
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 
