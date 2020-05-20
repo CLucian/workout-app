@@ -2,10 +2,33 @@ import React from 'react';
 
 import ExerciseImage from "./ExerciseImage";
 import Modal from "./Modal";
+import ExerciseModal from './ExerciseModal';
+import FormProvider from './FormProvider';
+import FormContext from './FormContext';
 
-function ExerciseList(props) {
 
 
+class ExerciseList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedExercise: null,
+    };
+  }
+
+  openModal = () => {
+    this.setState({
+      selectedExercise: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      selectedExercise: false,
+    });
+  };
+
+  render() {
     const {
       selectExercise,
       exerciseTitle,
@@ -19,10 +42,8 @@ function ExerciseList(props) {
       exercise,
       // index,
       handleDeleteExercise,
-      sendFinalArray
       // handleDeleteEx
-    } = props;
-
+    } = this.props;
 
     return (
       <>
@@ -90,21 +111,45 @@ function ExerciseList(props) {
                 <div className="exercise-info">
                   <h1 className="steps-list-title">Steps</h1>
                   <ol className="steps-list">
-                    {steps.map(step => {
+                    {steps.map((step) => {
                       // console.log(step);
 
                       return <li className="step-list-item">{step}</li>;
                     })}
                   </ol>
-                  { userCreated && <button className="deleteButton" onClick={() => handleDeleteExercise(exercise.id)}>Delete</button> }
+                  <button
+                    type="button"
+                    className="deleteButton"
+                    onClick={this.openModal}
+                  >
+                    Add to Workout
+                  </button>
+                  {userCreated && (
+                    <button
+                      className="deleteButton"
+                      onClick={() => handleDeleteExercise(exercise.id)}
+                    >
+                      Delete
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <Modal
+          isVisible={this.state.selectedExercise}
+          closeModal={this.closeModal}
+        >
+          <FormContext.Consumer>
+            {context => 
+              <ExerciseModal workoutList={context.workout} />
+            }
+          </FormContext.Consumer>
+        </Modal>
       </>
     );
-
+  }
 }
 
 

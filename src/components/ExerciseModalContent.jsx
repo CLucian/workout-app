@@ -16,6 +16,7 @@ class ExerciseModalContent extends React.Component {
     this.state = {
       workoutName: "",
       workoutDesc: "",
+      workoutId: Math.random()
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -25,7 +26,8 @@ class ExerciseModalContent extends React.Component {
   sendWorkoutObj = () => {
     const workoutObj = {
       workoutName: this.state.workoutName,
-      workoutDesc: this.state.workoutDesc
+      workoutDesc: this.state.workoutDesc,
+      workoutId: this.state.workoutId
     };
     this.context.addNewWorkout(workoutObj)
   }
@@ -35,6 +37,7 @@ class ExerciseModalContent extends React.Component {
     e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
+      workoutId: Math.random()
     }, () => {
       this.sendWorkoutObj();
     });

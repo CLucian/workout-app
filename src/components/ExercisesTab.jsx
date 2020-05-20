@@ -2,9 +2,7 @@ import React from 'react';
 
 import data from "../data/category_to_exercise";
 import ExerciseList from './ExerciseList';
-import Modal from './Modal';
 
-import ExerciseModalContent from './ExerciseModalContent';
 
 
 
@@ -40,7 +38,6 @@ class ExercisesTab extends React.Component {
 	sendFinalArray () {
 		const completeArray = this.state.exerciseArray;
 		this.props.addCompleteArray(completeArray);
-
 	}
 
 
@@ -90,7 +87,7 @@ class ExercisesTab extends React.Component {
 				index={index}
 				userCreated={exercise.userCreated}
 				handleDeleteExercise={this.handleDeleteExercise}
-				sendFinalArray={this.sendFinalArray}
+				// sendFinalArray={this.sendFinalArray}
               />
             ) : null}
           </div>
