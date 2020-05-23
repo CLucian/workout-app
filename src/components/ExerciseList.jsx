@@ -143,7 +143,7 @@ class ExerciseList extends React.Component {
         >
           <FormContext.Consumer>
             {context => 
-              <ExerciseModal workoutList={context.workout} />
+              <ExerciseModal workoutList={context.workout} closeModal={this.closeModal} />
             }
           </FormContext.Consumer>
         </Modal>

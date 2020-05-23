@@ -5,38 +5,48 @@ class ExerciseModal extends React.Component {
 		super(props);
 		this.state = {
 			buttonOn: false,
+			buttonId: null,
+			buttonIndex: null
 		}
 	}
 
 
-
-	// USE ID HERE TO MAKE SURE YOURE ONLY TARGETTING THE SPECIFC WORKOUT
-	toggleMoreInfo = () => {
-		this.setState(prevState => 	({
-			buttonOn: !prevState.buttonOn 
-		})
-		)
-	}
+	toggleOn = (index) => {
+		this.setState((prevState) => ({
+			buttonIndex: index,
+			buttonOn: !prevState.buttonOn
+		}))
+	} 
 
 
 	render() {
+		console.log('(((((((((((((((((((((((((((((((', this.props.workoutList.id)
+		console.log("(((((((((((((((((((((((((((((((", this.props.workoutList);
+		console.log(')))))))))))))))))))', this.props.workoutList.map((workout, index) => workout[index]))
+		console.log('Button State', this.state.buttonOn)
+		
 		return (
       <div>
         <h1 className="modal-title">
           Add to Workout
         </h1>
-			{this.props.workoutList.map(workout => {
+			{this.props.workoutList.map((workout, index) => {
 				return (
           <div className="currentWorkouts">
             <div className="exercise-modal-workout-title">
-            	{workout.workoutName}
+              {workout.workoutName}
             </div>
-			<button type="button" onClick={()=>this.toggleMoreInfo()}>+</button>
-			{this.state.buttonOn ? 
-				<div>
-					{workout.workoutDesc}
-				</div>	
-			: null
+            <button
+              key={workout.id}
+              type="button"
+              onClick={() => this.toggleOn(index)}
+            >
+              +
+            </button>
+			{
+			 this.state.buttonOn && (index === this.state.buttonIndex) ?
+				<div>workout.workoutDesc</div>
+				 : null
 			}
           </div>
         );
