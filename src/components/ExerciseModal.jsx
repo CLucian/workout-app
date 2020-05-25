@@ -12,10 +12,20 @@ class ExerciseModal extends React.Component {
 
 
 	toggleOn = (index) => {
-		this.setState((prevState) => ({
+		if ( index !== this.state.buttonIndex ) {
+			this.setState({
+				buttonIndex: index,
+				buttonOn: true
+			})
+		}
+		else {
+			this.setState((prevState) => ({
 			buttonIndex: index,
-			buttonOn: !prevState.buttonOn
-		}))
+			buttonOn: !prevState.buttonOn,
+     	 }));
+		}
+
+		
 	} 
 
 
@@ -45,7 +55,7 @@ class ExerciseModal extends React.Component {
             </button>
 			{
 			 this.state.buttonOn && (index === this.state.buttonIndex) ?
-				<div>workout.workoutDesc</div>
+				<div>{workout.workoutDesc}</div>
 				 : null
 			}
           </div>
