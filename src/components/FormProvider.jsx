@@ -15,6 +15,7 @@ class FormProvider extends React.Component {
 		completeArray: [],
 		dataCategory: null,
 		workout: [],
+		workoutExercises: [],
 
 
 		addDataCategory: (dataCategory) => {
@@ -39,13 +40,20 @@ class FormProvider extends React.Component {
 			this.setState({
 				workout: [...this.state.workout, newWorkout]
 			})
+		},
+		addExerciseToWorkout: (newWorkoutExercise) => {
+			this.setState({
+				workoutExercises: [...this.state.workoutExercises, newWorkoutExercise]
+			})
 		}
 
 		}  
 		this.handleDeleteEx = this.handleDeleteEx.bind(this);
 	}
 	
-
+	doSomething = () => {
+	 	this.state.workout.map()
+	 }
 
 
 	handleExerciseReset() {
@@ -66,10 +74,11 @@ class FormProvider extends React.Component {
 			handleDeleteEx: this.handleDeleteEx
 		}
 
+		console.log('++++++++++++++++++++++++++', this.state.workoutExercises)
 		console.log('THIS IS THE NEW ARRAY ITEM', this.state.items)
-		console.log('===========This is the absolute completeArray============', this.state.completeArray)
-		console.log('++++++++++++++++++++++++++++++++++++++++++', this.state.dataCategory)
-		console.log('******************************', this.state.workout.map(obj => obj))
+		// console.log('===========This is the absolute completeArray============', this.state.completeArray)
+		// console.log('++++++++++++++++++++++++++++++++++++++++++', this.state.dataCategory)
+		// console.log('******************************', this.state.workout.map(obj => obj))
 
 		return (
 			<FormContext.Provider value={value}>

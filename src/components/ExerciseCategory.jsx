@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import ExerciseList from './ExerciseList';
+import Exercise from './Exercise';
 
 
 
@@ -48,7 +48,7 @@ class ExerciseCategory extends React.Component {
               ))}
           </ul>
           {this.state.category && (
-            <ExerciseList category={this.props.data[this.state.category]} />
+            <Exercise category={this.props.data[this.state.category]} />
           )}
         </div>
       </div>

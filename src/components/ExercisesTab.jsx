@@ -1,7 +1,7 @@
 import React from 'react';
 
 import data from "../data/category_to_exercise";
-import ExerciseList from './ExerciseList';
+import Exercise from './Exercise';
 
 
 
@@ -74,7 +74,8 @@ class ExercisesTab extends React.Component {
 				return (
           <div>
             {this.props.dataCategory === exercise.primary ? (
-              <ExerciseList
+              <Exercise
+				exercise={exercise}
                 selectExercise={this.selectExercise}
                 exerciseTitle={exercise.title}
                 exerciseImage1={exerciseImage1}

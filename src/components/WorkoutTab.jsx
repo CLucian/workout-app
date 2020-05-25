@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import Modal from './Modal';
-import ExerciseModalContent from './ExerciseModalContent';
+import WorkoutModal from './WorkoutModal';
 import Workout from './Workout';
 
 import FormContext from './FormContext';
@@ -62,7 +62,7 @@ class WorkoutTab extends React.Component {
           isVisible={this.state.selectedWorkout}
           closeModal={this.closeModal}
         >
-          <ExerciseModalContent
+          <WorkoutModal
             data={this.state.modalData}
             closeModal={this.closeModal}
           />

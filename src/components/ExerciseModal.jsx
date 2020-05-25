@@ -6,27 +6,37 @@ class ExerciseModal extends React.Component {
 		this.state = {
 			buttonOn: false,
 			buttonId: null,
-			buttonIndex: null
+			buttonIndex: null,
+			addedExercises: []
 		}
 	}
 
 
-	toggleOn = (index) => {
+	toggleOn = (workout, index) => {
 		if ( index !== this.state.buttonIndex ) {
 			this.setState({
 				buttonIndex: index,
+				addedExercises: [...this.state.addedExercises, this.props.exerciseTitle],
 				buttonOn: true
-			})
+			}, () => this.sendExercise()
+			)
 		}
 		else {
 			this.setState((prevState) => ({
-			buttonIndex: index,
-			buttonOn: !prevState.buttonOn,
-     	 }));
+				buttonIndex: index,
+				addedExercises: [...this.state.addedExercises, this.props.exerciseTitle],
+				buttonOn: !prevState.buttonOn,
+		  }), () => this.sendExercise())
 		}
-
-		
+		alert('Added to ' + workout)
 	} 
+
+	sendExercise = () => {
+		const addedExercise = {
+			exerciseName: this.state.addedExercises
+		}
+		this.props.addExerciseToWorkout(addedExercise);
+	}
 
 
 	render() {
@@ -49,7 +59,7 @@ class ExerciseModal extends React.Component {
             <button
               key={workout.id}
               type="button"
-              onClick={() => this.toggleOn(index)}
+              onClick={() => this.toggleOn(workout.workoutName, index)}
             >
               +
             </button>
@@ -69,8 +79,9 @@ class ExerciseModal extends React.Component {
           >
             CLOSE
           </button>
-          {this.state.workoutName}
-          {this.state.workoutDesc}
+          {/* {this.state.workoutName}
+          {this.state.workoutDesc} */}
+		  {this.state.addedExercises}
         </div>
       </div>
     );

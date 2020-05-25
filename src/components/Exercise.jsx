@@ -8,7 +8,7 @@ import FormContext from './FormContext';
 
 
 
-class ExerciseList extends React.Component {
+class Exercise extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -143,7 +143,12 @@ class ExerciseList extends React.Component {
         >
           <FormContext.Consumer>
             {context => 
-              <ExerciseModal workoutList={context.workout} closeModal={this.closeModal} />
+              <ExerciseModal workoutList={context.workout}
+                addExerciseToWorkout={context.addExerciseToWorkout}
+               closeModal={this.closeModal}
+               exercise={exercise}
+                exerciseTitle={exerciseTitle}
+                 />
             }
           </FormContext.Consumer>
         </Modal>
@@ -154,4 +159,4 @@ class ExerciseList extends React.Component {
 
 
 
-export default ExerciseList;
+export default Exercise;

@@ -8,7 +8,7 @@ import FormContext from './FormContext';
              // }
 
 
-class ExerciseModalContent extends React.Component {
+class WorkoutModal extends React.Component {
   static contextType = FormContext;
 
   constructor(props) {
@@ -27,6 +27,7 @@ class ExerciseModalContent extends React.Component {
     const workoutObj = {
       workoutName: this.state.workoutName,
       workoutDesc: this.state.workoutDesc,
+      workoutExercises: [],
       workoutId: this.state.workoutId
     };
     this.context.addNewWorkout(workoutObj)
@@ -98,4 +99,4 @@ class ExerciseModalContent extends React.Component {
   }
 }
 
-export default ExerciseModalContent;
+export default WorkoutModal;
