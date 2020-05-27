@@ -7,15 +7,24 @@ class Workout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      exerciseDisplay: 'false'
+      exerciseDisplay: false
     }
   }
+
+
+  handleClick = () => {
+    this.setState(prevState => ({
+      exerciseDisplay: !prevState.exerciseDisplay
+    }))
+  }
+
   
   render() {
-    console.log(
-      "AAAAAAAAAJHDFJHDJFHDJHFDJHFJSHDFKHSDFSDF",
-      this.props.workoutName
-    );
+    console.log('===EXERCISE DISPLAY===', this.state.exerciseDisplay)
+    console.log('Is props.workout being passed properly?', this.props.workout)
+    this.props.workout && console.log('00000000000000000', this.props.workout.map(workout => {
+      return workout.workoutExercises.exerciseName
+    }))
 
     return (
       <>
@@ -28,10 +37,27 @@ class Workout extends React.Component {
                 </h1>
               </div>
               <div className="workoutDescription">{this.props.desc}</div>
-              <button type="button">Display Exercises</button>
+              <button type="button" onClick={() => this.handleClick()}>Display Exercises</button>
               {
-                this.state.exerciseDisplay ? 
-                <WorkoutExercises /> :
+                this.state.exerciseDisplay && this.props.workout ? 
+              <div>
+                {this.props.workout.map(workout => {
+                  return (
+                    <div>
+                      <h1>
+                        {workout.workoutExercises.map((exercise) => (
+                          <div>
+                            <div>{exercise.exerciseName}</div>
+                            <div>{exercise.exerciseId}</div>
+                          </div>
+                        ))}
+                      </h1>
+                    </div>
+                  );
+                })}
+              </div>
+                // <WorkoutExercises />
+                 :
                 null
               }
             </div>

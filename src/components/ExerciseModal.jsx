@@ -5,7 +5,7 @@ class ExerciseModal extends React.Component {
 		super(props);
 		this.state = {
 			buttonOn: false,
-			buttonId: null,
+			exerciseId: null,
 			buttonIndex: null,
 			addedExercises: []
 		}
@@ -17,23 +17,27 @@ class ExerciseModal extends React.Component {
 			this.setState({
 				buttonIndex: index,
 				addedExercises: [...this.state.addedExercises, this.props.exerciseTitle],
-				buttonOn: true
-			}, () => this.sendExercise()
-			)
+				buttonOn: true,
+				exerciseId: workout.workoutId
+			}, () => {this.sendExercise(); })
 		}
 		else {
 			this.setState((prevState) => ({
 				buttonIndex: index,
 				addedExercises: [...this.state.addedExercises, this.props.exerciseTitle],
 				buttonOn: !prevState.buttonOn,
-		  }), () => this.sendExercise())
+				exerciseId: workout.workoutId
+		  }), () => {this.sendExercise(); })
 		}
-		alert('Added to ' + workout)
+		// this.props.updateWorkoutExercises();
+		
+		// alert('Added to ' + workout.workoutName);
 	} 
 
 	sendExercise = () => {
 		const addedExercise = {
-			exerciseName: this.state.addedExercises
+			exerciseName: this.state.addedExercises,
+			exerciseId: this.state.exerciseId
 		}
 		this.props.addExerciseToWorkout(addedExercise);
 	}
@@ -59,13 +63,13 @@ class ExerciseModal extends React.Component {
             <button
               key={workout.id}
               type="button"
-              onClick={() => this.toggleOn(workout.workoutName, index)}
+              onClick={() => this.toggleOn(workout, index)}
             >
               +
             </button>
 			{
 			 this.state.buttonOn && (index === this.state.buttonIndex) ?
-				<div>{workout.workoutDesc}</div>
+			(<div>{this.props.exerciseTitle}</div>)
 				 : null
 			}
           </div>

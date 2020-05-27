@@ -10,50 +10,59 @@ class FormProvider extends React.Component {
 
 
 	this.state = {
-		items: [],
-		test: 'Test state',
-		completeArray: [],
-		dataCategory: null,
-		workout: [],
-		workoutExercises: [],
+    items: [],
+    test: "Test state",
+    completeArray: [],
+    dataCategory: null,
+    workout: [],
+    workoutExercises: [],
 
+    addDataCategory: (dataCategory) => {
+      this.setState({
+        dataCategory,
+      });
+    },
 
-		addDataCategory: (dataCategory) => {
-			this.setState({
-				dataCategory
-			})
-		},
+    addArrayItem: (newItem) => {
+      this.setState({
+        items: [...this.state.items, newItem],
+      });
+    },
+    addCompleteArray: (completeArray) => {
+      this.setState({
+        completeArray,
+      });
+    },
+    addNewWorkout: (newWorkout) => {
+      this.setState({
+        workout: [...this.state.workout, newWorkout],
+      });
+    },
+    addExerciseToWorkout: (newWorkoutExercise) => {
+      this.setState({
+        workoutExercises: [...this.state.workoutExercises, newWorkoutExercise],
+      }, () => this.updateWorkoutExercises(newWorkoutExercise));
+    },
 
-		
-
-		addArrayItem: (newItem) => {
-			this.setState({
-				items: [...this.state.items, newItem]
-			})
-		},
-		addCompleteArray: (completeArray) => {
-			this.setState({
-				completeArray
-			})
-		},
-		addNewWorkout: (newWorkout) => {
-			this.setState({
-				workout: [...this.state.workout, newWorkout]
-			})
-		},
-		addExerciseToWorkout: (newWorkoutExercise) => {
-			this.setState({
-				workoutExercises: [...this.state.workoutExercises, newWorkoutExercise]
-			})
-		}
-
-		}  
+  };  
 		this.handleDeleteEx = this.handleDeleteEx.bind(this);
 	}
 	
-	doSomething = () => {
-	 	this.state.workout.map()
-	 }
+
+	updateWorkoutExercises = (newWorkoutExercise) => {
+		const newWorkout = this.state.workout.map(workout => {
+			return { 	
+					...workout,
+					workoutExercises: [...workout.workoutExercises, ...[newWorkoutExercise].filter(exercise => {
+						return exercise.exerciseId === workout.workoutId
+					})]
+				}
+			},
+		)
+		this.setState({
+			workout: newWorkout
+		})
+	};
 
 
 	handleExerciseReset() {
@@ -71,11 +80,13 @@ class FormProvider extends React.Component {
 
 		const value = {
 			...this.state,
-			handleDeleteEx: this.handleDeleteEx
+			handleDeleteEx: this.handleDeleteEx,
+			updateWorkoutExercises: this.updateWorkoutExercises
 		}
 
 		console.log('++++++++++++++++++++++++++', this.state.workoutExercises)
 		console.log('THIS IS THE NEW ARRAY ITEM', this.state.items)
+		console.log('+++++++This is the new workout Array++++', this.state.workout)
 		// console.log('===========This is the absolute completeArray============', this.state.completeArray)
 		// console.log('++++++++++++++++++++++++++++++++++++++++++', this.state.dataCategory)
 		// console.log('******************************', this.state.workout.map(obj => obj))

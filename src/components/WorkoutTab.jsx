@@ -52,9 +52,16 @@ class WorkoutTab extends React.Component {
         </div>
         <div>
 			{this.props.workout.map(workout => {
-				return(
-					<Workout name={workout.workoutName} desc={workout.workoutDesc} />
-				)
+				return (
+          <FormContext.Consumer> 
+			{context => 
+			<Workout name={workout.workoutName}
+			 desc={workout.workoutDesc}
+			 workout={context.workout}
+			/>
+			}
+          </FormContext.Consumer>
+        );
 			})}
 			
         </div>

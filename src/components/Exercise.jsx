@@ -145,6 +145,7 @@ class Exercise extends React.Component {
             {context => 
               <ExerciseModal workoutList={context.workout}
                 addExerciseToWorkout={context.addExerciseToWorkout}
+                updateWorkoutExercises={context.updateWorkoutExercises}
                closeModal={this.closeModal}
                exercise={exercise}
                 exerciseTitle={exerciseTitle}
