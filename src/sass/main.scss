@@ -11,6 +11,17 @@
 @import 'components/exerciseCategory.scss';
 
 
+.generic-button {
+	margin: 4rem;
+	padding: .5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 1.2rem;
+	border-radius: 0.5rem;
+	border: 2px solid #f2b01e;
+}
+
+
 .main-title {
 	font-size: 6rem;
 	padding: 2rem;
@@ -481,6 +492,7 @@
 
 .tab:hover {
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 .tab:active {
@@ -716,6 +728,7 @@
 /// Modal
 ///////////////////////////////
 
+
 .modal-container {
 	display: flex;
 	justify-content: center;
@@ -737,17 +750,20 @@
 	background-color: #333;
 	color: #f2b01e;
 	border-radius: 0.4rem;
-	border: 1px solid black;
+	border: 1px solid #f2b01e;
+	padding: 5rem;
 	width: 30%;
 	height: 30%;
 	z-index: 1;
+	overflow: auto;
 }
 
 .modal-title {
 	// display: flex;
 	// text-align: center;
 	text-align: center;
-	padding-top: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 2rem;
 	// padding-left: 5rem;
 	font-size: 3rem;
 }
@@ -760,25 +776,33 @@
 	width: 100%;
 }
 
+.submit-button {
+	// display: flex;
+	// align-items: center;
+}
+
 .modal-form-container {
-	padding-top: 2rem;
+	// padding-top: 3rem;
+	// display: flex;
+	text-align: center;
+	// justify-content: center;
 	// display: flex;
 	// align-items: center;
 	// justify-content: center;
 }
 
 .modal-form-group {
-	padding-top: 2rem;
+	padding-top: 3rem;
 	padding-left: 3rem;
 	display: flex;
 	align-items: center;
-	// justify-content: center;
+	justify-content: center;
 	width: 80%;
 	font-size: 2rem;
 }
 
 .modal-input {
-	width: 60%;
+	width: 80%;
 	background: transparent;
 	border: none;
 	border-bottom: 2px solid #f2b01e;
@@ -801,6 +825,11 @@
 	// width: 100%;
 }
 
+.submit-button-div {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
 
 
 
@@ -838,12 +867,6 @@ ol li:before {
 	display: flex;
 	justify-content: center;
 	padding-top: 5rem;
-}
-
-.modal-button {
-	padding: 0.5rem;
-	border: 1px solid black;
-	border-radius: 0.3rem;
 }
 
 
@@ -1060,14 +1083,68 @@ ol li:before {
 
 .currentWorkouts {
 	display: flex;
+	padding-bottom: 1rem;
+}
+
+.workout-items-container {
+	
 }
 
 .exercise-modal-workout-title {
+	display: flex;
+	// justify-content: center;
+	padding-top: 0.6rem;
+	padding-left: 2rem;
+	align-items: center;
+	width: 100%;
 	font-size: 2rem;
+	color: #fff;
+	// padding: 1rem;
+}
+
+.exerciseModal-default {
+	text-align: center;
+	margin-top: 5rem;
+	color: #999
+}
+
+.exercise-add-button {
+	// padding: 0rem 1rem 0rem 1rem;
+	margin-left: 3rem;
+	color: #f2b01e;
+	font-size: 5rem;
+	border: none;
+	// border: 1px solid #f2b01e;
+	border-radius: 0.5rem;
+	background: none;
+}
+
+.exercise-add-button:active {
+	transition: 0.3s;
+	display: none;
+}
+
+.exercise-add-symbol {
+	cursor: pointer;
+	fill: #fff;
+	z-index: 10;
 }
 
 
+// .exercise-add-symbol:hover {
+// 	transition: 0.3s;
+// 	display: none
+// }
 
+
+
+.added-exercise-text {
+	display: flex;
+	font-size: 1.3rem;
+	justify-content: center;
+	align-items: center;
+	color: #999;
+}
 
 ////////////////////////////
 ///// CREATE

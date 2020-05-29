@@ -93,7 +93,7 @@ class ExercisesTab extends React.Component {
             ) : null}
           </div>
         );
-					})}
+					})} 
 			</div>
 		);
 	}

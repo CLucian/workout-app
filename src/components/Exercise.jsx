@@ -119,14 +119,14 @@ class Exercise extends React.Component {
                   </ol>
                   <button
                     type="button"
-                    className="deleteButton"
+                    className="generic-button"
                     onClick={this.openModal}
                   >
                     Add to Workout
                   </button>
                   {userCreated && (
                     <button
-                      className="deleteButton"
+                      className="generic-button"
                       onClick={() => handleDeleteExercise(exercise.id)}
                     >
                       Delete

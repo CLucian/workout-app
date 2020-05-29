@@ -62,7 +62,7 @@ class WorkoutModal extends React.Component {
         <h1 className="modal-title">
           {/*{data.exerciseTitle}*/}Create New Workout
         </h1>
-        <form onSubmit={this.handleSubmit}>
+        <form className="workout-form" onSubmit={this.handleSubmit}>
           <div className="modal-form-container">
             <div className="modal-form-group">
               <input
@@ -85,15 +85,17 @@ class WorkoutModal extends React.Component {
               />
             </div>
           </div>
-          <input type="submit" />
+          <div className="submit-button-div">
+            <input type="submit" className="generic-button" />
+          </div>
         </form>
-        <div className="modal-button-div">
-          <button className="modal-button" type="button" onClick={this.props.closeModal}>
-            CLOSE
+        {/* <div className="modal-button-div">
+          <button className="generic-button" type="button" onClick={this.props.closeModal}>
+            Close
           </button>
           {this.state.workoutName}
           {this.state.workoutDesc}
-        </div>
+        </div> */}
       </div>
     );
   }

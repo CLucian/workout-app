@@ -37,7 +37,7 @@ class Workout extends React.Component {
                 </h1>
               </div>
               <div className="workoutDescription">{this.props.desc}</div>
-              <button type="button" onClick={() => this.handleClick()}>Display Exercises</button>
+              <button type="button" className="generic-button" onClick={() => this.handleClick()}>Display Exercises</button>
               {
                 this.state.exerciseDisplay && this.props.workout ? 
               <div>

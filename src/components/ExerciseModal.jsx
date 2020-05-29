@@ -4,34 +4,29 @@ class ExerciseModal extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			buttonOn: false,
 			exerciseId: null,
 			buttonIndex: null,
-			addedExercises: []
+			addedExercises: [],
+			exerciseIds: [],
+			showAdded: false
 		}
 	}
 
 
 	toggleOn = (workout, index) => {
-		if ( index !== this.state.buttonIndex ) {
+		if ( index !== this.state.buttonIndex &&
+			this.state.exerciseIds.map(exerciseId => (exerciseId)) !== workout.workoutId) {
 			this.setState({
 				buttonIndex: index,
 				addedExercises: [...this.state.addedExercises, this.props.exerciseTitle],
+				exerciseIds: [...this.state.exerciseIds, this.props.exercise.id],
 				buttonOn: true,
 				exerciseId: workout.workoutId
-			}, () => {this.sendExercise(); })
+			}, () => {this.sendExercise(); this.showAddedExercise() })
 		}
 		else {
-			this.setState((prevState) => ({
-				buttonIndex: index,
-				addedExercises: [...this.state.addedExercises, this.props.exerciseTitle],
-				buttonOn: !prevState.buttonOn,
-				exerciseId: workout.workoutId
-		  }), () => {this.sendExercise(); })
+			alert("You've already added this exercise to this workout!")
 		}
-		// this.props.updateWorkoutExercises();
-		
-		// alert('Added to ' + workout.workoutName);
 	} 
 
 	sendExercise = () => {
@@ -42,6 +37,12 @@ class ExerciseModal extends React.Component {
 		this.props.addExerciseToWorkout(addedExercise);
 	}
 
+	showAddedExercise = () => {
+		this.setState({ showAdded: true });
+		setTimeout(() => {
+			this.setState({ showAdded: false})
+		}, 3000)
+	}
 
 	render() {
 		console.log('(((((((((((((((((((((((((((((((', this.props.workoutList.id)
@@ -54,38 +55,49 @@ class ExerciseModal extends React.Component {
         <h1 className="modal-title">
           Add to Workout
         </h1>
-			{this.props.workoutList.map((workout, index) => {
-				return (
-          <div className="currentWorkouts">
-            <div className="exercise-modal-workout-title">
-              {workout.workoutName}
-            </div>
-            <button
-              key={workout.id}
-              type="button"
-              onClick={() => this.toggleOn(workout, index)}
-            >
-              +
-            </button>
-			{
-			 this.state.buttonOn && (index === this.state.buttonIndex) ?
-			(<div>{this.props.exerciseTitle}</div>)
-				 : null
+			{(this.props.workoutList.length === 0) ? 
+
+				<div>
+					<h1 className="exerciseModal-default">There are currently no created workouts</h1>
+				</div>
+				:
+				<div className="workout-items-container">
+					{
+					this.props.workoutList.map((workout, index) => {
+						return (
+              <div className="currentWorkouts">
+                <button
+                  className="exercise-add-button"
+                  key={workout.id}
+                  type="button"
+                  onClick={() => this.toggleOn(workout, index)}
+                >
+                  <span className="exercise-add-symbol">+</span>
+                </button>
+
+                <div className="exercise-modal-workout-title">
+                  {workout.workoutName}
+                </div>
+
+                {index === this.state.buttonIndex && this.state.showAdded ? (
+                  <div className="added-exercise-text">
+                    Added {this.props.exerciseTitle}!
+                  </div>
+                ) : null}
+              </div>
+            );
+					})
+					}
+				</div>
 			}
-          </div>
-        );
-			})}
         <div className="modal-button-div">
           <button
-            className="modal-button"
+            className="generic-button"
             type="button"
             onClick={this.props.closeModal}
           >
-            CLOSE
+            Close
           </button>
-          {/* {this.state.workoutName}
-          {this.state.workoutDesc} */}
-		  {this.state.addedExercises}
         </div>
       </div>
     );

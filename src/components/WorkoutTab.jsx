@@ -43,7 +43,7 @@ class WorkoutTab extends React.Component {
             <div className="workout-info">
               <div className="workoutTitle">
                 <h1 className="workout-title"> + Add Workout</h1>
-                <button type="button" onClick={this.openModal}>
+                <button className="generic-button" type="button" onClick={this.openModal}>
                   Add
                 </button>
               </div>
