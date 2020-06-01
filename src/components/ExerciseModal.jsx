@@ -30,21 +30,36 @@ class ExerciseModal extends React.Component {
 
 	
 	toggleOn = (e, workout, index) => {
-		const targetValue = Number(e.currentTarget.value);
-		if (targetValue === workout.workoutId) {
-		 alert('Workout ' + workout.workoutName + ' was clicked')
-		 console.log('======This is e.currentTarget.value ====', e.target.value)
-		 console.log('======This is workout.workoutId ====', workout.workoutId)
-		// alert(e.currentTarget.value)
-		this.setState({
-			workoutId: workout.workoutId
-		}, ()=> this.sendExercise())
+		const searchedWorkout = (this.props.workoutList.filter(item => item.workoutName === workout.workoutName))
+		const searchedExercise = (searchedWorkout[0].workoutExercises.filter(exercise => exercise === this.props.exercise.id)).toString();
+		const searchedExerciseId = Number(searchedExercise);
+		console.log('/////////////////////////////////////////////////This is searchedWorkout', searchedWorkout)
+		console.log('/////////////////////////////////////////////////This is searchedWorkout', searchedWorkout[0])
+		console.log('//////////////////////////////////////This is searchedExercise', typeof(searchedExercise));
+		if(searchedExerciseId !== this.props.exercise.id) {
+			console.log(searchedWorkout);
+			this.setState({
+				workoutId: workout.workoutId
+			}, ()=> this.sendExercise())
+		}
+
+		// const targetValue = Number(e.currentTarget.value);
+		// if (targetValue === workout.workoutId) {
+		//  alert('Workout ' + workout.workoutName + ' was clicked')
+		//  console.log('======This is e.currentTarget.value ====', e.target.value)
+		//  console.log('======This is workout.workoutId ====', workout.workoutId)
+		// // alert(e.currentTarget.value)
+		// this.setState({
+		// 	workoutId: workout.workoutId
+		// }, ()=> this.sendExercise())
 		
-		}
+		// }
+
+
 		else {
-			alert(e.currentTarget.value)
+			alert("You've already clicked this value")
 		}
-	
+	}
 		
 		// else {
 		// 	alert('Whats going on?!!>!>')
@@ -54,7 +69,7 @@ class ExerciseModal extends React.Component {
 		// 	buttonIndex: workout.index
 		// })
 		// this.sendExercise();
-	}
+	// }
 
 	
 	// toggleOn = (workout, index) => {
@@ -134,6 +149,7 @@ class ExerciseModal extends React.Component {
 	render() {
 
 		// console.log(this.state.workoutIds.find(e => e === workout.workoutId))
+		
 		console.log("blah blah blah", this.props.exercise.title);
 		console.log('blah blah blah', this.state.workoutIds)
 		console.log('Current exercise', this.currentExercise)
