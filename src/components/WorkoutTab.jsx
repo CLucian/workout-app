@@ -57,7 +57,9 @@ class WorkoutTab extends React.Component {
 			{context => 
 			<Workout name={workout.workoutName}
 			 desc={workout.workoutDesc}
-			 workout={context.workout}
+			 workoutList={context.workout}
+			 exerciseArray={workout.exerciseInfo}
+			
 			/>
 			}
           </FormContext.Consumer>

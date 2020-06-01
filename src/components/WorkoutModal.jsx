@@ -16,6 +16,7 @@ class WorkoutModal extends React.Component {
     this.state = {
       workoutName: "",
       workoutDesc: "",
+      exerciseInfo: [],
       workoutId: Math.random()
     };
 
@@ -86,7 +87,7 @@ class WorkoutModal extends React.Component {
             </div>
           </div>
           <div className="submit-button-div">
-            <input type="submit" className="generic-button" />
+            <input type="submit" className="generic-button submit-button" />
           </div>
         </form>
         {/* <div className="modal-button-div">

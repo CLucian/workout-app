@@ -21,8 +21,8 @@ class Workout extends React.Component {
   
   render() {
     console.log('===EXERCISE DISPLAY===', this.state.exerciseDisplay)
-    console.log('Is props.workout being passed properly?', this.props.workout)
-    this.props.workout && console.log('00000000000000000', this.props.workout.map(workout => {
+    console.log('Is props.workout being passed properly?', this.props.workoutList)
+    this.props.workout && console.log('00000000000000000', this.props.workoutList.map(workout => {
       return workout.workoutExercises.exerciseName
     }))
 
@@ -32,34 +32,22 @@ class Workout extends React.Component {
           <div className="inner-container">
             <div className="create-workout-info">
               <div className="workoutTitle">
-                <h1 className="create-workout-title">
-                  {this.props.name}
-                </h1>
+                <h1 className="create-workout-title">{this.props.name}</h1>
               </div>
               <div className="workoutDescription">{this.props.desc}</div>
-              <button type="button" className="generic-button" onClick={() => this.handleClick()}>Display Exercises</button>
-              {
-                this.state.exerciseDisplay && this.props.workout ? 
-              <div>
-                {this.props.workout.map(workout => {
-                  return (
-                    <div>
-                      <h1>
-                        {workout.workoutExercises.map((exercise) => (
-                          <div>
-                            <div>{exercise.exerciseName}</div>
-                            <div>{exercise.exerciseId}</div>
-                          </div>
-                        ))}
-                      </h1>
-                    </div>
-                  );
-                })}
-              </div>
-                // <WorkoutExercises />
-                 :
-                null
-              }
+              <button
+                type="button"
+                className="generic-button"
+                onClick={() => this.handleClick()}
+              >
+                Display Exercises
+              </button>
+              {this.state.exerciseDisplay ? this.props.exerciseArray && this.props.exerciseArray.map(exercise => 
+                <div>
+                  {exercise.exerciseName}
+                </div>  
+              ) : null}
+
             </div>
           </div>
         </div>

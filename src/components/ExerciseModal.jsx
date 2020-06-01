@@ -125,6 +125,9 @@ class ExerciseModal extends React.Component {
 			exerciseId: this.props.exercise.id
 			// workoutIds: this.state.workoutIds
 		}
+		const exerciseInfo = {
+			exerciseName: this.props.exercise.title
+		}		
 		// const currentWorkoutId = {
 		// 	currentWorkoutId: this.state.workoutId
 		// }
@@ -134,7 +137,7 @@ class ExerciseModal extends React.Component {
 		// };
 		// this.props.addExerciseWorkoutArray(exerciseWorkArray);
 		// this.props.addExercise
-		this.props.addExerciseToWorkout(addedExercise);
+		this.props.addExerciseToWorkout(addedExercise, exerciseInfo);
 		// this.props.addCurrentWorkoutId(currentWorkoutId);
 		
 	}
