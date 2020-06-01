@@ -84,7 +84,6 @@ class ExercisesTab extends React.Component {
                 exerciseType={exercise.type}
                 exerciseEquipment={exercise.equipment}
 				steps={exercise.steps}
-				exercise={exercise}
 				index={index}
 				userCreated={exercise.userCreated}
 				handleDeleteExercise={this.handleDeleteExercise}

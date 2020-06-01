@@ -1119,9 +1119,9 @@ ol li:before {
 	background: none;
 }
 
-.exercise-add-button:active {
-	transition: 0.3s;
-	display: none;
+.exercise-add-button:focus {
+	border: none;
+	outline: none;
 }
 
 .exercise-add-symbol {

@@ -142,15 +142,19 @@ class Exercise extends React.Component {
           closeModal={this.closeModal}
         >
           <FormContext.Consumer>
-            {context => 
-              <ExerciseModal workoutList={context.workout}
+            {(context) => (
+              <ExerciseModal
+                workoutList={context.workout}
+                exerciseWorkoutArray={context.exerciseWorkoutArray}
+                addCurrentWorkoutId={context.addCurrentWorkoutId}
                 addExerciseToWorkout={context.addExerciseToWorkout}
+                addExerciseWorkoutArray={context.addExerciseWorkoutArray}
                 updateWorkoutExercises={context.updateWorkoutExercises}
-               closeModal={this.closeModal}
-               exercise={exercise}
+                closeModal={this.closeModal}
+                exercise={exercise}
                 exerciseTitle={exerciseTitle}
-                 />
-            }
+              />
+            )}
           </FormContext.Consumer>
         </Modal>
       </>
