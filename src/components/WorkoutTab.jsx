@@ -58,7 +58,7 @@ class WorkoutTab extends React.Component {
 			<Workout name={workout.workoutName}
 			 desc={workout.workoutDesc}
 			 workoutList={context.workout}
-			 exerciseArray={workout.exerciseInfo}
+			 exerciseNames={workout.exerciseNames}
 			
 			/>
 			}

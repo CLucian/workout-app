@@ -42,9 +42,9 @@ class Workout extends React.Component {
               >
                 Display Exercises
               </button>
-              {this.state.exerciseDisplay ? this.props.exerciseArray && this.props.exerciseArray.map(exercise => 
+              {this.state.exerciseDisplay ? this.props.exerciseNames && this.props.exerciseNames.map(exercise => 
                 <div>
-                  {exercise.exerciseName}
+                  {exercise}
                 </div>  
               ) : null}
 

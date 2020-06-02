@@ -18,7 +18,7 @@ class FormProvider extends React.Component {
 		workoutExercises: [],
 		exerciseWorkoutArray: [],
 		currentWorkoutId: null,
-		exerciseInfo: [],
+		exerciseNames: [],
 
 		addDataCategory: (dataCategory) => {
 		this.setState({
@@ -56,7 +56,7 @@ class FormProvider extends React.Component {
 		this.setState({
 			currentWorkoutId: newWorkoutExercise.currentWorkoutId,
 			workoutExercises: [...this.state.workoutExercises, newWorkoutExercise.exerciseId],
-			exerciseInfo: [...this.state.exerciseInfo, exerciseInfo]
+			exerciseNames: [...this.state.exerciseNames, exerciseInfo.exerciseName]
 		}, () => this.updateWorkoutExercises(newWorkoutExercise, exerciseInfo));
 		},
 
@@ -70,7 +70,7 @@ class FormProvider extends React.Component {
 			if(workout.workoutId === this.state.currentWorkoutId) {
 				return { 	
 						...workout,
-						exerciseInfo: [...this.state.exerciseInfo],
+						exerciseNames: [...workout.exerciseNames, exerciseInfo.exerciseName],
 						workoutExercises: [...workout.workoutExercises, newWorkoutExercise.exerciseId]
 					}
 				}

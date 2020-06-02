@@ -29,6 +29,7 @@ class WorkoutModal extends React.Component {
       workoutName: this.state.workoutName,
       workoutDesc: this.state.workoutDesc,
       workoutExercises: [],
+      exerciseNames: [],
       workoutId: this.state.workoutId
     };
     this.context.addNewWorkout(workoutObj)
