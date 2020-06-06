@@ -39,8 +39,9 @@ class ExerciseModal extends React.Component {
 		if(searchedExerciseId !== this.props.exercise.id) {
 			console.log(searchedWorkout);
 			this.setState({
-				workoutId: workout.workoutId
-			}, ()=> this.sendExercise())
+				workoutId: workout.workoutId,
+				buttonIndex: index
+			}, () => {this.sendExercise(); this.showAddedExercise()})
 		}
 
 		// const targetValue = Number(e.currentTarget.value);
@@ -146,7 +147,7 @@ class ExerciseModal extends React.Component {
 		this.setState({ showAdded: true });
 		setTimeout(() => {
 			this.setState({ showAdded: false})
-		}, 3000)
+		}, 2000)
 	}
 
 	render() {
@@ -196,7 +197,7 @@ class ExerciseModal extends React.Component {
                   {workout.workoutName}
                 </div>
 
-                {index === this.state.buttonIndex && this.state.showAdded ? (
+                {this.state.buttonIndex === index && this.state.showAdded ? (
                   <div className="added-exercise-text">
                     Added {this.props.exerciseTitle}!
                   </div>

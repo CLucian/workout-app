@@ -37,13 +37,22 @@ class WorkoutModal extends React.Component {
 
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.setState({
-      [e.target.name]: e.target.value,
-      workoutId: Math.random()
-    }, () => {
-      this.sendWorkoutObj();
-    });
+     e.preventDefault();
+    if(this.context.workout.find(workout => workout.workoutName.toString() === this.state.workoutName)) {
+      alert("You've already submitted a workout with this Name!")
+    }
+
+   else {
+          this.setState(
+            {
+              [e.target.name]: e.target.value,
+              workoutId: Math.random(),
+            },
+            () => {
+              this.sendWorkoutObj();
+            }
+          );
+        }
   }
 
 

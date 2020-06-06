@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import ExerciseModal from './ExerciseModal';
 import FormProvider from './FormProvider';
 import FormContext from './FormContext';
+import ExerciseButton from './ExerciseButton';
 
 
 
@@ -13,6 +14,7 @@ class Exercise extends React.Component {
     super(props);
     this.state = {
       selectedExercise: null,
+      isActive: false
     };
   }
 
@@ -27,6 +29,14 @@ class Exercise extends React.Component {
       selectedExercise: false,
     });
   };
+
+  handleClick = (index) => {
+    this.setState({
+      isActive: !this.state.isActive
+    })
+  }
+
+
 
   render() {
     const {
@@ -45,19 +55,20 @@ class Exercise extends React.Component {
       // handleDeleteEx
     } = this.props;
 
+   
+
+
+
+
     return (
       <>
-        <div class="flip" key={exercise.id}>
-          <div class="front">
-            <div
-              className="exerciseList"
-              // onClick={() => {
-              //   selectExercise({
-              //     exerciseTitle: exerciseTitle
-              //     // steps: steps
-              //   });
-              // }}
-            >
+        <div className='flip red' key={this.props.index}>
+          <div className="front">
+            <div className="exerciseList">
+              <div>
+                {/* <button className="exercise-button" onClick={this.handleClick}>Open</button> */}
+                {/* <ExerciseButton index={this.props.index} flipSide={this.buttonClicked} /> */}
+              </div>
               <div className="exerciseTitle">
                 <h1 className="exercise-title">{exerciseTitle}</h1>
               </div>
@@ -98,8 +109,10 @@ class Exercise extends React.Component {
             </div>
           </div>
 
-          <div class="back">
+          <div className="back">
             <div className="exerciseList">
+              {/* <button>Close</button> */}
+              {/* <ExerciseButton /> */}
               <div className="exerciseTitle">
                 <h1 className="exercise-title">{exerciseTitle}</h1>
               </div>

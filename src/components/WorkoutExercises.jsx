@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
-function WorkoutExercises() {
-	return(
-		<div>
-			
-		</div>
-	)
-}
+// function WorkoutExercises() {
+// 	return(
+// 		<div>
+// 			{props.workout.map()}
+// 		</div>
+// 	)
+// }
 
-export default WorkoutExercises;
+// export default WorkoutExercises;
