@@ -8,12 +8,8 @@ class ExerciseModal extends React.Component {
 		this.state = {
 			exerciseId: null,
 			buttonIndex: null,
-			addedExercises: [],
 			workoutId: null,
-			workoutIds: [],
 			showAdded: false,
-			workoutsAdded: [],
-			click: false,
 			clicked: false
 		}
 
@@ -44,102 +40,24 @@ class ExerciseModal extends React.Component {
 			}, () => {this.sendExercise(); this.showAddedExercise()})
 		}
 
-		// const targetValue = Number(e.currentTarget.value);
-		// if (targetValue === workout.workoutId) {
-		//  alert('Workout ' + workout.workoutName + ' was clicked')
-		//  console.log('======This is e.currentTarget.value ====', e.target.value)
-		//  console.log('======This is workout.workoutId ====', workout.workoutId)
-		// // alert(e.currentTarget.value)
-		// this.setState({
-		// 	workoutId: workout.workoutId
-		// }, ()=> this.sendExercise())
-		
-		// }
-
 
 		else {
 			alert("You've already clicked this value")
 		}
 	}
 		
-		// else {
-		// 	alert('Whats going on?!!>!>')
-		// }
-		// if(workout.index === index)
-		// this.setState({
-		// 	buttonIndex: workout.index
-		// })
-		// this.sendExercise();
-	// }
-
 	
-	// toggleOn = (workout, index) => {
-	// 	const currentExercise = this.props.exerciseWorkoutArray.find(exercise => exercise.exerciseName);
-	// 	// const combinedIds = this.props.exerciseWorkoutArray.map((exercise) => exercise.workouts);
-	// 	const combinedIds = this.props.exerciseWorkoutArray.map(e => e);
-
-	// 	if (this.state.click === false) {
-	// 		this.setState({
-	// 			buttonIndex: index,
-	// 			workoutIds: [...this.state.workoutIds, workout.workoutId],
-	// 			currentId: this.props.exercise.id,
-	// 			buttonOn: true,
-	// 			exerciseId: workout.workoutId,
-	// 			click: true
-	// 		}, () => {this.sendExercise(); this.showAddedExercise() })
-	// 	}
-
-	// 	else if (combinedIds.find(e => (e === workout.workoutId) ? true : false)) {
-	// 		alert("You've already added this exercise to this workout!");
-	// 		this.setState({
-	// 			buttonIndex: index
-	// 		})
-	// 	}
-
-	// 	else {
-    
-    //        this.setState(
-    //          {
-    //            buttonIndex: index,
-    //            workoutIds: [...this.state.workoutIds, workout.workoutId],
-    //            currentId: this.props.exercise.id,
-    //            buttonOn: true,
-    //            exerciseId: workout.workoutId,
-    //          },
-    //          () => {
-    //            this.sendExercise();
-    //            this.showAddedExercise();
-    //          }
-    //        );
-    //      }
-			
-			
-	// 	}
-	// } 
 
 	sendExercise = () => {
 		const addedExercise = {
-			// exerciseName: this.props.exercise.title,
-			// exerciseId: this.state.exerciseId,
-			// workoutId: this.state.workoutId,
 			currentWorkoutId: this.state.workoutId,
 			exerciseId: this.props.exercise.id
-			// workoutIds: this.state.workoutIds
 		}
 		const exerciseInfo = {
 			exerciseName: this.props.exercise.title
 		}		
-		// const currentWorkoutId = {
-		// 	currentWorkoutId: this.state.workoutId
-		// }
-		// const exerciseWorkArray = this.state.workoutIds;
-		// const exerciseWorkoutObj = {
-		// 	exerciseId: this.props.exercise.id,
-		// };
-		// this.props.addExerciseWorkoutArray(exerciseWorkArray);
-		// this.props.addExercise
-		this.props.addExerciseToWorkout(addedExercise, exerciseInfo);
-		// this.props.addCurrentWorkoutId(currentWorkoutId);
+		
+		this.props.addExerciseToWorkout(addedExercise, exerciseInfo);	
 		
 	}
 

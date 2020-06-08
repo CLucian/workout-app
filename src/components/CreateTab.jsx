@@ -132,7 +132,7 @@ class CreateTab extends React.Component {
                 placeholder="E.g. Barbell/Bench etc..."
                 onChange={handleFormChange}
                 value={this.state.inputEquipment}
-                maxLength="20"
+                maxLength="40"
                 required
               />
             </div>
