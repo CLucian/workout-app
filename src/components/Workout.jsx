@@ -1,6 +1,8 @@
 import React from 'react';
 import FormContext from './FormContext';
 import WorkoutExercises from './WorkoutExercises';
+import Modal from './Modal';
+import WorkoutModalLog from './WorkoutModalLog';
 
 
 class Workout extends React.Component {
@@ -16,6 +18,12 @@ class Workout extends React.Component {
     this.setState(prevState => ({
       exerciseDisplay: !prevState.exerciseDisplay
     }))
+  }
+
+  sendExerciseToLogs = (exercise) => {
+    // const loggedExercise = exercise
+
+    this.props.addExerciseToLogs(exercise);
   }
 
   
@@ -42,15 +50,50 @@ class Workout extends React.Component {
               >
                 Display Exercises
               </button>
-              {this.state.exerciseDisplay ? this.props.exerciseNames && this.props.exerciseNames.map(exercise => 
-                <div>
-                  {exercise}
-                </div>  
-              ) : null}
-
+              <div className="workout-exercise-list">
+                <ul>
+                  {this.state.exerciseDisplay
+                    ? this.props.exerciseNames &&
+                      this.props.exerciseNames.map((exercise) => (
+                        <div className="workout-exercise-item">
+                          <li className="workout-exercise-list-item">
+                            {exercise}
+                          </li>
+                          <div className="add-to-logs">
+                            <button type="button" className="dumbbell-button" onClick={() => this.sendExerciseToLogs(exercise)}>
+                              <img
+                                src="exercise-images/misc-images/dumbbell.png"
+                                className="add-to-logs-image"
+                                alt="dumbbells"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      ))
+                    : null}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+        {/* <Modal
+          isVisible={this.state.selectedExercise}
+          closeModal={this.closeModal}
+        >
+          <FormContext.Consumer>
+            {(context) => (
+              <WorkoutModalLog
+                workoutList={context.workout}
+                exerciseWorkoutArray={context.exerciseWorkoutArray}
+                addCurrentWorkoutId={context.addCurrentWorkoutId}
+                addExerciseToWorkout={context.addExerciseToWorkout}
+                addExerciseWorkoutArray={context.addExerciseWorkoutArray}
+                updateWorkoutExercises={context.updateWorkoutExercises}
+                closeModal={this.closeModal}
+              />
+            )}
+          </FormContext.Consumer>
+        </Modal> */}
       </>
     );
   }

@@ -75,3 +75,28 @@ const backStyles = {
   opacity: 1,
   transform: "rotateY(0deg)",
 };
+
+
+
+
+<form className="exercise-form-modal">
+  <button
+    className="exercise-add-button"
+    id={index}
+    type="button"
+    value={workout.workoutId}
+    onClick={(e) => this.toggleOn(e, workout, index)}
+    // onClick={() => this.handleClick(workout, index)}
+  >
+    <span className="exercise-add-symbol">+</span>
+  </button>
+  <div className="exercise-modal-workout-title">{workout.workoutName}</div>
+  <div className="volume-container">
+    <div className="volume-input-group">
+      <input className="volume-input" placeholder="Sets" />
+    </div>
+    <div className="volume-input-group">
+      <input className="volume-input" placeholder="Reps" />
+    </div>
+  </div>
+</form>;

@@ -4,6 +4,7 @@ import ExercisesTab from './ExercisesTab';
 import OverviewTab from './OverviewTab';
 import CreateTab from './CreateTab';
 import WorkoutTab from './WorkoutTab';
+import LogsTab from './LogsTab';
 import FormContext from "./FormContext";
 
 
@@ -25,7 +26,7 @@ function SectionContent(props) {
     const { info, title, muscleFunction, src } = sectionContent;
 
   function currentTab() {
-    if(activeTab === "overview") {
+    if (activeTab === "overview") {
       return (
         <OverviewTab
           info={info}
@@ -33,58 +34,59 @@ function SectionContent(props) {
           src={src}
           muscleFunction={muscleFunction}
         />
-      )
+      );
+    } else if (activeTab === "exercises") {
+      return (
+        <FormContext.Consumer>
+          {(context) => (
+            <ExercisesTab
+              // activeCategory={activeCategory}
+              dataCategory={dataCategory}
+              // setExerciseTitle={setExerciseTitle}
+              handleFormChange={handleFormChange}
+              handleSubmit={handleSubmit}
+              handleDeleteEx={context.handleDeleteEx}
+              addCompleteArray={context.addCompleteArray}
+              // formSubData={formSubData}
+              formData={context.items}
+            />
+          )}
+        </FormContext.Consumer>
+      );
+    } else if (activeTab === "create") {
+      return (
+        <FormContext.Consumer>
+          {(context) => (
+            <CreateTab
+              handleFormChange={handleFormChange}
+              handleSubmit={handleSubmit}
+              addNewItem={addNewItem}
+              addArrayItem={context.addArrayItem}
+              hello={context.test}
+            />
+          )}
+        </FormContext.Consumer>
+      );
+    } else if (activeTab === "workout") {
+      return (
+        <FormContext.Consumer>
+          {(context) => (
+            <WorkoutTab
+              handleFormChange={handleFormChange}
+              handleSubmit={handleSubmit}
+              addNewItem={addNewItem}
+              addArrayItem={context.addArrayItem}
+              hello={context.test}
+              workout={context.workout}
+            />
+          )}
+        </FormContext.Consumer>
+      );
+    } else if (activeTab === "logs") {
+      return (
+        <FormContext.Consumer>{(context) => <LogsTab exercise={context.exerciseLog} />}</FormContext.Consumer>
+      );
     }
-      else if (activeTab === "exercises") {
-        return (
-          <FormContext.Consumer>
-            {context => (
-              <ExercisesTab
-                // activeCategory={activeCategory}
-                dataCategory={dataCategory}
-                // setExerciseTitle={setExerciseTitle}
-                handleFormChange={handleFormChange}
-                handleSubmit={handleSubmit}
-                handleDeleteEx={context.handleDeleteEx}
-                addCompleteArray={context.addCompleteArray}
-                // formSubData={formSubData}
-                formData={context.items}
-              />
-            )}
-          </FormContext.Consumer>
-        );
-      } 
-      else if (activeTab === 'create') {
-        return (
-          <FormContext.Consumer>
-            {context => (
-              <CreateTab
-                handleFormChange={handleFormChange}
-                handleSubmit={handleSubmit}
-                addNewItem={addNewItem}
-                addArrayItem={context.addArrayItem}
-                hello={context.test}
-              />
-            )}
-          </FormContext.Consumer>
-        );
-      }
-      else if (activeTab === 'workout') {
-        return(
-          <FormContext.Consumer>
-            {context => (
-              <WorkoutTab
-                handleFormChange={handleFormChange}
-                handleSubmit={handleSubmit}
-                addNewItem={addNewItem}
-                addArrayItem={context.addArrayItem}
-                hello={context.test}
-                workout={context.workout}
-              />
-            )}
-          </FormContext.Consumer>
-        )
-      }
 
     }
 
@@ -123,11 +125,16 @@ function SectionContent(props) {
           >
             Workouts
           </li>
+          <li
+            className={activeTab === "logs" ? "active" : null}
+            id="logs"
+            onClick={setActiveTab}
+          >
+            Logs
+          </li>
         </ul>
         <div className="overview-main-container">
-          <div className="overview-content-container">
-            {currentTab()}
-          </div>
+          <div className="overview-content-container">{currentTab()}</div>
         </div>
       </div>
     );

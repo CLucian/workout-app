@@ -99,7 +99,6 @@ class ExerciseModal extends React.Component {
 					this.props.workoutList.map((workout, index) => {
 						return (
               <div className="currentWorkouts">
-                <form className="exercise-form-modal">
                   <button
                     className="exercise-add-button"
                     id={index}
@@ -113,16 +112,6 @@ class ExerciseModal extends React.Component {
                   <div className="exercise-modal-workout-title">
                     {workout.workoutName}
                   </div>
-                  <div className="volume-container">
-                    <div className="volume-input-group">
-                      <input className="volume-input" placeholder="Sets" />
-                    </div>
-                    <div className="volume-input-group">
-                      <input className="volume-input" placeholder="Reps" />
-                    </div>
-                  </div>
-                </form>
-
                 {this.state.buttonIndex === index && this.state.showAdded ? (
                   <div className="added-exercise-text">
                     Added {this.props.exerciseTitle}!

@@ -19,6 +19,7 @@ class FormProvider extends React.Component {
 		exerciseWorkoutArray: [],
 		currentWorkoutId: null,
 		exerciseNames: [],
+		exerciseLog: [],
 
 		addDataCategory: (dataCategory) => {
 		this.setState({
@@ -59,6 +60,12 @@ class FormProvider extends React.Component {
 			exerciseNames: [...this.state.exerciseNames, exerciseInfo.exerciseName]
 		}, () => this.updateWorkoutExercises(newWorkoutExercise, exerciseInfo));
 		},
+
+		addExerciseToLogs: (exercise) => {
+			this.setState({
+				exerciseLog: [...this.state.exerciseLog, exercise]
+			})
+		}
 
 	};  
 		this.handleDeleteEx = this.handleDeleteEx.bind(this);
@@ -107,6 +114,7 @@ class FormProvider extends React.Component {
 		console.log('++++++++++++++++++++++++++', this.state.workoutExercises)
 		console.log('THIS IS THE NEW ARRAY ITEM', this.state.items)
 		console.log('+++++++This is the new workout Array++++', this.state.workout)
+		console.log("+++++++This is the exercise Log ++++", this.state.exerciseLog);
 		// console.log('===========This is the absolute completeArray============', this.state.completeArray)
 		// console.log('++++++++++++++++++++++++++++++++++++++++++', this.state.dataCategory)
 		// console.log('******************************', this.state.workout.map(obj => obj))

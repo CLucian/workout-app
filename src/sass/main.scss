@@ -1167,7 +1167,40 @@ ol li:before {
 	word-wrap: break-word;
 }
 
+.workout-exercise-list {
+	color: #f2b01e;
+	font-size: 2rem;
+	// width: 50%;
+	// text-align: left;
+}
 
+
+
+.workout-exercise-item {
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+}
+
+.workout-exercise-list-item {
+	width: 40%;
+	text-align: left;
+}
+
+.add-to-logs {
+	// display: flex;
+}
+
+.dumbbell-button {
+	background-color: #f2b01e;
+}
+
+.add-to-logs-image {
+	width: 50%;
+	color: #f2b01e;
+	background-color: #f2b01e;
+	height: auto;
+}
 
 .deleteButton {
 	margin-top: 4rem;

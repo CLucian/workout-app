@@ -53,15 +53,16 @@ class WorkoutTab extends React.Component {
         <div>
 			{this.props.workout.map(workout => {
 				return (
-          <FormContext.Consumer> 
-			{context => 
-			<Workout name={workout.workoutName}
-			 desc={workout.workoutDesc}
-			 workoutList={context.workout}
-			 exerciseNames={workout.exerciseNames}
-			
-			/>
-			}
+          <FormContext.Consumer>
+            {(context) => (
+              <Workout
+                name={workout.workoutName}
+                desc={workout.workoutDesc}
+                workoutList={context.workout}
+                exerciseNames={workout.exerciseNames}
+                addExerciseToLogs={context.addExerciseToLogs}
+              />
+            )}
           </FormContext.Consumer>
         );
 			})}
