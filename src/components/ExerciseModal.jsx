@@ -147,7 +147,7 @@ class ExerciseModal extends React.Component {
 		this.setState({ showAdded: true });
 		setTimeout(() => {
 			this.setState({ showAdded: false})
-		}, 2000)
+		}, 3000)
 	}
 
 	render() {

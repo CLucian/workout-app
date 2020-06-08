@@ -17,7 +17,8 @@ class WorkoutModal extends React.Component {
       workoutName: "",
       workoutDesc: "",
       exerciseInfo: [],
-      workoutId: Math.random()
+      workoutId: Math.random(),
+      showMessage: false
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -30,39 +31,45 @@ class WorkoutModal extends React.Component {
       workoutDesc: this.state.workoutDesc,
       workoutExercises: [],
       exerciseNames: [],
-      workoutId: this.state.workoutId
+      workoutId: this.state.workoutId,
     };
-    this.context.addNewWorkout(workoutObj)
-  }
+    this.context.addNewWorkout(workoutObj);
+  };
 
+  duplicate = () => {
+    this.setState({ showMessage: true });
+    setTimeout(() => {
+      this.setState({ showMessage: false });
+    }, 2000);
+  };
 
   handleSubmit(e) {
-     e.preventDefault();
-    if(this.context.workout.find(workout => workout.workoutName.toString() === this.state.workoutName)) {
-      alert("You've already submitted a workout with this Name!")
-    }
-
-   else {
-          this.setState(
-            {
-              [e.target.name]: e.target.value,
-              workoutId: Math.random(),
-            },
-            () => {
-              this.sendWorkoutObj();
-            }
-          );
+    e.preventDefault();
+    if (
+      this.context.workout.find(
+        (workout) => workout.workoutName.toString() === this.state.workoutName
+      )
+    ) {
+      alert("You've already submitted a workout with this Name!");
+    } else {
+      this.setState(
+        {
+          [e.target.name]: e.target.value,
+          workoutId: Math.random(),
+        },
+        () => {
+          this.sendWorkoutObj();
+          this.duplicate();
         }
+      );
+    }
   }
-
 
   handleInput(e) {
     e.preventDefault();
-    this.setState(
-      {
-        [e.target.name]: e.target.value,
-      }
-    );
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   }
 
   render() {
@@ -99,6 +106,7 @@ class WorkoutModal extends React.Component {
           <div className="submit-button-div">
             <input type="submit" className="generic-button submit-button" />
           </div>
+          <div className="popup-text">{this.state.showMessage ? <p>Added to workout!</p> : null}</div>
         </form>
         {/* <div className="modal-button-div">
           <button className="generic-button" type="button" onClick={this.props.closeModal}>

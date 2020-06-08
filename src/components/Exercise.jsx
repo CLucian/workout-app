@@ -14,7 +14,7 @@ class Exercise extends React.Component {
     super(props);
     this.state = {
       selectedExercise: null,
-      isActive: false
+      isActive: false,
     };
   }
 
@@ -30,12 +30,25 @@ class Exercise extends React.Component {
     });
   };
 
-  handleClick = (index) => {
-    this.setState({
-      isActive: !this.state.isActive
-    })
+  handleClick = () => {
+    console.log("------Button was clicked-----", this.state.isActive);
+    this.setState(prevState => ({
+      isActive: !prevState.isActive
+    }))
+    console.log("------Button was clicked-----", this.state.isActive);
   }
 
+  handleClickOpen = (index) => {
+    this.setState({
+      isActive: true,
+    });
+  };
+
+  handleClickClose = (index) => {
+    this.setState({
+      isActive: false,
+    });
+  };
 
 
   render() {
@@ -55,20 +68,24 @@ class Exercise extends React.Component {
       // handleDeleteEx
     } = this.props;
 
-   
-
-
-
-
     return (
       <>
-        <div className='flip red' key={this.props.index}>
-          <div className="front">
+        <div className="flip" key={this.props.index}>
+          <div
+            className={this.state.isActive === true ? "clicked-front" : "front"}
+          >
             <div className="exerciseList">
-              <div>
-                {/* <button className="exercise-button" onClick={this.handleClick}>Open</button> */}
-                {/* <ExerciseButton index={this.props.index} flipSide={this.buttonClicked} /> */}
-              </div>
+              <button
+                className={ this.state.isActive === true ? "exercise-button2" : "exercise-button1" }
+                onClick={this.handleClick}
+                type="button"
+              >
+                Open
+              </button>
+              {/* <div className="generic-button"> */}
+              {/* </div> */}
+
+              {/* <ExerciseButton index={this.props.index} flipSide={this.buttonClicked} /> */}
               <div className="exerciseTitle">
                 <h1 className="exercise-title">{exerciseTitle}</h1>
               </div>
@@ -109,9 +126,17 @@ class Exercise extends React.Component {
             </div>
           </div>
 
-          <div className="back">
+          <div
+            className={this.state.isActive === true ? "clicked-back" : "back"}
+          >
             <div className="exerciseList">
-              {/* <button>Close</button> */}
+              <button
+                className={ this.state.isActive === true ? "exercise-button1" : "exercise-button2" }
+                onClick={this.handleClick}
+                type="button"
+              >
+                Open
+              </button>
               {/* <ExerciseButton /> */}
               <div className="exerciseTitle">
                 <h1 className="exercise-title">{exerciseTitle}</h1>
