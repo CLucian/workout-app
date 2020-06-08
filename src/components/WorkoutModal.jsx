@@ -89,7 +89,7 @@ class WorkoutModal extends React.Component {
                 name="workoutName"
                 onChange={this.handleInput}
                 value={this.state.workoutName}
-                maxLength="20"
+                maxLength="15"
               />
             </div>
             <div className="modal-form-group">

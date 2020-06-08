@@ -1183,6 +1183,7 @@ ol li:before {
 
 .currentWorkouts {
 	display: flex;
+	flex-direction: row;
 	padding-bottom: 1rem;
 }
 
@@ -1190,13 +1191,18 @@ ol li:before {
 	
 }
 
+.exercise-form-modal {
+	display: flex;
+	width: 100%;
+}
+
 .exercise-modal-workout-title {
 	display: flex;
-	// justify-content: center;
+	justify-content: left;
 	padding-top: 0.6rem;
 	padding-left: 2rem;
 	align-items: center;
-	width: 100%;
+	width: 80%;
 	font-size: 2rem;
 	color: #fff;
 	// padding: 1rem;
@@ -1228,6 +1234,55 @@ ol li:before {
 	cursor: pointer;
 	fill: #fff;
 	z-index: 10;
+}
+
+.volume-input {
+	width: 40%;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid #f2b01e;
+	color: #fff;
+	padding-bottom: 0.3rem;
+	padding-left: 0.5rem;
+	margin-left: 1rem;
+	font-size: 1.5rem;
+}
+
+.volume-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+// .setInput {
+// 	width: 10%;
+// 	background: transparent;
+// 	border: none;
+// 	border-bottom: 2px solid #f2b01e;
+// 	color: #fff;
+// 	padding-bottom: 0.3rem;
+// 	padding-left: 0.5rem;
+// 	margin-left: 1rem;
+// 	font-size: 1.5rem;
+// }
+
+.setInput:focus, .repInput:focus {
+	text-decoration: none;
+	outline: none;
+	box-shadow: none;
+	// width: 100%;
+}
+
+.repInput {
+	width: 10%;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid #f2b01e;
+	color: #fff;
+	padding-bottom: 0.3rem;
+	padding-left: 0.5rem;
+	margin-left: 1rem;
+	font-size: 1.5rem;
 }
 
 
