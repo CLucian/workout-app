@@ -33,11 +33,12 @@ class WorkoutModalLog extends React.Component {
   }
 
   sendExerciseLogToProvider = () => {
+    let splicedDate = this.state.date.toString().slice(0, 15);
     const exerciseLog = {
       exerciseName: this.props.exercise,
       sets: this.state.sets,
       reps: this.state.reps,
-      date: this.state.date
+      date: splicedDate
     }
     
     this.props.addExerciseToLogsArray(exerciseLog);
