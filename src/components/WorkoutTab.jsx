@@ -60,7 +60,7 @@ class WorkoutTab extends React.Component {
                 desc={workout.workoutDesc}
                 workoutList={context.workout}
                 exerciseNames={workout.exerciseNames}
-                addExerciseToLogs={context.addExerciseToLogs}
+                addExerciseToModal={context.addExerciseToModal}
               />
             )}
           </FormContext.Consumer>

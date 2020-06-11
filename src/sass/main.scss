@@ -1269,16 +1269,21 @@ ol li:before {
 	z-index: 10;
 }
 
+.modal-workout-form-container {
+	display: flex;
+	justify-content: center;
+}
+
 .volume-input {
-	width: 40%;
+	width: 100%;
 	background: transparent;
 	border: none;
 	border-bottom: 2px solid #f2b01e;
 	color: #fff;
 	padding-bottom: 0.3rem;
-	padding-left: 0.5rem;
-	margin-left: 1rem;
-	font-size: 1.5rem;
+	// padding-left: 0.5rem;
+	// margin-left: 1rem;
+	font-size: 1.8rem;
 }
 
 .volume-container {
@@ -1286,6 +1291,53 @@ ol li:before {
 	justify-content: center;
 	align-items: center;
 }
+
+.modal-workout-log-group {
+	padding: 2rem;
+	// padding-left: 3rem;
+	display: flex;
+	// align-items: center;
+	justify-content: center;
+	width: 13.2%;
+}
+
+.calendar-div {
+	margin-top: 2rem;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.calendar {
+	font-size: 2rem;
+	border: 1px solid #f2b01e;
+	color: #f2b01e;
+}
+
+.react-date-picker__wrapper {
+	border: 1px solid #f2b01e;	
+}
+
+.react-date-picker__inputGroup__divider {
+	color: #f2b01e;
+}
+
+.react-date-picker__inputGroup__input {
+	color: #fff;
+}
+
+
+
+.react-date-picker__button svg {
+	color: #f2b01e;
+}
+
+// .react-date-picker__inputGroup__divider {
+// 	color: #222;
+// 	font-size: 2.3rem;
+// 	font-weight: strong;
+// }
 
 // .setInput {
 // 	width: 10%;

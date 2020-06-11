@@ -38,17 +38,17 @@ class Exercise extends React.Component {
     console.log("------Button was clicked-----", this.state.isActive);
   }
 
-  handleClickOpen = (index) => {
-    this.setState({
-      isActive: true,
-    });
-  };
+  // handleClickOpen = (index) => {
+  //   this.setState({
+  //     isActive: true,
+  //   });
+  // };
 
-  handleClickClose = (index) => {
-    this.setState({
-      isActive: false,
-    });
-  };
+  // handleClickClose = (index) => {
+  //   this.setState({
+  //     isActive: false,
+  //   });
+  // };
 
 
   render() {

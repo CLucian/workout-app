@@ -9,30 +9,48 @@ class Workout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      exerciseDisplay: false
-    }
+      exerciseDisplay: false,
+      selectedExercise: null,
+    };
   }
-
 
   handleClick = () => {
-    this.setState(prevState => ({
-      exerciseDisplay: !prevState.exerciseDisplay
-    }))
-  }
+    this.setState((prevState) => ({
+      exerciseDisplay: !prevState.exerciseDisplay,
+    }));
+  };
 
-  sendExerciseToLogs = (exercise) => {
+  sendExerciseToModal = (exercise) => {
     // const loggedExercise = exercise
 
-    this.props.addExerciseToLogs(exercise);
-  }
+    this.props.addExerciseToModal(exercise);
+  };
 
-  
+  openModal = () => {
+    this.setState({
+      selectedExercise: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      selectedExercise: false,
+    });
+  };
+
   render() {
-    console.log('===EXERCISE DISPLAY===', this.state.exerciseDisplay)
-    console.log('Is props.workout being passed properly?', this.props.workoutList)
-    this.props.workout && console.log('00000000000000000', this.props.workoutList.map(workout => {
-      return workout.workoutExercises.exerciseName
-    }))
+    console.log("===EXERCISE DISPLAY===", this.state.exerciseDisplay);
+    console.log(
+      "Is props.workout being passed properly?",
+      this.props.workoutList
+    );
+    this.props.workout &&
+      console.log(
+        "00000000000000000",
+        this.props.workoutList.map((workout) => {
+          return workout.workoutExercises.exerciseName;
+        })
+      );
 
     return (
       <>
@@ -60,7 +78,11 @@ class Workout extends React.Component {
                             {exercise}
                           </li>
                           <div className="add-to-logs">
-                            <button type="button" className="dumbbell-button" onClick={() => this.sendExerciseToLogs(exercise)}>
+                            <button
+                              type="button"
+                              className="dumbbell-button"
+                              onClick={() => {this.sendExerciseToModal(exercise); this.openModal()}}
+                            >
                               <img
                                 src="exercise-images/misc-images/dumbbell.png"
                                 className="add-to-logs-image"
@@ -76,24 +98,20 @@ class Workout extends React.Component {
             </div>
           </div>
         </div>
-        {/* <Modal
+        <Modal
           isVisible={this.state.selectedExercise}
           closeModal={this.closeModal}
         >
           <FormContext.Consumer>
             {(context) => (
               <WorkoutModalLog
-                workoutList={context.workout}
-                exerciseWorkoutArray={context.exerciseWorkoutArray}
-                addCurrentWorkoutId={context.addCurrentWorkoutId}
-                addExerciseToWorkout={context.addExerciseToWorkout}
-                addExerciseWorkoutArray={context.addExerciseWorkoutArray}
-                updateWorkoutExercises={context.updateWorkoutExercises}
+                exercise={context.currentModalExercise}
+                addExerciseToLogsArray={context.addExerciseToLogsArray}
                 closeModal={this.closeModal}
               />
             )}
           </FormContext.Consumer>
-        </Modal> */}
+        </Modal>
       </>
     );
   }

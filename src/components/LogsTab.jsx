@@ -9,11 +9,9 @@ class LogsTab extends React.Component {
 	render() {
 		return (
       <div>
-        {this.props.exercise.map((exercise) => {
+        {this.props.exerciseLog.map((exercise) => {
           return (
-                <LogItem
-                  exercise={this.props.exercise}
-                />
+          <div>{exercise.exerciseName}</div>
           );
         })}
       </div>

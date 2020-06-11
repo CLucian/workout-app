@@ -4,77 +4,97 @@ import FormContext from './FormContext';
 import data from "../data/category_to_exercise";
 
 
+
 class FormProvider extends React.Component {
 	constructor() {
 	super();
 
 
 	this.state = {
-		items: [],
-		test: "Test state",
-		completeArray: [],
-		dataCategory: null,
-		workout: [],
-		workoutExercises: [],
-		exerciseWorkoutArray: [],
-		currentWorkoutId: null,
-		exerciseNames: [],
-		exerciseLog: [],
+    items: [],
+    test: "Test state",
+    completeArray: [],
+    dataCategory: null,
+    workout: [],
+    workoutExercises: [],
+    exerciseWorkoutArray: [],
+    currentWorkoutId: null,
+    exerciseNames: [],
+    currentModalExercise: null,
+    exerciseLog: [],
 
-		addDataCategory: (dataCategory) => {
-		this.setState({
-			dataCategory,
-		});
-		},
+    addDataCategory: (dataCategory) => {
+      this.setState({
+        dataCategory,
+      });
+    },
 
-		addArrayItem: (newItem) => {
-		this.setState({
-			items: [...this.state.items, newItem],
-		});
-		},
-		addCompleteArray: (completeArray) => {
-		this.setState({
-			completeArray,
-		});
-		},
-		addNewWorkout: (newWorkout) => {
-		this.setState({
-			workout: [...this.state.workout, newWorkout],
-		});
-		},
-		addCurrentWorkoutId: (newId) => {
-			this.setState({
-				currentWorkoutId: newId.currentWorkoutId
-			})
-		},
-		addExerciseWorkoutArray: (newArray) => {
-			this.setState({
-				exerciseWorkoutArray: [...this.state.exerciseWorkoutArray, ...newArray]
-			})
-		},
+    addArrayItem: (newItem) => {
+      this.setState({
+        items: [...this.state.items, newItem],
+      });
+    },
+    addCompleteArray: (completeArray) => {
+      this.setState({
+        completeArray,
+      });
+    },
+    addNewWorkout: (newWorkout) => {
+      this.setState({
+        workout: [...this.state.workout, newWorkout],
+      });
+    },
+    addCurrentWorkoutId: (newId) => {
+      this.setState({
+        currentWorkoutId: newId.currentWorkoutId,
+      });
+    },
+    addExerciseWorkoutArray: (newArray) => {
+      this.setState({
+        exerciseWorkoutArray: [...this.state.exerciseWorkoutArray, ...newArray],
+      });
+    },
 
-		addExerciseToWorkout: (newWorkoutExercise, exerciseInfo) => {
-		this.setState({
-			currentWorkoutId: newWorkoutExercise.currentWorkoutId,
-			workoutExercises: [...this.state.workoutExercises, newWorkoutExercise.exerciseId],
-			exerciseNames: [...this.state.exerciseNames, exerciseInfo.exerciseName]
-		}, () => this.updateWorkoutExercises(newWorkoutExercise, exerciseInfo));
-		},
+    addExerciseToWorkout: (newWorkoutExercise, exerciseInfo) => {
+      this.setState(
+        {
+          currentWorkoutId: newWorkoutExercise.currentWorkoutId,
+          workoutExercises: [
+            ...this.state.workoutExercises,
+            newWorkoutExercise.exerciseId,
+          ],
+          exerciseNames: [
+            ...this.state.exerciseNames,
+            exerciseInfo.exerciseName,
+          ],
+        },
+        () => this.updateWorkoutExercises(newWorkoutExercise, exerciseInfo)
+      );
+    },
 
-		addExerciseToLogs: (exercise) => {
-			this.setState({
-				exerciseLog: [...this.state.exerciseLog, exercise]
-			})
-		}
-
-	};  
+    addExerciseToModal: (exercise) => {
+        this.setState({
+          currentModalExercise: exercise,
+        });
+	},
+	
+    addExerciseToLogsArray: (exercise) => {
+    //   if (this.state.exerciseLog.find((exr) => exr === exercise)) {
+    //     return null;
+    //   } else {
+        this.setState({
+          exerciseLog: [...this.state.exerciseLog, exercise],
+        });
+    //   }
+    },
+  };  
 		this.handleDeleteEx = this.handleDeleteEx.bind(this);
 	}
 	
 
 	updateWorkoutExercises = (newWorkoutExercise, exerciseInfo) => {
 		const newWorkout = this.state.workout.map(workout => {
-			if(workout.workoutId === this.state.currentWorkoutId) {
+			if(workout.workoutId === this.state.currentWorkoutId)  {
 				return { 	
 						...workout,
 						exerciseNames: [...workout.exerciseNames, exerciseInfo.exerciseName],

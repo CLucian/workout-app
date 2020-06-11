@@ -84,7 +84,7 @@ function SectionContent(props) {
       );
     } else if (activeTab === "logs") {
       return (
-        <FormContext.Consumer>{(context) => <LogsTab exercise={context.exerciseLog} />}</FormContext.Consumer>
+        <FormContext.Consumer>{(context) => <LogsTab exercise={context.exerciseLog} exerciseLog={context.exerciseLog} />}</FormContext.Consumer>
       );
     }
 
