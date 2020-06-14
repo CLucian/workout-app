@@ -16,13 +16,36 @@ class LogsTab extends React.Component {
        this.props.exerciseLog,
        (exercise) => (exercise.date)
      );
+
+    console.log('dateArray Map',
+      Object.keys(dateArray).map((key) => {
+        const val = dateArray[key];
+        return val
+        // return val.map(exercise => {
+        //   return (
+        //     exercise.exerciseName
+        //   )
+        // })
+      })
+    );
      console.log(dateArray);
+     console.log(this.props.exerciseLog);
 		return (
      
       <div>
-        {this.props.exerciseLog.map((exercise) => {
+        {Object.keys(dateArray).map(key => {
+          const val = dateArray[key]
           return (
-          <div>{exercise.exerciseName}</div>
+            <div>
+              <h1>{key}</h1>
+              <ul>
+                {val.map(dateInfo => {
+                  return(
+                  <li>{dateInfo.exerciseName}</li>
+                  )
+                })}
+              </ul>
+            </div>
           );
         })}
       </div>
