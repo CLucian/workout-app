@@ -17,18 +17,45 @@ class LogsTab extends React.Component {
       (exercise) => exercise.date
     );
     return Object.keys(dateArray).map((key) => {
-      let newArr = [];
+      let newArr = []
       const val = dateArray[key];
       this.uniqueArray(val, newArr);
 
       return {
-        items: newArr.map((exercise) => {
-          return exercise;
-        }),
+        items: 
+          newArr.sort((a, b) => {
+            if (a.exerciseName < b.exerciseName) {return -1}
+            if (a.exerciseName > b.exerciseName) {return 1}
+            return 0;
+          }).map((exercise) => {
+            return exercise
+          }),
+        
+        // newArr.map((exercise) => {
+        //   return exercise
+        // }),
         header: key,
       };
     });
   };
+
+  sortedData = () => {
+    const sortedArr = this.formattedData().sort((a, b) => {
+      if (a.header < b.header) {return -1}
+      if (a.header > b.header) {return 1}
+      return 0;
+    })
+    return sortedArr
+  }
+
+  // completedData = () => {
+  //   const completedArr = this.sortedData().map.items.sort((a, b) => {
+  //     if (a.header < b.header) {return -1}
+  //     if (a.header > b.header) {return 1}
+  //     return 0;
+  //   })
+  //   return completedArr
+  // }
 
   constructor(props) {
     super(props);
@@ -38,43 +65,11 @@ class LogsTab extends React.Component {
       editingId: null,
       currentId: null,
       currentDate: null,
-      editing: false,
+      editing: true,
     };
   }
 
-  // handleClickDec = (id, index) => {
-  //   console.log("This has been clicked");
-  //   console.log("id", id);
-  //   console.log("index", index);
-  //   if (id === index && this.state.editingValue > 0) {
-  //     this.setState(
-  //       {
-  //         editingId: id,
-  //         editingValue: this.state.editingValue - 1,
-  //       },
-  //       console.log("this.state.editingId", this.state.editingId)
-  //     );
-  //     console.log("this.state.editingId", this.state.editingId);
-  //   }
-  // };
 
-  // handleClickInc = (id, index) => {
-  //   console.log("This has been clicked");
-  //   console.log("id", id);
-  //   console.log("index", index);
-  //   console.log('this.state.editingId', this.state.editingId)
-  //   console.log("this.state.editingValue", this.state.editingValue);
-  //   if (id === index) {
-  //     this.setState(
-  //       {
-  //         editingId: id,
-  //         editingValue: this.state.editingValue + 1,
-  //       },
-  //       console.log("this.state.editingId", this.state.editingId)
-  //     );
-  //     console.log("this.state.editingId", this.state.editingId);
-  //   }
-  // };
 
   uniqueArray = (arr, newArray) => {
     arr.forEach((item) => {
@@ -94,11 +89,11 @@ class LogsTab extends React.Component {
   };
 
   handleClick = (currentId, currentDate, indexValue, exerciseIndex, dateIndex, currentDateIndex) => {
-    // if(indexValue === index) {
       console.log('dateIndex', dateIndex)
       console.log('currentDateIndex', currentDateIndex)
       console.log("-----exercise Index", exerciseIndex);
       console.log("IndexValue", indexValue);
+      console.log('this.state.editing handleClick', this.state.editing);
       
     console.log("currentId============", currentId);
     this.setState({
@@ -113,6 +108,7 @@ class LogsTab extends React.Component {
     this.setState({
       editing: !this.state.editing
     })
+    console.log('this.state.editing -  toggleEdit', this.state.editing)
   }
 
 
@@ -132,15 +128,17 @@ class LogsTab extends React.Component {
   render() {
     console.log("this.props.exerciseLog", this.props.exerciseLog);
     console.log("formatted Data", this.formattedData());
+    console.log('sortedData()', this.sortedData());
+
 
     return (
       <div>
-        {this.formattedData().map((date, dateIndex) => {
-          const currentDateIndex = this.formattedData().findIndex(
+        {this.sortedData().map((date, dateIndex) => {
+          const currentDateIndex = this.sortedData().findIndex(
             (x) => x.header === date.header
           )
           return (
-            <div className="log-outer-container">
+            <div className="log-outer-container" key={date.header}>
               <div className="log-inner-container">
                 <div className="log-info">
                   <div className="workoutTitle">
