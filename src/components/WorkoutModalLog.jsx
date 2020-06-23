@@ -10,7 +10,8 @@ class WorkoutModalLog extends React.Component {
     this.state = {
       date: new Date(),
       sets: null,
-      reps: null
+      reps: null,
+      id: null
     };
   }
 
@@ -38,7 +39,8 @@ class WorkoutModalLog extends React.Component {
       exerciseName: this.props.exercise,
       sets: this.state.sets,
       reps: this.state.reps,
-      date: splicedDate
+      date: splicedDate,
+      id: this.state.date.toString()
     }
     
     this.props.addExerciseToLogsArray(exerciseLog);
@@ -61,6 +63,7 @@ class WorkoutModalLog extends React.Component {
               <input
                 className="volume-input"
                 type="number"
+                min="0"
                 placeholder="Sets"
                 name="sets"
                 onChange={this.onInputChange}
@@ -73,6 +76,7 @@ class WorkoutModalLog extends React.Component {
               <input
                 className="volume-input"
                 type="number"
+                min="0"
                 placeholder="Reps"
                 name="reps"
                 onChange={this.onInputChange}

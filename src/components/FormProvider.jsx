@@ -83,7 +83,7 @@ class FormProvider extends React.Component {
     //     return null;
     //   } else {
         this.setState({
-          exerciseLog: [...this.state.exerciseLog, exercise],
+          exerciseLog: [ exercise,...this.state.exerciseLog ],
         });
     //   }
     },
