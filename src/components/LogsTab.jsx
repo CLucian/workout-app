@@ -41,9 +41,12 @@ class LogsTab extends React.Component {
 
   sortedData = () => {
     const sortedArr = this.formattedData().sort((a, b) => {
-      if (a.header < b.header) {return -1}
-      if (a.header > b.header) {return 1}
-      return 0;
+      // if (a.header > b.header) {return -1}
+      // if (a.header < b.header) {return 1}
+      // return 0;
+      let dateA = new Date(a.header)
+      let dateB = new Date(b.header)
+      return dateA - dateB;
     })
     return sortedArr
   }
