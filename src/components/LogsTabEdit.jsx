@@ -38,6 +38,7 @@ class LogsTabEdit extends React.Component {
 		
 	}
 
+
 	render() {
 		return(
 			<>

@@ -3,6 +3,8 @@ import React from 'react';
 import FormContext from './FormContext';
 import data from "../data/category_to_exercise";
 
+import groupBy from "lodash/groupBy";
+
 
 
 class FormProvider extends React.Component {
@@ -73,23 +75,37 @@ class FormProvider extends React.Component {
     },
 
     addExerciseToModal: (exercise) => {
-        this.setState({
-          currentModalExercise: exercise,
-        });
+      this.setState({
+        currentModalExercise: exercise,
+      });
+    },
+
+    addExerciseToLogsArray: (exercise) => {
+      //   if (this.state.exerciseLog.find((exr) => exr === exercise)) {
+	  //     return null;
+      //   } else {
+	// let objArray = [exercise];
+	// let newArray = groupBy(objArray, 
+	// 	(exercise) => exercise.date
+	// );
+
+      this.setState({
+        exerciseLog: [exercise, ...this.state.exerciseLog],
+	  });
+      //   }
+    },
+
+	updateExerciseToLogsArray: (exerciseArray) => {
+		this.setState({
+			exerciseLog: [...exerciseArray]
+		});
 	},
 	
-    addExerciseToLogsArray: (exercise) => {
-    //   if (this.state.exerciseLog.find((exr) => exr === exercise)) {
-    //     return null;
-    //   } else {
-        this.setState({
-          exerciseLog: [ exercise,...this.state.exerciseLog ],
-        });
-    //   }
-    },
+
   };  
 		this.handleDeleteEx = this.handleDeleteEx.bind(this);
 	}
+
 	
 
 	updateWorkoutExercises = (newWorkoutExercise, exerciseInfo) => {

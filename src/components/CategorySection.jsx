@@ -90,6 +90,7 @@ function SectionContent(props) {
               exercise={context.exerciseLog}
               exerciseLog={context.exerciseLog}
               addExerciseToLogsArray={context.addExerciseToLogsArray}
+              updateExerciseToLogsArray={context.updateExerciseToLogsArray}
             />
           )}
         </FormContext.Consumer>
