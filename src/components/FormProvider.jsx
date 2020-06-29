@@ -45,7 +45,14 @@ class FormProvider extends React.Component {
       this.setState({
         workout: [...this.state.workout, newWorkout],
       });
-    },
+	},
+	
+	updatedWorkoutList: (workoutList) => {
+		this.setState({
+			workout: workoutList
+		});
+	},
+
     addCurrentWorkoutId: (newId) => {
       this.setState({
         currentWorkoutId: newId.currentWorkoutId,

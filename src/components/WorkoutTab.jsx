@@ -59,6 +59,7 @@ class WorkoutTab extends React.Component {
                 name={workout.workoutName}
                 desc={workout.workoutDesc}
                 workoutList={context.workout}
+                updatedWorkoutList={context.updatedWorkoutList}
                 exerciseNames={workout.exerciseNames}
                 addExerciseToModal={context.addExerciseToModal}
               />

@@ -38,6 +38,15 @@ class Workout extends React.Component {
     });
   };
 
+  handleDelete = () => {
+    const filteredWorkout = this.props.workoutList.filter(workout => {
+      return workout.workoutName !== this.props.name
+    })
+
+    this.props.updatedWorkoutList(filteredWorkout);
+
+  }
+
   render() {
     console.log("===EXERCISE DISPLAY===", this.state.exerciseDisplay);
     console.log(
@@ -57,6 +66,9 @@ class Workout extends React.Component {
         <div className="outer-container">
           <div className="inner-container">
             <div className="create-workout-info">
+              <button type="button" onClick={this.handleDelete}>
+                x
+              </button>
               <div className="workoutTitle">
                 <h1 className="create-workout-title">{this.props.name}</h1>
               </div>
@@ -81,7 +93,10 @@ class Workout extends React.Component {
                             <button
                               type="button"
                               className="dumbbell-button"
-                              onClick={() => {this.sendExerciseToModal(exercise); this.openModal()}}
+                              onClick={() => {
+                                this.sendExerciseToModal(exercise);
+                                this.openModal();
+                              }}
                             >
                               <img
                                 src="exercise-images/misc-images/dumbbell.png"
