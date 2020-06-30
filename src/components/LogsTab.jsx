@@ -6,7 +6,8 @@ import data from './MuscleData';
 import LogsTabEdit from './LogsTabEdit';
 import LogsTabView from './LogsTabView';
 import FormContext from './FormContext';
-
+import { ReactComponent as Edit } from './Icons/pencil.svg';
+import { ReactComponent as DeleteIcon } from "./Icons/cross.svg";
 
 
 
@@ -153,20 +154,35 @@ class LogsTab extends React.Component {
 
 
     return (
+      
       <div>
+        {this.sortedData().length < 1 ?
+          <div className="log-outer-container">
+            <div className="log-inner-container">
+              <div className="log-info">
+                <div className="workoutTitle-default">
+                  <h1 className="log-title-default">No current logs to display</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          : null}
+
+
+
+
         {this.sortedData().map((date, dateIndex) => {
-        {/* {this.state.finalDataArray.map((date, dateIndex) => { */}
+          console.log('date.header', date.header)
           const currentDateIndex = this.sortedData().findIndex(
             (x) => x.header === date.header
           );
-          
           
           return (
             <div className="log-outer-container" key={date.header}>
               <div className="log-inner-container">
                 <div className="log-info">
                   <div className="workoutTitle">
-                    <h1 className="log-title">{date.header === "undefined" ? "No current logs" : date.header}</h1>
+                    <h1 className="log-title">{date.header}</h1>
                     <ul className="logs-list">
                       {date.items.map((item, exerciseIndex) => {
                         const currentId = item.id;
@@ -206,18 +222,12 @@ class LogsTab extends React.Component {
                                   sets={item.sets}
                                   reps={item.reps}
                                 />
-                                {/* <li className="logs-list-edit">
-                                <button type="button"
-                                  onClick={() => this.handleClick(currentId, currentDate)}
-                                >
-                                  Edit
-                                </button>
-                              </li> */}
                               </>
                             )}
                             <li className="logs-list-edit">
                               <button
                                 type="button"
+                                className="logs-edit-button"
                                 onClick={() =>
                                   this.handleClick(
                                     currentId,
@@ -229,15 +239,20 @@ class LogsTab extends React.Component {
                                   )
                                 }
                               >
-                                Edit
+                                <Edit className="logs-edit-image" />
                               </button>
                               <button
                                 type="button"
+                                className="delete-log-btn"
                                 onClick={() =>
-                                  this.handleDelete(exerciseIndex, indexValue, date.header)
+                                  this.handleDelete(
+                                    exerciseIndex,
+                                    indexValue,
+                                    date.header
+                                  )
                                 }
                               >
-                                X
+                                <DeleteIcon className="delete-log-image" />
                               </button>
                             </li>
                           </div>

@@ -3,6 +3,9 @@ import FormContext from './FormContext';
 import WorkoutExercises from './WorkoutExercises';
 import Modal from './Modal';
 import WorkoutModalLog from './WorkoutModalLog';
+import { ReactComponent as DeleteIcon } from './Icons/cross.svg';
+import { ReactComponent as FileTextIcon } from './Icons/file-text.svg';
+
 
 
 class Workout extends React.Component {
@@ -66,16 +69,22 @@ class Workout extends React.Component {
         <div className="outer-container">
           <div className="inner-container">
             <div className="create-workout-info">
-              <button type="button" onClick={this.handleDelete}>
-                x
-              </button>
+              <div className="delete-btn-container">
+                <button
+                  type="button"
+                  className="workout-delete-button"
+                  onClick={this.handleDelete}
+                >
+                  <DeleteIcon className="delete-component" />
+                </button>
+              </div>
               <div className="workoutTitle">
                 <h1 className="create-workout-title">{this.props.name}</h1>
               </div>
               <div className="workoutDescription">{this.props.desc}</div>
               <button
                 type="button"
-                className="generic-button"
+                className="workout-display-button"
                 onClick={() => this.handleClick()}
               >
                 Display Exercises
@@ -98,11 +107,7 @@ class Workout extends React.Component {
                                 this.openModal();
                               }}
                             >
-                              <img
-                                src="exercise-images/misc-images/dumbbell.png"
-                                className="add-to-logs-image"
-                                alt="dumbbells"
-                              />
+                              <FileTextIcon className="add-to-logs-image" />
                             </button>
                           </div>
                         </div>

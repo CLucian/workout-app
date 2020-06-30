@@ -692,6 +692,7 @@
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-around;
+	// justify-content: center;
 	color: #f2b01e;
 	// margin-left: 7rem;
 	margin-bottom: 2rem;
@@ -1152,9 +1153,45 @@ ol li:before {
 	margin: 3rem; 
 }
 
-.workoutTitle {
-
+.workout-delete-button {
+	// float: right;
+	// display: flex;
+	// justify-content: flex-end;
+	background: none;
+	border: none;
+	fill: white;
+	cursor: pointer;
+	padding: 1rem;
+	// position: absolute;
 }
+
+.delete-btn-container {
+	display: flex;
+	justify-content: flex-end;
+	
+}
+
+.delete-component {
+	width: 50%;
+	
+	height: auto;
+}
+
+.workout-display-button {
+	// margin: 4rem;
+	padding: .5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+	border-radius: 0.5rem;
+	border: 2px solid #f2b01e;
+	cursor: pointer;
+}
+
+
+
+
 
 
 
@@ -1166,11 +1203,15 @@ ol li:before {
 .create-workout-title {
 	color: #f2b01e;
 	font-size: 4rem;
-	margin-top: 4rem;
+	margin-top: 1rem;
+	// text-align: center;
+	// display: flex;
+	// justify-content: center;
 }
 
 .workoutDescription {
-	margin: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 	font-size: 1.8rem;
 	color: #999;
 	word-wrap: break-word;
@@ -1188,6 +1229,7 @@ ol li:before {
 .workout-exercise-item {
 	display: flex;
 	justify-content: space-evenly;
+	margin: 0.25rem;
 	flex-direction: row;
 }
 
@@ -1197,18 +1239,19 @@ ol li:before {
 }
 
 .add-to-logs {
-	// display: flex;
+	width: auto;
+	height: 50%;
 }
 
 .dumbbell-button {
-	background-color: #f2b01e;
+	background-color: transparent;
+	border: none;
+	fill: #f2b01e;
 	cursor: pointer;
 }
 
 .add-to-logs-image {
-	width: 50%;
-	color: #f2b01e;
-	background-color: #f2b01e;
+	width: 75%;
 	height: auto;
 }
 
@@ -1516,6 +1559,21 @@ input[type=text] {
 	padding-bottom: 2rem;
 }
 
+.workoutTitle-default {
+	height: 100%;
+}
+
+.log-title-default {
+	color: #f2b01e;
+	font-size: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90%;
+	// margin-top: 4rem;
+	// padding-bottom: 2rem;
+}
+
 .logs-list {
 	font-size: 1.5rem;
 	padding-top: 2rem;
@@ -1529,7 +1587,7 @@ input[type=text] {
 	display: flex;
 	justify-content: space-evenly;
 	padding-bottom: 1rem;
-	// align-items: center;
+	align-items: center;
 }
 
 .logs-list-name {
@@ -1555,4 +1613,34 @@ input[type=text] {
 	align-items: center;
 	color: #f2b01e;
 	list-style-type: none;
+	background: none;
+}
+
+.logs-edit-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.logs-edit-image {
+	background: transparent;
+	fill: #f2b01e;
+	width: 45%;
+	display: flex;
+	justify-content: center;
+	height: auto;
+}
+
+.delete-log-btn {
+	margin-left: 2rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.25rem;
+}
+
+.delete-log-image {
+	fill: #fff;
+	width: 40%;
+	height: auto;
 }
