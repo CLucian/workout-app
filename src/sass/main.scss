@@ -531,7 +531,16 @@
 	font-size: 4rem;
 	// background: white;
 	font-family: 'Bangers';
-	padding: 2rem;
+	padding: 2rem 2rem 0 2rem;
+}
+
+.inner-background {
+	background: #222;
+	margin: 4rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	border: 0.1rem solid #000;
+	border-radius: 0.5rem;
 }
 
 .img-info-container {
@@ -539,13 +548,21 @@
 	// display: flex;
 	// margin: 2rem;
 	// justify-content: space-evenly;
+	// padding: 2rem;
+	border: 0.1rem solid #000;
+	border-radius: 0.5rem;
+	margin: 3rem;
+	background-color: #333;
 	text-align: center;
 }
 
 
 .info-container {
+	// color: #555;
+	// background: #555;
+	// display: flex;
 	position: relative;
-	padding: 1rem 10rem 3rem;
+	padding: 2rem 10rem 2rem;
 	text-align: center;
 	margin: 0 auto;
 	// background: white;
@@ -554,7 +571,8 @@
 
 .info {
 	font-size: 1.7rem;
-	// color: white;
+	text-align: left;
+	color: white;
 	// background-color: #222;
 }
 
@@ -563,11 +581,16 @@
 	padding-top: 2rem;
 	padding-bottom: 1rem;
 	font-family: 'Lato';
+	color: #f2b01e;
 	// background-color: #222;
 }
 
+
+
 .muscleFunction {
 	font-size: 1.7rem;
+	color: white;
+	text-align: left;
 	// background-color: #222;
 	// color: white;
 }
@@ -593,8 +616,13 @@
 	width: 100%;
 	height: 25rem;
 	background: white;
+	border: 0.2rem solid #f2b01e;
 }
 
+
+.info-group {
+
+}
 
 //////////////////////
 //Exercise Tab
@@ -834,6 +862,8 @@
 .modal-form-container {
 	// padding-top: 3rem;
 	// display: flex;
+	margin: auto;
+	width: 80%;
 	text-align: center;
 	// justify-content: center;
 	// display: flex;
@@ -843,11 +873,11 @@
 
 .modal-form-group {
 	padding-top: 3rem;
-	padding-left: 3rem;
+	// padding-left: 3rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 80%;
+	width: 100%;
 	font-size: 2rem;
 }
 
@@ -1139,6 +1169,17 @@ ol li:before {
 	overflow: auto;
 	margin: 3rem; 
 }
+
+.create-form {
+	background-color: #222;
+	border: 0.1rem solid #f2b01e;
+	border-radius: 0.5rem;
+}
+
+.create-form-background {
+	color: #333;
+}
+
 
 .create-workout-info {
 	align-items: center;
@@ -1464,6 +1505,7 @@ ol li:before {
 
 
 .createTab-label {
+	color: #f2b01e;
 	display: flex;
 }
 
@@ -1475,7 +1517,7 @@ ol li:before {
 input[type=text] {
 	padding: 0.5rem 1.5rem;
 	box-sizing: border-box;
-	border: 0.1rem solid red;
+	border: 0.1rem solid #f2b01e;
 	border-radius: 0.4rem;
 }
 
@@ -1488,10 +1530,18 @@ input[type=text] {
 
 }
 
+.createForm-submit-btn {
+	border: 0.2rem solid #f2b01e;
+	border-radius: 0.4rem;
+	padding: 0.5rem;
+	font-weight: bold;
+}
+
 .step-button {
 	padding: 0.5rem;
-	border: 0.1rem solid red;
+	border: 0.2rem solid #f2b01e;
 	border-radius: 0.4rem;
+	font-weight: bold;
 }
 
 .steps-div {
@@ -1605,6 +1655,10 @@ input[type=text] {
 	color: #fff;
 	list-style-type: none;
 	// justify-content: center;
+}
+
+.logs-edit-input {
+
 }
 
 .logs-list-edit {

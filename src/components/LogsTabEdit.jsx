@@ -42,20 +42,17 @@ class LogsTabEdit extends React.Component {
 	render() {
 		return(
 			<>
-				{/* {	!this.state.dataIsSent ? */}
 					<form onSubmit={this.handleSubmit}>
 						<li className="logs-list-info">
 							Sets: 
-							<input onChange={this.handleChange} value={this.state.inputSets} name="inputSets" type="number" min="0" placeholder={this.props.sets} />
+							<input className="logs-edit-input" onChange={this.handleChange} value={this.state.inputSets} name="inputSets" type="number" min="0" placeholder={this.props.sets} />
 						</li>
 						<li className="logs-list-info">
 							Reps:
-							<input onChange={this.handleChange} value={this.state.inputReps} name="inputReps" type="number" min="0" placeholder={this.props.reps} />
+							<input className="logs-edit-input" onChange={this.handleChange} value={this.state.inputReps} name="inputReps" type="number" min="0" placeholder={this.props.reps} />
 						</li>
 						<input type="submit" value="Submit" />
 					</form>
-					{/* : <LogsTabEditView sets={this.state.inputSets} reps={this.state.inputReps} />
-				} */}
 			</>
 		)
 	}

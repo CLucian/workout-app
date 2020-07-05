@@ -91,155 +91,159 @@ class CreateTab extends React.Component {
     const { handleFormChange, handleSubmit } = this;
     return (
       <div>
-        <form className="create-form"   onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label className="createTab-label">Exercise name: </label>
-            <div className="input-div">
-              <input
-                className="inputs"
-                type="text"
-                name="inputName"
-                placeholder="E.g. Push Ups"
-                onChange={handleFormChange}
-                value={this.state.inputName}
-                maxLength="20"
-                required
-              />
+        <form className="create-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label className="createTab-label">Exercise name: </label>
+              <div className="input-div">
+                <input
+                  className="inputs"
+                  type="text"
+                  name="inputName"
+                  placeholder="E.g. Push Ups"
+                  onChange={handleFormChange}
+                  value={this.state.inputName}
+                  maxLength="20"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <label className="createTab-label">Movement Type:</label>
-            <div className="input-div">
-              <input
-                className="inputs"
-                type="text"
-                name="inputType"
-                placeholder="E.g. Isolation/Compound"
-                onChange={handleFormChange}
-                value={this.state.inputType}
-                maxLength="20"
-                required
-              />
+            <div className="form-group">
+              <label className="createTab-label">Movement Type:</label>
+              <div className="input-div">
+                <input
+                  className="inputs"
+                  type="text"
+                  name="inputType"
+                  placeholder="E.g. Isolation/Compound"
+                  onChange={handleFormChange}
+                  value={this.state.inputType}
+                  maxLength="20"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <label className="createTab-label">Equipment:</label>
-            <div className="input-div">
-              <input
-                className="inputs"
-                type="text"
-                name="inputEquipment"
-                placeholder="E.g. Barbell/Bench etc..."
-                onChange={handleFormChange}
-                value={this.state.inputEquipment}
-                maxLength="40"
-                required
-              />
+            <div className="form-group">
+              <label className="createTab-label">Equipment:</label>
+              <div className="input-div">
+                <input
+                  className="inputs"
+                  type="text"
+                  name="inputEquipment"
+                  placeholder="E.g. Barbell/Bench etc..."
+                  onChange={handleFormChange}
+                  value={this.state.inputEquipment}
+                  maxLength="40"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <label className="createTab-label">Steps: </label>
-            <div className="steps-input-div">
-              {/* <input
+            <div className="form-group">
+              <label className="createTab-label">Steps: </label>
+              <div className="steps-input-div">
+                {/* <input
                 className="inputs"
                 type="text"
                 name="inputEquipment"
                 placeholder="E.g. Lie flat on a bench"
               /> */}
-              {this.state.steps.map((step, index) => {
-                return (
-                  <div className="steps-div" key={index}>
-                    <input
-                      className="step-inputs"
-                      type="text"
-                      name="steps"
-                      //   onChange={handleFormChange}
-                      onChange={e => this.handleStepsChange(e, index)}
-                      maxLength="50"
-                      value={step}
-                    />
-                    <button
-                      type="button"
-                      className="step-remove-button"
-                      onClick={() => this.handleRemove(index)}
-                    >
-                      Remove
-                    </button>
-                  </div>
-                );
-              })}
+                {this.state.steps.map((step, index) => {
+                  return (
+                    <div className="steps-div" key={index}>
+                      <input
+                        className="step-inputs"
+                        type="text"
+                        name="steps"
+                        //   onChange={handleFormChange}
+                        onChange={(e) => this.handleStepsChange(e, index)}
+                        maxLength="50"
+                        value={step}
+                      />
+                      <button
+                        type="button"
+                        className="step-remove-button"
+                        onClick={() => this.handleRemove(index)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+              <button
+                type="button"
+                onClick={(e) => this.addStep(e)}
+                className="step-button"
+              >
+                Add Step
+              </button>
             </div>
-            <button type="button" onClick={e => this.addStep(e)} className="step-button">
-              Add Step
-            </button>
-          </div>
-          <div className="form-group">
-            <label className="createTab-label">Muscle Group</label>
-            <select
-              className="inputs"
-              name="inputGroup"
-              //   value={this.state.value}
-              onChange={handleFormChange}
-              value={this.state.inputGroup}
-              required
-            >
-              <option name="abdominals" value="abdominals">
-                Abdominals
-              </option>
-              <option name="back" value="back">
-                Back
-              </option>
-              <option name="biceps" value="biceps">
-                Biceps
-              </option>
-              <option name="calves" value="calves">
-                Calves
-              </option>
-              <option name="chest" value="chest">
-                Chest
-              </option>
-              <option name="shoulders" value="shoulders">
-                Shoulders
-              </option>
-              <option name="glutes" value="glutes">
-                Glutes
-              </option>
-              <option name="hamstrings" value="hamstrings">
-                Hamstrings
-              </option>
-              <option name="quadriceps" value="quadriceps">
-                Quadriceps
-              </option>
-              <option name="triceps" value="triceps">
-                Triceps
-              </option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label className="createTab-label">Description: </label>
-            <textarea
-              className="inputs"
-              name="inputDesc"
-              rows="10"
-              cols="30"
-              //   value={this.state.value}
-              onChange={handleFormChange}
-              placeholder="Briefly, please describe this movement."
-              value={this.state.inputDesc}
-              maxLength="100"
-              required
-            />
-          </div>
-          <div>
-            {/* <button type="submit" value="Submit" onSubmit={handleSubmit}>Submit</button> */}
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
-        <h1>{this.state.inputName}</h1>
-        <h1>{this.state.inputGroup}</h1>
-        <h1>{this.state.inputDesc}</h1>
-        <h1>{this.state.steps}</h1>
-        <h1>{this.props.hello}</h1>
+            <div className="form-group">
+              <label className="createTab-label">Muscle Group</label>
+              <select
+                className="inputs"
+                name="inputGroup"
+                //   value={this.state.value}
+                onChange={handleFormChange}
+                value={this.state.inputGroup}
+                required
+              >
+                <option name="abdominals" value="abdominals">
+                  Abdominals
+                </option>
+                <option name="back" value="back">
+                  Back
+                </option>
+                <option name="biceps" value="biceps">
+                  Biceps
+                </option>
+                <option name="calves" value="calves">
+                  Calves
+                </option>
+                <option name="chest" value="chest">
+                  Chest
+                </option>
+                <option name="shoulders" value="shoulders">
+                  Shoulders
+                </option>
+                <option name="glutes" value="glutes">
+                  Glutes
+                </option>
+                <option name="hamstrings" value="hamstrings">
+                  Hamstrings
+                </option>
+                <option name="quadriceps" value="quadriceps">
+                  Quadriceps
+                </option>
+                <option name="triceps" value="triceps">
+                  Triceps
+                </option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label className="createTab-label">Description: </label>
+              <textarea
+                className="inputs"
+                name="inputDesc"
+                rows="10"
+                cols="30"
+                //   value={this.state.value}
+                onChange={handleFormChange}
+                placeholder="Briefly, please describe this movement."
+                value={this.state.inputDesc}
+                maxLength="100"
+                required
+              />
+            </div>
+            <div>
+              {/* <button type="submit" value="Submit" onSubmit={handleSubmit}>Submit</button> */}
+              <input className="createForm-submit-btn" type="submit" value="Submit" />
+            </div>
+          </form>
+          {/* <h1>{this.state.inputName}</h1>
+          <h1>{this.state.inputGroup}</h1>
+          <h1>{this.state.inputDesc}</h1>
+          <h1>{this.state.steps}</h1>
+          <h1>{this.props.hello}</h1> */}
       </div>
     );
   }
