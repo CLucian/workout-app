@@ -561,6 +561,7 @@
 	// color: #555;
 	// background: #555;
 	// display: flex;
+	width: 50%;
 	position: relative;
 	padding: 2rem 10rem 2rem;
 	text-align: center;
@@ -670,22 +671,28 @@
 }
 
 .exercise-button1 {
+	margin: 1rem;
 	z-index: 10;
 	opacity: 1;
 	padding: 1rem;
 	// margin-top: 2rem;
 	float: right;
 	cursor: pointer;
+	border: 0.2rem solid #f2b01e;
+	border-radius: 0.2rem;
 	
 }
 
 .exercise-button2 {
+	margin: 1rem;
 	z-index: 10;
 	opacity: 1;
 	padding: 1rem;
 	// margin-top: 2rem;
 	float: left;
 	cursor: pointer;
+	border: 0.2rem solid #f2b01e;
+	border-radius: 0.2rem;
 	
 }
 
@@ -1640,6 +1647,11 @@ input[type=text] {
 	align-items: center;
 }
 
+.logs-master-list {
+	// display: flex;
+	align-items: flex-start;
+}
+
 .logs-list-name {
 	// font-size: 1.5rem;
 	text-align: left;
@@ -1651,14 +1663,35 @@ input[type=text] {
 	// justify-content: center;
 }
 
+
 .logs-list-info {
 	color: #fff;
 	list-style-type: none;
+	text-align: left;
 	// justify-content: center;
 }
 
-.logs-edit-input {
+.logs-edit-input1 {
+	border: 0.1rem solid #f2b01e;
+	border-radius: 0.5rem;
+	margin-left: 0.9rem;
+	padding-left: 0.5rem;
+	width: 50%;
+}
 
+.logs-edit-input2 {
+	border: 0.1rem solid #f2b01e;
+	border-radius: 0.5rem;
+	margin-left: 0.5rem;
+	padding-left: 0.5rem;
+	width: 50%;
+}
+
+.logs-edit-submit-btn {
+	margin-top: 0.5rem;
+	padding: 0.5rem;
+	border: 0.1rem solid #f2b01e;
+	border-radius: 0.2rem;
 }
 
 .logs-list-edit {

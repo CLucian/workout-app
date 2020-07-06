@@ -10,7 +10,7 @@ function OverviewTab(props) {
       <div className="img-info-container">
         <div className="inner-background">
           <div className="img-container">
-            <img className="overview-img" src={src} alt="abs" />
+            <img className="overview-img" src={src} />
           </div>
           <div className="info-container">
             <div className="info-group">

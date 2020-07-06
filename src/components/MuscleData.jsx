@@ -4,10 +4,11 @@ const absSectionContent = {
   title: "Abdominals",
   src: "exercise-images/muscle-category-images/abdominal-muscles.jpg",
   info:
-    "The abdominal muscles form the anterior and lateral abdominal wall and consist of the external abdominal obliques, the internal abdominal obliques, the rectus abdominis and the transversus abdominis . Acting together these muscles form a firm wall that protects the viscera and they help to maintain erect posture. In addition the contraction of these muscles helps in expiration and to increase the intra-abdominal pressure such as in sneezing, coughing, lifting and childbirth.",
+    "The abdominals are a group of muscles running vertically on each side of the anterior wall of the human abdomen. The muscles attach from the xiphoid process, the center point bone between your chest, to the pubis bone located centrally just above the pubic region",
   muscleFunction:
-    "Both sides acting together, the external abdominal obliques flex the vertebral column by drawing the pubis towards the xiphoid process. Acting unilaterally it results in ipsilateral side flexion and contralateral rotation of the trunk."
+    "These muscles play a crucial rule as a postural muscles. They are responsible for flexing the spine when doing movements like a crunch or sit up. The abdominals also assist with breathing and help forcefullying exhaling while also helping keep the internal organs intact and creating intra-abdominal pressure."
 };
+
 
 const bicepsSectionContent = {
   title: "Biceps Brachii",
@@ -22,9 +23,9 @@ const pectoralsSectionContent = {
   title: "Pectorals",
   src: "exercise-images/muscle-category-images/pectoral-muscles.jpg",
   info:
-    "The pectoralis major is the most superficial muscle in the pectoral region. It is large and fan shaped, and is composed of a sternal head and a clavicular head. The pectoralis major is active in deep or forced inspiration, but not expiration. - The pectoralis minor is triangular in shape and is located under the pectoralis major, and both form the anterior wall of the axilla. The shortened , tight muscle can be easily palpated there. It is also located close in relation to the brachial plexus and both the subclavian artery and vein, which all run between the muscle and the rib cage. Pectorlis minor and coracoid process together form a bridge under which nerves and vessels go to he upper limb.",
+    "The pectoral muscles, commonly referred to as the 'pecs' are the muscles that connect the front of the human chest with the bones of the upper arm and shoulder. The pectorals are composed of 2 muscles, the major and minor. The pectoralis major is a thick fan-shaped muscle, while the pectoralis minor is a thin triangular one",
   muscleFunction:
-    "With the origin fixed, the pectoralis major adducts and medially rotates the humerus. With the insertion fixed, it may assist in elevating thorax, as in forced inspiration. In crunch-walking or parallel-bar work, it will assist in supporting the weight of the body. The primary actions of the pectoralis minor muscle includes the stabilization, depression, abduction or protraction, internal rotation and downward rotation of the scapula. It elevates the ribs for deep inspiration when the pectoral girdle is fixed or elevated. With the scapula stabilized, in a position of good alignment, the pectoralis minor acts as an accessory muscle of inspiration. When the ribs are immobilized, this muscle brings the scapula forward, Both pectoralis muscles work with the serratus anterior muscles to create full range of movement for the scapula."
+    "The pectoral major muscle lies under the breast and serves to flex, extend and rotate the humerus bone (the long bone of the upper arm). The pectoralis minor attaches to the ribs and serves to stablize the scapula (the large bone of the shoulder).",
 };
 
 const deltoidsSectionContent = {
@@ -40,7 +41,7 @@ const calvesSectionContent = {
   title: "Calves",
   src: "exercise-images/muscle-category-images/calf-muscles.jpg",
   info:
-    "The muscles within the calf correspond to the posterior compartment of the leg. The two largest muscles (soleus and gastrocnemius) within this compartment are known together as the calf muscle and attach to the heel via the achilles tendon. Several other smaller muscles attach to the knee and ankle and via long tendons to the toes.",
+    "The muscles within the calf correspond to the posterior compartment of the leg. The two largest muscles (soleus and gastrocnemius) within this compartment are known together as the calf muscle and attach to the heel via the achilles tendon.",
   muscleFunction:
     "Along with the soleus muscle, the gastrocnemius forms half of the calf muscle. Its function is plantar flexing the foot at the ankle joint and flexing the leg at the knee joint. The gastrocnemius is primarily involved in running, jumping and other 'quick' movements of the leg, and to a lesser degree in walking and standing. The soleus muscle on the other hand plays a significant role in pumping blood back up to the body and maintaining posture and balance."
 };
@@ -67,9 +68,9 @@ const hamstringsSectionContent = {
   title: "Hamstrings",
   src: "exercise-images/muscle-category-images/hamstring-muscles.jpg",
   info:
-    "The hamstrings are a group of three muscles which predominatly act to flex the knee. They are the Semitendinosus, Semimembranosus and Biceps Femoris",
+    "The hamstrings are a group of three muscles which predominatly act to flex the knee. They are the Semitendinosus, Semimembranosus and Biceps Femoris.",
   muscleFunction:
-    "The hamstrings cross and act upon two joints, the hip and knee. They help extend the hip when the trunk is flexed and they also flex the knee inwardly and help rotate the lower leg when the knee is bent. These muscles play a crucial role in many daily activities such as walking, jumping, running and controlling some movements in the gluteus. They are most important as an antagonist to the quadriceps int he deceleration of knee extension"
+    "The hamstrings cross and act upon two joints, the hip and knee. They help extend the hip when the trunk is flexed and they also flex the knee inwardly and help rotate the lower leg when the knee is bent. These muscles play a crucial role in many daily activities such as walking, jumping, running and controlling some movements in the gluteus. They are most important as an antagonist to the quadriceps int he deceleration of knee extension."
 };
 
 const glutealsSectionContent = {

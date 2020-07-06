@@ -43,15 +43,17 @@ class LogsTabEdit extends React.Component {
 		return(
 			<>
 					<form onSubmit={this.handleSubmit}>
-						<li className="logs-list-info">
-							Sets: 
-							<input className="logs-edit-input" onChange={this.handleChange} value={this.state.inputSets} name="inputSets" type="number" min="0" placeholder={this.props.sets} />
-						</li>
-						<li className="logs-list-info">
-							Reps:
-							<input className="logs-edit-input" onChange={this.handleChange} value={this.state.inputReps} name="inputReps" type="number" min="0" placeholder={this.props.reps} />
-						</li>
-						<input type="submit" value="Submit" />
+						<ul className="logs-master-list">
+							<li className="logs-list-info">
+								Sets:
+								<input className="logs-edit-input1" onChange={this.handleChange} value={this.state.inputSets} name="inputSets" type="number" min="0" placeholder={this.props.sets} />
+							</li>
+							<li className="logs-list-info">
+								Reps:
+								<input className="logs-edit-input2" onChange={this.handleChange} value={this.state.inputReps} name="inputReps" type="number" min="0" placeholder={this.props.reps} />
+							</li>
+						</ul>
+						<input type="submit" value="Submit" className="logs-edit-submit-btn" />
 					</form>
 			</>
 		)
