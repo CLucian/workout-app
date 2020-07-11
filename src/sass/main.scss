@@ -1,13 +1,14 @@
 @import 'components/navbar';
 @import 'base/base';
-@import 'pages/community.scss';
-@import 'pages/exercises.scss';
+// @import 'pages/community.scss';
+// @import 'pages/exercises.scss';
 @import 'pages/home.scss';
 @import 'pages/muscle-groups.scss';
-@import 'pages/workouts.scss';
+@import 'base/mediaQueries.scss';
+// @import 'pages/workouts.scss';
 
 
-@import 'components/exercise.scss';
+// @import 'components/exercise.scss';
 @import 'components/exerciseCategory.scss';
 
 
@@ -120,6 +121,7 @@
 	text-align: center;
 	display: block;
 	margin-bottom: 11rem;
+	min-width: 42rem;
 }
 
 .muscle-image-quadA {
@@ -444,6 +446,7 @@
 	margin: auto;
 	margin-top: 5rem;
 	margin-bottom: 8rem;
+	min-width: 48.4rem;
 }
 
 // .overview-background-image {
@@ -459,6 +462,7 @@
 ////////////////////////////////////////
 
 .main-container {
+	min-width: 33.6rem;
 	// display: relative;
 }
 
@@ -466,15 +470,17 @@
 	display: flex;
 	list-style: none;
 	justify-content: center;
-	width: inherit;
-	padding: 2rem;
+	width: 100%;
+	// padding: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 	font-size: 2.5rem;
 	color: #f2b01e;
 	// background: #222;
 
 
 	li {
-		margin: 0rem 2rem;
+		margin: 0rem 1rem;
 		background: #222;
 		border-radius: 0.4rem;
 		padding: 1rem;
@@ -525,6 +531,7 @@
 	// display: flex;
 	// justify-content: center;
 	background: rgba(255, 255, 255, 0.8); 
+	min-width: 55.5rem;
 }
 
 .category-title {
@@ -541,6 +548,7 @@
 	padding-bottom: 2rem;
 	border: 0.1rem solid #000;
 	border-radius: 0.5rem;
+	min-width: 19.4rem;
 }
 
 .img-info-container {
@@ -554,6 +562,7 @@
 	margin: 3rem;
 	background-color: #333;
 	text-align: center;
+	min-width: 27.6rem;
 }
 
 
@@ -671,12 +680,15 @@
 }
 
 .exercise-button1 {
+	// font-weight: bold;
+	position: absolute;
 	margin: 1rem;
 	z-index: 10;
 	opacity: 1;
 	padding: 1rem;
 	// margin-top: 2rem;
-	float: right;
+	// float: right;
+	left: 87%;
 	cursor: pointer;
 	border: 0.2rem solid #f2b01e;
 	border-radius: 0.2rem;
@@ -684,12 +696,15 @@
 }
 
 .exercise-button2 {
+	// font-weight: bold;
+	position: absolute;
 	margin: 1rem;
 	z-index: 10;
 	opacity: 1;
 	padding: 1rem;
+	right: 87%;
 	// margin-top: 2rem;
-	float: left;
+	// float: left;
 	cursor: pointer;
 	border: 0.2rem solid #f2b01e;
 	border-radius: 0.2rem;
@@ -697,9 +712,9 @@
 }
 
 
-.back-exerciseList {
-	margin-top: 10rem;
-}
+// .back-exerciseList {
+// 	margin-top: 10rem;
+// }
 
 .exerciseList {
 	// display: flex;
@@ -1015,6 +1030,7 @@ ol li:before {
 
 
 .flip {
+	min-width: 42rem;
 	// position: relative;
 	// display: flex;
 	// justify-content: center;
@@ -1258,8 +1274,11 @@ ol li:before {
 }
 
 .workoutDescription {
-	margin-top: 1rem;
-	margin-bottom: 2rem;
+	// margin-top: 1rem;
+	// margin-bottom: 2rem;
+	// margin-left: 2rem;
+	// margin-right: 2rem;
+	margin: 1rem 10rem 2rem 10rem;
 	font-size: 1.8rem;
 	color: #999;
 	word-wrap: break-word;
@@ -1385,6 +1404,7 @@ ol li:before {
 	// padding-left: 0.5rem;
 	// margin-left: 1rem;
 	font-size: 1.8rem;
+	min-width: 5.322rem;
 }
 
 .volume-container {
@@ -1400,6 +1420,7 @@ ol li:before {
 	// align-items: center;
 	justify-content: center;
 	width: 13.2%;
+	// min-width: 9.366rem;
 }
 
 .calendar-div {
@@ -1730,4 +1751,106 @@ input[type=text] {
 	fill: #fff;
 	width: 40%;
 	height: auto;
+}
+
+
+
+
+/////////////////////////
+///// Media Queries
+////////////////////////
+
+@media (max-width: 1500px) {
+	.exercise-button1 {
+		left: 80%
+	}
+	.exercise-button2 {
+		right: 80%
+	}
+}
+
+@media (max-width: 1200px) {
+	.exercise-button1 {
+		left: 75%
+	}
+
+	.exercise-button2 {
+		right: 75%
+	}
+
+	.exercise-title {
+		width: 60%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.info-container {
+		// position: center;
+		text-align: center;
+		padding: 0;
+		margin: 1;
+		width: 80%;
+	}
+
+	.muscleFunction-title {
+		width: 100%;
+		font-size: 2.5rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		// margin: 0;
+	}
+
+	.info {
+		font-size: 1.5rem;
+	}
+
+	.muscleFunction {
+		font-size: 1.5rem;
+	}
+}
+
+
+@media (max-width: 900px) {
+	.tab-bar {
+		font-size: 2rem;
+	}
+
+	.exerciseImageAndInfo {
+		
+	}
+}
+
+
+@media (max-width: 700px) {
+	.tab-bar {
+		font-size: 2rem;
+	}
+
+	.muscleFunction-title {
+		font-size: 1.5rem;
+	}
+
+	.info {
+		font-size: 1rem;
+	}
+
+	.muscleFunction {
+		font-size: 1rem;
+	}
+
+	.main-div {
+		width: 100%;
+	}
+
+	.muscle-category-container {
+		width: 100%;
+	}
+
+	.overview-main-container {
+		width: 100%;
+	}
+
+	.overview-content-container {
+		width: 100%;
+	}
 }

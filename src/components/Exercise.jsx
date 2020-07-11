@@ -80,7 +80,7 @@ class Exercise extends React.Component {
                 onClick={this.handleClick}
                 type="button"
               >
-                Open
+                More
               </button>
               {/* <div className="generic-button"> */}
               {/* </div> */}
@@ -135,7 +135,7 @@ class Exercise extends React.Component {
                 onClick={this.handleClick}
                 type="button"
               >
-                Open
+                Close
               </button>
               {/* <ExerciseButton /> */}
               <div className="exerciseTitle">
