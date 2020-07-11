@@ -15,7 +15,6 @@ function MuscleMap(props) {
         className="body-diagram-image"
         alt="muscle-diagram"
       />
-      {}
       {MuscleData.map(category => {
         return <img
           key={category.key}
