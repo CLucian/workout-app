@@ -4,7 +4,7 @@ import MuscleData from './MuscleData';
 
 function MuscleMap(props) {  
 
-  const { setActiveMuscleCategory, handleCategoryClick, dataCategory } = props
+  const { setActiveMuscleCategory, handleCategoryClick } = props
 
 
   
