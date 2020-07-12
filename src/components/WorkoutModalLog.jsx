@@ -52,8 +52,6 @@ class WorkoutModalLog extends React.Component {
   }
 
   render() {
-    console.log('{{{{{{{{{{{{{{{{{{{{{ ModalLogState ]]]]]]]]]]]]]]]]]]]]]]]', this.state)
-    console.log("====CurrentModalExercise====", this.props.exercise);
     return (
       <div>
         <h1 className="modal-title">{this.props.exercise}</h1>
