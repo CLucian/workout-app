@@ -101,7 +101,6 @@ const data = [
       alt: "quads",
       class: "muscle-image-quadA"
     },
-    // SectionComponent: QuadSection,
     sectionContent: quadsSectionContent
   },
   {
