@@ -16,8 +16,6 @@ function MuscleCategory(props) {
       formSubData
     } = props;
 
-		// console.log("ACTIVE CATEGORY IS", activeCategory);
-
 		if (!activeCategory) {
 		return null;
 		}
@@ -25,7 +23,6 @@ function MuscleCategory(props) {
 
 		return (
       <div className="muscle-category-container">
-        {/* <img className="overview-background-image" src="/exercise-images/background-images/gym1.jpg" alt="overview-background" /> */}
         <CategorySection
           activeCategory={activeCategory}
           handleCategoryClick={handleCategoryClick}
