@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import Exercise from './Exercise';
 
 
@@ -16,8 +15,6 @@ class ExerciseCategory extends React.Component {
 
 
   handleClick = (muscleGroup) => {
-    // console.log(this.props.data[muscleGroup].exercise)
-
     if (muscleGroup === this.state.category) {
       this.setState({
         category: null
