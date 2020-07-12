@@ -31,8 +31,6 @@ class WorkoutTab extends React.Component {
 		}) 
 	}
 
-	// const { title, info, muscleFunction, src } = props;
-
 	render() {
 
 		return (
