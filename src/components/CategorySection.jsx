@@ -15,10 +15,8 @@ function SectionContent(props) {
       activeTab,
       setActiveTab,
       dataCategory,
-      setExerciseTitle,
       handleFormChange,
       handleSubmit,
-      formSubData,
       addNewItem
     } = props;
     
@@ -40,14 +38,11 @@ function SectionContent(props) {
         <FormContext.Consumer>
           {(context) => (
             <ExercisesTab
-              // activeCategory={activeCategory}
               dataCategory={dataCategory}
-              // setExerciseTitle={setExerciseTitle}
               handleFormChange={handleFormChange}
               handleSubmit={handleSubmit}
               handleDeleteEx={context.handleDeleteEx}
               addCompleteArray={context.addCompleteArray}
-              // formSubData={formSubData}
               formData={context.items}
             />
           )}
