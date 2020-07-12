@@ -1,6 +1,5 @@
 import React from 'react';
 import FormContext from './FormContext';
-import WorkoutExercises from './WorkoutExercises';
 import Modal from './Modal';
 import WorkoutModalLog from './WorkoutModalLog';
 import { ReactComponent as DeleteIcon } from './Icons/cross.svg';

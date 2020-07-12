@@ -28,7 +28,6 @@ class CreateTab extends React.Component {
 
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleStepsChange = this.handleStepsChange.bind(this);
   }
 
   
@@ -48,7 +47,6 @@ class CreateTab extends React.Component {
 
   addStep() {
     this.setState({
-      // the "" is what appends an empty element to the array
       steps: [...this.state.steps, ""]
     });
   }
@@ -84,10 +82,6 @@ class CreateTab extends React.Component {
 
 
   render() {
-    // console.log(this.props.hello);
-    // console.log(this.state.steps);
-    console.log('CreateTab State:', this.state.inputName)
-
     const { handleFormChange, handleSubmit } = this;
     return (
       <div>
@@ -140,12 +134,6 @@ class CreateTab extends React.Component {
             <div className="form-group">
               <label className="createTab-label">Steps: </label>
               <div className="steps-input-div">
-                {/* <input
-                className="inputs"
-                type="text"
-                name="inputEquipment"
-                placeholder="E.g. Lie flat on a bench"
-              /> */}
                 {this.state.steps.map((step, index) => {
                   return (
                     <div className="steps-div" key={index}>
@@ -153,7 +141,6 @@ class CreateTab extends React.Component {
                         className="step-inputs"
                         type="text"
                         name="steps"
-                        //   onChange={handleFormChange}
                         onChange={(e) => this.handleStepsChange(e, index)}
                         maxLength="50"
                         value={step}
@@ -182,7 +169,6 @@ class CreateTab extends React.Component {
               <select
                 className="inputs"
                 name="inputGroup"
-                //   value={this.state.value}
                 onChange={handleFormChange}
                 value={this.state.inputGroup}
                 required
@@ -226,7 +212,6 @@ class CreateTab extends React.Component {
                 name="inputDesc"
                 rows="10"
                 cols="30"
-                //   value={this.state.value}
                 onChange={handleFormChange}
                 placeholder="Briefly, please describe this movement."
                 value={this.state.inputDesc}
@@ -235,15 +220,9 @@ class CreateTab extends React.Component {
               />
             </div>
             <div>
-              {/* <button type="submit" value="Submit" onSubmit={handleSubmit}>Submit</button> */}
               <input className="createForm-submit-btn" type="submit" value="Submit" />
             </div>
           </form>
-          {/* <h1>{this.state.inputName}</h1>
-          <h1>{this.state.inputGroup}</h1>
-          <h1>{this.state.inputDesc}</h1>
-          <h1>{this.state.steps}</h1>
-          <h1>{this.props.hello}</h1> */}
       </div>
     );
   }
