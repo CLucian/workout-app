@@ -1,8 +1,6 @@
 import React from 'react';
 
 
-import LogsTabEditView from './LogsTabEditView';
-
 class LogsTabEdit extends React.Component {
 	constructor(props){
 		super(props)
@@ -11,10 +9,6 @@ class LogsTabEdit extends React.Component {
 			inputReps: null,
 			dataIsSent: false
 		}
-	}
-
-	componentDidMount() {
-		
 	}
 
 	handleChange = (e) => {
@@ -42,19 +36,19 @@ class LogsTabEdit extends React.Component {
 	render() {
 		return(
 			<>
-					<form onSubmit={this.handleSubmit}>
-						<ul className="logs-master-list">
-							<li className="logs-list-info">
-								Sets:
-								<input className="logs-edit-input1" onChange={this.handleChange} value={this.state.inputSets} name="inputSets" type="number" min="0" placeholder={this.props.sets} />
-							</li>
-							<li className="logs-list-info">
-								Reps:
-								<input className="logs-edit-input2" onChange={this.handleChange} value={this.state.inputReps} name="inputReps" type="number" min="0" placeholder={this.props.reps} />
-							</li>
-						</ul>
-						<input type="submit" value="Submit" className="logs-edit-submit-btn" />
-					</form>
+				<form onSubmit={this.handleSubmit}>
+					<ul className="logs-master-list">
+						<li className="logs-list-info">
+							Sets:
+							<input className="logs-edit-input1" onChange={this.handleChange} value={this.state.inputSets} name="inputSets" type="number" min="0" placeholder={this.props.sets} />
+						</li>
+						<li className="logs-list-info">
+							Reps:
+							<input className="logs-edit-input2" onChange={this.handleChange} value={this.state.inputReps} name="inputReps" type="number" min="0" placeholder={this.props.reps} />
+						</li>
+					</ul>
+					<input type="submit" value="Submit" className="logs-edit-submit-btn" />
+				</form>
 			</>
 		)
 	}
