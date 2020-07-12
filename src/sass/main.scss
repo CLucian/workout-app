@@ -856,6 +856,7 @@
 	height: 30%;
 	z-index: 1;
 	overflow: auto;
+	min-width: 32rem;
 }
 
 .modal-title {
@@ -1819,6 +1820,16 @@ input[type=text] {
 		
 	}
 }
+
+@media (max-width: 900px) {
+	.added-exercise-text {
+		margin-left: 2rem;
+		font-size: 1.0rem;
+	}
+}
+
+
+
 
 
 @media (max-width: 700px) {
