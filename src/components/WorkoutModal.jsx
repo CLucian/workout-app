@@ -1,12 +1,6 @@
 import React from "react";
 import FormContext from './FormContext';
 
-  // const { data } = props
-
-             // if (!data) {
-             //   return null;
-             // }
-
 
 class WorkoutModal extends React.Component {
   static contextType = FormContext;
@@ -73,12 +67,11 @@ class WorkoutModal extends React.Component {
   }
 
   render() {
-    console.log(this.state);
 
     return (
       <div>
         <h1 className="modal-title">
-          {/*{data.exerciseTitle}*/}Create New Workout
+          Create New Workout
         </h1>
         <form className="workout-form" onSubmit={this.handleSubmit}>
           <div className="modal-form-container">
@@ -108,13 +101,6 @@ class WorkoutModal extends React.Component {
           </div>
           <div className="popup-text">{this.state.showMessage ? <p>Added to workout!</p> : null}</div>
         </form>
-        {/* <div className="modal-button-div">
-          <button className="generic-button" type="button" onClick={this.props.closeModal}>
-            Close
-          </button>
-          {this.state.workoutName}
-          {this.state.workoutDesc}
-        </div> */}
       </div>
     );
   }
