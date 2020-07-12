@@ -39,7 +39,7 @@ class ExerciseModal extends React.Component {
 
 
 		else {
-			alert("You've already clicked this value")
+			alert("You've already added this exercise to this workout")
 		}
 	}
 		

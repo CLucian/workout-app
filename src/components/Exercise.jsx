@@ -58,7 +58,11 @@ class Exercise extends React.Component {
           >
             <div className="exerciseList">
               <button
-                className={ this.state.isActive === true ? "exercise-button2" : "exercise-button1" }
+                className={
+                  this.state.isActive === true
+                    ? "exercise-button2"
+                    : "exercise-button1"
+                }
                 onClick={this.handleClick}
                 type="button"
               >
@@ -108,7 +112,11 @@ class Exercise extends React.Component {
           >
             <div className="exerciseList">
               <button
-                className={ this.state.isActive === true ? "exercise-button1" : "exercise-button2" }
+                className={
+                  this.state.isActive === true
+                    ? "exercise-button1"
+                    : "exercise-button2"
+                }
                 onClick={this.handleClick}
                 type="button"
               >

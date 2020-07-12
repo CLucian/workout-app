@@ -650,7 +650,7 @@
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	background: white;
-	border: 0.2rem solid #f2b01e;
+	border: 0.3rem solid #f2b01e;
 }
 
 .exercise-image {
@@ -658,6 +658,7 @@
 	width: 80%;
 	height: 18rem;
 }
+
 
 .exercise-info {
 	width: 50%;
@@ -916,6 +917,7 @@ ol li:before {
     margin: 4rem;
     >.front,
     >.back {
+		backface-visibility: hidden;
 		border: 1px solid black;
 	  	color: white;
 		width: 100%;

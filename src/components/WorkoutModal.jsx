@@ -44,7 +44,7 @@ class WorkoutModal extends React.Component {
         (workout) => workout.workoutName.toString() === this.state.workoutName
       )
     ) {
-      alert("You've already submitted a workout with this Name!");
+      alert("You've already submitted a workout with this name!");
     } else {
       this.setState(
         {
