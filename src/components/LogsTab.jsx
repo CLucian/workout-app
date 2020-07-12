@@ -1,8 +1,6 @@
 import React from 'react';
-import LogItem from './LogItem';
 
 import groupBy from 'lodash/groupBy'
-import data from './MuscleData';
 import LogsTabEdit from './LogsTabEdit';
 import LogsTabView from './LogsTabView';
 import FormContext from './FormContext';
@@ -20,13 +18,10 @@ class LogsTab extends React.Component {
       (exercise) => exercise.date
     );
 
-    console.log('1. dateArray', dateArray)
     return Object.keys(dateArray).map((key) => {
       let newArr = []
       const val = dateArray[key];
-      // console.log('2.5, newArr', newArr);
       this.uniqueArray(val, newArr);
-      // console.log('3. newArr', newArr)
       return {
         items: 
           newArr.sort((a, b) => {
@@ -36,10 +31,6 @@ class LogsTab extends React.Component {
           }).map((exercise) => {
             return exercise
           }),
-        
-        // newArr.map((exercise) => {
-        //   return exercise
-        // }),
         header: key,
       };
     });
@@ -47,9 +38,6 @@ class LogsTab extends React.Component {
 
   sortedData = () => {
     const sortedArr = this.formattedData().sort((a, b) => {
-      // if (a.header > b.header) {return -1}
-      // if (a.header < b.header) {return 1}
-      // return 0;
       let dateA = new Date(a.header)
       let dateB = new Date(b.header)
       return dateA - dateB;
@@ -77,7 +65,6 @@ class LogsTab extends React.Component {
       let i = newArray.findIndex(
         (exercise) => exercise.exerciseName === item.exerciseName
       );
-      console.log('5. i', i)
       if (i <= -1) {
         newArray.push({
           exerciseName: item.exerciseName,
@@ -87,18 +74,10 @@ class LogsTab extends React.Component {
           date: item.date,
         });
       }
-      // console.log('2. newArray', newArray)
     });
   };
 
-  handleClick = (currentId, currentDate, indexValue, exerciseIndex, dateIndex, currentDateIndex) => {
-      // console.log('dateIndex', dateIndex)
-      // console.log('currentDateIndex', currentDateIndex)
-      // console.log("-----exercise Index", exerciseIndex);
-      // console.log("IndexValue", indexValue);
-      // console.log('this.state.editing handleClick', this.state.editing);
-      
-    console.log("currentId============", currentId);
+  handleClick = (currentId, currentDate) => {
     this.setState({
       currentId,
       currentDate,
@@ -111,17 +90,13 @@ class LogsTab extends React.Component {
     this.setState({
       editing: !this.state.editing
     })
-    console.log('this.state.editing -  toggleEdit', this.state.editing)
   }
 
   handleDelete = (exerciseIndex, indexValue, dateId) => {
     let splicedArray = [...this.sortedData()]
 
     if (exerciseIndex === indexValue) {
-      console.log('splicedArray', splicedArray)
       splicedArray.forEach(date => {
-        // console.log('dateId', dateId)
-        // console.log("date.id", date.header);
         if (date.header === dateId)
         date.items.splice(indexValue, 1)
       })
@@ -139,20 +114,12 @@ class LogsTab extends React.Component {
       finalDataArray: reformattedArray,
       formatted: true
     })
-    console.log('splicedArray', splicedArray)
-    console.log('===============reformattedArray========================', reformattedArray)
     this.props.updateExerciseToLogsArray(reformattedArray);
     
   }
 
 
   render() {
-    console.log("this.props.exerciseLog", this.props.exerciseLog);
-    console.log("formatted Data", this.formattedData());
-    console.log('sortedData()', this.sortedData());
-    console.log('rendered state', this.state.finalDataArray)
-
-
     return (
       
       <div>
@@ -172,7 +139,6 @@ class LogsTab extends React.Component {
 
 
         {this.sortedData().map((date, dateIndex) => {
-          console.log('date.header', date.header)
           const currentDateIndex = this.sortedData().findIndex(
             (x) => x.header === date.header
           );
