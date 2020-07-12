@@ -23,8 +23,6 @@ class Workout extends React.Component {
   };
 
   sendExerciseToModal = (exercise) => {
-    // const loggedExercise = exercise
-
     this.props.addExerciseToModal(exercise);
   };
 
@@ -50,18 +48,6 @@ class Workout extends React.Component {
   }
 
   render() {
-    console.log("===EXERCISE DISPLAY===", this.state.exerciseDisplay);
-    console.log(
-      "Is props.workout being passed properly?",
-      this.props.workoutList
-    );
-    this.props.workout &&
-      console.log(
-        "00000000000000000",
-        this.props.workoutList.map((workout) => {
-          return workout.workoutExercises.exerciseName;
-        })
-      );
 
     return (
       <>
