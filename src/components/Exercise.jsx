@@ -3,9 +3,7 @@ import React from 'react';
 import ExerciseImage from "./ExerciseImage";
 import Modal from "./Modal";
 import ExerciseModal from './ExerciseModal';
-import FormProvider from './FormProvider';
 import FormContext from './FormContext';
-import ExerciseButton from './ExerciseButton';
 
 
 
@@ -31,29 +29,15 @@ class Exercise extends React.Component {
   };
 
   handleClick = () => {
-    console.log("------Button was clicked-----", this.state.isActive);
     this.setState(prevState => ({
       isActive: !prevState.isActive
     }))
-    console.log("------Button was clicked-----", this.state.isActive);
   }
 
-  // handleClickOpen = (index) => {
-  //   this.setState({
-  //     isActive: true,
-  //   });
-  // };
-
-  // handleClickClose = (index) => {
-  //   this.setState({
-  //     isActive: false,
-  //   });
-  // };
 
 
   render() {
     const {
-      selectExercise,
       exerciseTitle,
       exerciseImage1,
       exerciseImage2,
@@ -63,9 +47,7 @@ class Exercise extends React.Component {
       steps,
       userCreated,
       exercise,
-      // index,
       handleDeleteExercise,
-      // handleDeleteEx
     } = this.props;
 
     return (
@@ -82,10 +64,6 @@ class Exercise extends React.Component {
               >
                 More
               </button>
-              {/* <div className="generic-button"> */}
-              {/* </div> */}
-
-              {/* <ExerciseButton index={this.props.index} flipSide={this.buttonClicked} /> */}
               <div className="exerciseTitle">
                 <h1 className="exercise-title">{exerciseTitle}</h1>
               </div>
@@ -120,7 +98,6 @@ class Exercise extends React.Component {
                       </h2>
                     </h2>
                   </div>
-                  {/* <p className="more-info">More info</p> */}
                 </div>
               </div>
             </div>
@@ -137,7 +114,6 @@ class Exercise extends React.Component {
               >
                 Close
               </button>
-              {/* <ExerciseButton /> */}
               <div className="exerciseTitle">
                 <h1 className="exercise-title">{exerciseTitle}</h1>
               </div>
@@ -150,8 +126,6 @@ class Exercise extends React.Component {
                   <h1 className="steps-list-title">Steps</h1>
                   <ol className="steps-list">
                     {steps.map((step) => {
-                      // console.log(step);
-
                       return <li className="step-list-item">{step}</li>;
                     })}
                   </ol>
