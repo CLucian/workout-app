@@ -30,21 +30,10 @@ class ExercisesTab extends React.Component {
 		})
 	}
 
-
-
-
-	// finalArray = [...data[this.props.dataCategory].exercise, ...this.props.formData];
-
 	sendFinalArray () {
 		const completeArray = this.state.exerciseArray;
 		this.props.addCompleteArray(completeArray);
 	}
-
-
-	
-
-
-
 
 	handleDeleteExercise(id) {
 		this.props.handleDeleteEx(id);
@@ -55,19 +44,11 @@ class ExercisesTab extends React.Component {
 		this.sendFinalArray()
 	}
 
-
-
-
 	render() {
 
 		return (
 			<div className="main-container">
-				{/* {(data[dataCategory].exercise.map(exercise => { */}
 				{this.state.exerciseArray.map((exercise, index) => {
-					// console.log(index);
-					// console.log(exercise.steps);
-					// console.log('this is the final array', this.state.exerciseArray)
-					// console.log('this is the state from CREATETAB', this.finalArray)
 					const exerciseImage1 = `exercise-images/images-web/${(exercise.img[0]).split('').slice(12).join('')}`
 					const exerciseImage2 = `exercise-images/images-web/${(exercise.img[1]).split('').slice(12).join('')}`
 
@@ -87,7 +68,6 @@ class ExercisesTab extends React.Component {
 				index={index}
 				userCreated={exercise.userCreated}
 				handleDeleteExercise={this.handleDeleteExercise}
-				// sendFinalArray={this.sendFinalArray}
               />
             ) : null}
           </div>
