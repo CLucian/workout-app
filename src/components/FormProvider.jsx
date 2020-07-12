@@ -1,11 +1,6 @@
 import React from 'react';
 
 import FormContext from './FormContext';
-import data from "../data/category_to_exercise";
-
-import groupBy from "lodash/groupBy";
-
-
 
 class FormProvider extends React.Component {
 	constructor() {
@@ -88,18 +83,10 @@ class FormProvider extends React.Component {
     },
 
     addExerciseToLogsArray: (exercise) => {
-      //   if (this.state.exerciseLog.find((exr) => exr === exercise)) {
-	  //     return null;
-      //   } else {
-	// let objArray = [exercise];
-	// let newArray = groupBy(objArray, 
-	// 	(exercise) => exercise.date
-	// );
 
       this.setState({
         exerciseLog: [exercise, ...this.state.exerciseLog],
 	  });
-      //   }
     },
 
 	updateExerciseToLogsArray: (exerciseArray) => {
@@ -153,14 +140,6 @@ class FormProvider extends React.Component {
 			handleDeleteEx: this.handleDeleteEx,
 			updateWorkoutExercises: this.updateWorkoutExercises,
 		}
-
-		console.log('++++++++++++++++++++++++++', this.state.workoutExercises)
-		console.log('THIS IS THE NEW ARRAY ITEM', this.state.items)
-		console.log('+++++++This is the new workout Array++++', this.state.workout)
-		console.log("+++++++This is the exercise Log ++++", this.state.exerciseLog);
-		// console.log('===========This is the absolute completeArray============', this.state.completeArray)
-		// console.log('++++++++++++++++++++++++++++++++++++++++++', this.state.dataCategory)
-		// console.log('******************************', this.state.workout.map(obj => obj))
 
 		return (
 			<FormContext.Provider value={value}>
