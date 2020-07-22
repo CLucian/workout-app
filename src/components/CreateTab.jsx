@@ -98,6 +98,7 @@ class CreateTab extends React.Component {
                   value={this.state.inputName}
                   maxLength="20"
                   required
+                  autocomplete="off"
                 />
               </div>
             </div>
@@ -113,6 +114,7 @@ class CreateTab extends React.Component {
                   value={this.state.inputType}
                   maxLength="20"
                   required
+                  autocomplete="off"
                 />
               </div>
             </div>
@@ -128,6 +130,7 @@ class CreateTab extends React.Component {
                   value={this.state.inputEquipment}
                   maxLength="40"
                   required
+                  autocomplete="off"
                 />
               </div>
             </div>
@@ -144,6 +147,7 @@ class CreateTab extends React.Component {
                         onChange={(e) => this.handleStepsChange(e, index)}
                         maxLength="50"
                         value={step}
+                        autocomplete="off"
                       />
                       <button
                         type="button"
@@ -216,6 +220,7 @@ class CreateTab extends React.Component {
                 placeholder="Briefly, please describe this movement."
                 value={this.state.inputDesc}
                 maxLength="100"
+                autocomplete="off"
                 required
               />
             </div>

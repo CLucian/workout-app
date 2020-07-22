@@ -83,6 +83,7 @@ class WorkoutModal extends React.Component {
                 onChange={this.handleInput}
                 value={this.state.workoutName}
                 maxLength="15"
+                autocomplete="off"
               />
             </div>
             <div className="modal-form-group">
@@ -93,6 +94,7 @@ class WorkoutModal extends React.Component {
                 onChange={this.handleInput}
                 value={this.state.workoutDesc}
                 maxLength="200"
+                autocomplete="off"
               />
             </div>
           </div>

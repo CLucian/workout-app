@@ -473,8 +473,9 @@
 }
 
 .category-title {
-	font-size: 4rem;
-	font-family: 'Bangers';
+	font-size: 5rem;
+	font-weight: 900;
+	font-family: 'Didact Gothic';
 	padding: 2rem 2rem 0 2rem;
 }
 
@@ -1277,6 +1278,7 @@ input[type=text] {
 	border-radius: 0.4rem;
 	padding: 0.5rem;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .step-button {
@@ -1284,6 +1286,7 @@ input[type=text] {
 	border: 0.2rem solid #f2b01e;
 	border-radius: 0.4rem;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .steps-div {
