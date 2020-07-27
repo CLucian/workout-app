@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/workout-app-final/static/css/main.c2d54029.chunk.css",
+    "main.js": "/workout-app-final/static/js/main.334af42c.chunk.js",
+    "main.js.map": "/workout-app-final/static/js/main.334af42c.chunk.js.map",
+    "runtime-main.js": "/workout-app-final/static/js/runtime-main.2af01318.js",
+    "runtime-main.js.map": "/workout-app-final/static/js/runtime-main.2af01318.js.map",
+    "static/css/2.ab33d419.chunk.css": "/workout-app-final/static/css/2.ab33d419.chunk.css",
+    "static/js/2.756b9985.chunk.js": "/workout-app-final/static/js/2.756b9985.chunk.js",
+    "static/js/2.756b9985.chunk.js.map": "/workout-app-final/static/js/2.756b9985.chunk.js.map",
+    "index.html": "/workout-app-final/index.html",
+    "precache-manifest.4399988cbfbc8146e8f49fe44280260c.js": "/workout-app-final/precache-manifest.4399988cbfbc8146e8f49fe44280260c.js",
+    "service-worker.js": "/workout-app-final/service-worker.js",
+    "static/css/2.ab33d419.chunk.css.map": "/workout-app-final/static/css/2.ab33d419.chunk.css.map",
+    "static/css/main.c2d54029.chunk.css.map": "/workout-app-final/static/css/main.c2d54029.chunk.css.map",
+    "static/media/cross.91159e72.svg": "/workout-app-final/static/media/cross.91159e72.svg",
+    "static/media/file-text.998edcb3.svg": "/workout-app-final/static/media/file-text.998edcb3.svg",
+    "static/media/pencil.8809d3cf.svg": "/workout-app-final/static/media/pencil.8809d3cf.svg"
+  }
+}
