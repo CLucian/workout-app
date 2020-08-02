@@ -51,7 +51,7 @@ class Exercise extends React.Component {
     } = this.props;
 
     return (
-      <>
+      <div className="flip-container">
         <div className="flip" key={this.props.index}>
           <div
             className={this.state.isActive === true ? "clicked-front" : "front"}
@@ -177,7 +177,7 @@ class Exercise extends React.Component {
             )}
           </FormContext.Consumer>
         </Modal>
-      </>
+      </div>
     );
   }
 }

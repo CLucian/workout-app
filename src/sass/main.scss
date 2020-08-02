@@ -91,8 +91,8 @@
 	position: relative;
 	text-align: center;
 	display: block;
-	margin-bottom: 11rem;
-	min-width: 42rem;
+	// margin-bottom: 11rem;
+	// min-width: 42rem;
 }
 
 .muscle-image-quadA {
@@ -414,13 +414,13 @@
 	margin: auto;
 	margin-top: 5rem;
 	margin-bottom: 8rem;
-	min-width: 48.4rem;
+	// min-width: 48.4rem;
 }
 
 
 
 .main-container {
-	min-width: 33.6rem;
+	// min-width: 33.6rem;
 }
 
 .tab-bar {
@@ -469,7 +469,7 @@
 	width: 70%;
 	border-radius: 0.5rem;
 	background: rgba(255, 255, 255, 0.8); 
-	min-width: 55.5rem;
+	// min-width: 55.5rem;
 }
 
 .category-title {
@@ -486,7 +486,7 @@
 	padding-bottom: 2rem;
 	border: 0.1rem solid #000;
 	border-radius: 0.5rem;
-	min-width: 19.4rem;
+	// min-width: 19.4rem;
 }
 
 .img-info-container {
@@ -495,7 +495,7 @@
 	margin: 3rem;
 	background-color: #333;
 	text-align: center;
-	min-width: 27.6rem;
+	// min-width: 27.6rem;
 }
 
 
@@ -722,7 +722,7 @@
 	height: 30%;
 	z-index: 1;
 	overflow: auto;
-	min-width: 32rem;
+	// min-width: 32rem;
 }
 
 .modal-title {
@@ -834,7 +834,7 @@ ol li:before {
 
 
 .flip {
-	min-width: 42rem;
+	// min-width: 42rem;
     >.front,
     >.back {
         display: block;
@@ -1159,7 +1159,7 @@ ol li:before {
 	color: #fff;
 	padding-bottom: 0.3rem;
 	font-size: 1.8rem;
-	min-width: 5.322rem;
+	// min-width: 5.322rem;
 }
 
 .volume-container {
@@ -1518,6 +1518,13 @@ input[type=text] {
 		font-size: 2rem;
 	}
 
+	.overview-main-container {
+		width: 100%;
+	}
+	.overview-content-container {
+		width: 90%;
+	}
+
 }
 
 @media (max-width: 900px) {
@@ -1533,7 +1540,7 @@ input[type=text] {
 
 @media (max-width: 700px) {
 	.tab-bar {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 	.muscleFunction-title {
@@ -1544,16 +1551,29 @@ input[type=text] {
 		font-size: 1.5rem;
 	}
 
+	.master-div {
+		width: 100%;
+	}
+
 	.muscleFunction {
 		font-size: 1.5rem;
 	}
 
-	.main-div {
-		width: 100%;
+	.muscle-category-container {
+		display: flex;
+		justify-content: center;
+		width: 90%;
+		// width: 80%;
 	}
 
-	.muscle-category-container {
+
+	.main-container {
 		width: 100%;
+		
+	}
+
+	.category-title {
+		height: 100%;
 	}
 
 	.overview-main-container {
@@ -1562,5 +1582,79 @@ input[type=text] {
 
 	.overview-content-container {
 		width: 100%;
+	}
+
+	.img-info-container {
+		// width: 100%;
+		margin: 1rem;
+	}
+
+	.flip {
+		width: 100%;
+		// margin-bottom: 2rem;
+		margin: 0;
+		padding-bottom: 2rem;
+	}
+
+	.exerciseList {
+		// margin: 0;
+		// margin-bottom: 3rem;
+	}
+
+
+}
+
+@media (max-width: 500px) {
+	.muscle-category-container {
+		width: 90%;
+	}
+
+	.main-div {
+		width: 90%;
+	}
+
+	.tab-bar {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.tab-bar li {
+		margin: 0 0.5rem;
+		padding: 0.5rem;
+	}
+
+	.flip {
+		padding-top: 2rem;
+		width: 95%;
+	}
+
+	.exerciseList {
+		margin: 3rem;
+	}
+
+	.flip-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.exercise-button1 {
+		left: 40%;
+	}
+
+	.exercise-title {
+		margin-top: 5rem;
+	}
+
+	.mini-info-title {
+		padding: 0rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.exerciseList {
+		margin: 0rem;
+		height: 45rem;
+		overflow: hidden;
 	}
 }
