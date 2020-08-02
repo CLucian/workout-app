@@ -1657,4 +1657,48 @@ input[type=text] {
 		height: 45rem;
 		overflow: hidden;
 	}
+
+	.overview-img {
+		height: 15rem;
+	}
+
+	.outer-container {
+		width: 100%;
+		margin: 0rem;
+		
+		padding-top: 1rem;
+	}
+
+	.tab-bar {
+
+	}
+
+	.tab-bar li {
+		padding: 0.2rem;
+		margin: 0.1rem;
+	}
+
+	.inner-container {
+		width: 100%;
+	}
+
+	.workout-title {
+		font-size: 3rem;
+	}
+
+	.create-workout-title {
+		font-size: 3rem;
+	}
+
+	.workoutDescription {
+		margin: 2rem 0rem 2rem 0rem;
+	}
+
+	.modal-input {
+		width: 100%;
+	}
+
+	.log-title-default {
+		font-size: 2rem;
+	}
 }
