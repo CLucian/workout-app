@@ -1539,6 +1539,11 @@ input[type=text] {
 
 
 @media (max-width: 700px) {
+
+	.body-diagram-image {
+		// width: 90%;
+	}
+
 	.tab-bar {
 		font-size: 1.5rem;
 	}
@@ -1589,11 +1594,15 @@ input[type=text] {
 		margin: 1rem;
 	}
 
+	.flip-container {
+		margin: 2rem;
+	}
+
 	.flip {
 		width: 100%;
 		// margin-bottom: 2rem;
 		margin: 0;
-		padding-bottom: 2rem;
+		// padding-bottom: 2rem;
 	}
 
 	.exerciseList {
@@ -1605,12 +1614,17 @@ input[type=text] {
 }
 
 @media (max-width: 500px) {
+
+	.body-diagram-image {
+		// width: 100%;
+	}
+
 	.muscle-category-container {
 		width: 90%;
 	}
 
 	.main-div {
-		width: 90%;
+		width: 100%;
 	}
 
 	.tab-bar {
@@ -1636,6 +1650,9 @@ input[type=text] {
 	.flip-container {
 		display: flex;
 		justify-content: center;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 1rem;
 	}
 
 	.exercise-button1 {
@@ -1651,11 +1668,35 @@ input[type=text] {
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
+
+	.main-title {
+		font-size: 3rem;
+	}
+
+	.muscle-category-container {
+		width: 100%;
+	}
+
+
 	.exerciseList {
 		margin: 0rem;
 		height: 45rem;
-		overflow: hidden;
+		width: 100%;
+		// overflow: hidden;
+	}
+
+	.exercise-title {
+		font-size: 2rem;
+	}
+
+	.general-info {
+		font-size: 1.5rem;
+	}
+
+	.exerciseImageAndInfo {
+		display: flex;
+		// justify-content: center;
 	}
 
 	.overview-img {
@@ -1701,4 +1742,54 @@ input[type=text] {
 	.log-title-default {
 		font-size: 2rem;
 	}
+
+
+
+
+	.flip-container {
+		// height: 50rem;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 2rem;
+	}
+
+	.flip {
+		padding: 0;
+		width: 100%;
+		// height: 50rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.general-info {
+		font-size: 1.2rem;
+	}
+	.mini-info-container {
+		font-size: 1rem;
+	}
+
+	.mini-info-title {
+		font-size: 1.2rem;
+	}
+
+	.mini-info {
+		font-size: 1.2rem;
+	}
+
+	.steps-list {
+		font-size: 1.2rem;
+	}
+
+	.tab-bar {
+		font-size: 1.2rem;
+	}
+
+
+	@media (max-width: 250px) {
+		.tab-bar {
+			font-size: 1rem;
+		}
+	}
+
 }
