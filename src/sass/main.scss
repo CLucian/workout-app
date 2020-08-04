@@ -405,7 +405,9 @@
 	to right bottom,
 		rgba(0,0,0, 0.95),
 		rgba(0,0,0, 0.01)),
-	url('/exercise-images/background-images/gym3.jpg');
+	url('../background-images/gym3.jpg');
+	// '/exercise-images/background-images/gym3.jpg' on localhost
+
 	background-attachment:fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
