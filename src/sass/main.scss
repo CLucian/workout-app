@@ -1470,6 +1470,10 @@ input[type=text] {
 	.exercise-button2 {
 		right: 80%
 	}
+
+	.modal-workout-log-group {
+		width: 20%;
+	}
 }
 
 @media (max-width: 1200px) {
@@ -1512,6 +1516,11 @@ input[type=text] {
 	}
 }
 
+@media (max-width: 1000px) {
+	.modal-workout-log-group {
+			width: 30%;
+	}
+}
 
 @media (max-width: 900px) {
 	.tab-bar {
@@ -1526,6 +1535,7 @@ input[type=text] {
 	}
 
 }
+
 
 @media (max-width: 900px) {
 	.added-exercise-text {
@@ -1613,6 +1623,16 @@ input[type=text] {
 
 }
 
+@media (max-width: 600px) {
+	.outer-container {
+		margin: 1rem;
+	}
+
+	.modal-info-container {
+		width: 60%;
+	}
+}
+
 @media (max-width: 500px) {
 
 	.body-diagram-image {
@@ -1665,6 +1685,15 @@ input[type=text] {
 
 	.mini-info-title {
 		padding: 0rem;
+	}
+
+
+	.log-outer-container {
+		margin: 1rem;
+	}
+
+	.log-title-default {
+		font-size: 2rem;
 	}
 }
 
@@ -1723,6 +1752,10 @@ input[type=text] {
 		width: 100%;
 	}
 
+	.inner-background {
+		margin: 2rem;
+	}
+
 	.workout-title {
 		font-size: 3rem;
 	}
@@ -1744,6 +1777,9 @@ input[type=text] {
 	}
 
 
+	.category-title {
+		font-size: 3rem;
+	}
 
 
 	.flip-container {
@@ -1762,6 +1798,30 @@ input[type=text] {
 }
 
 @media (max-width: 400px) {
+
+	.modal-workout-log-group {
+		width: 50%;
+		padding: 1rem;
+	}
+
+	.react-date-picker__wrapper {
+		// font-size: 2rem;
+	}
+
+	.modal-info-container {
+		width: 90%;
+	}
+
+
+	.workout-exercise-list {
+		font-size: 1.5rem;
+	}
+
+	.workout-exerise-list-item {
+		font-size: 1rem;
+	}
+
+
 	.general-info {
 		font-size: 1.2rem;
 	}
@@ -1785,11 +1845,45 @@ input[type=text] {
 		font-size: 1.2rem;
 	}
 
-
-	@media (max-width: 250px) {
-		.tab-bar {
-			font-size: 1rem;
-		}
+	.modal-info-container {
+		padding: 2rem;
 	}
 
+	.modal-form-container {
+		width: 100%;
+	}
+
+	.modal-input {
+		font-size: 1rem;
+		margin: 0;
+	}
+
+
 }
+
+@media (max-width: 250px) {
+		.tab-bar {
+			font-size: 0.5rem;
+			// padding: 0;
+			li {
+				padding: 0;
+			}
+		}
+
+		.react-date-picker__wrapper {
+			font-size: 1.5rem;
+		}
+
+		.modal-info-container {
+			padding: 1rem;
+		}
+
+		.volume-input {
+			font-size: 1.5rem;
+		}
+
+		.inner-background {
+			margin: 0;
+		}
+
+	}
