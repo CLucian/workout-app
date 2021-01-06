@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://clucian.github.io/workout-app",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "boostrap": "^2.0.0",
     "bootstrap": "^4.5.0",
     "lodash": "^4.17.19",
